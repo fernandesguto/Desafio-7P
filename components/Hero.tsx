@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative pt-12 pb-16 md:pt-16 md:pb-20 flex justify-center overflow-hidden bg-gradient-to-b from-amber-50 via-white to-white text-slate-900">
+    <section className="relative pt-8 pb-10 md:pt-16 md:pb-20 flex justify-center overflow-hidden bg-gradient-to-b from-amber-50 via-white to-white text-slate-900">
       {/* Background Gradient & Pattern */}
       <div className="absolute inset-0 z-0 opacity-40">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-amber-200/40 via-transparent to-transparent" />
@@ -23,10 +23,10 @@ const Hero: React.FC = () => {
             <span className="serif-font font-bold text-[#F97316] text-3xl md:text-4xl -ml-1">7P</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 leading-tight serif-font text-slate-900">
+          <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold mb-4 leading-tight serif-font text-slate-900">
             7 Dias Para <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">Prosperar</span>
           </h1>
-          <h2 className="text-2xl md:text-3xl text-slate-700 font-medium mb-6 serif-font italic">
+          <h2 className="text-xl md:text-3xl text-slate-700 font-medium mb-6 serif-font italic">
             e Libertar o Passado
           </h2>
 
