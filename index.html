@@ -6,6 +6,9 @@
   <title>Desafio 7P | 7 Dias Para Prosperar</title>
   <meta name="description" content="Liberte o passado e reprograme sua mente para a prosperidade em 7 dias." />
   
+  <!-- Favicon 7P Logo -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia, Playfair Display, serif' font-weight='bold' font-size='80' fill='%23F97316'%3E7P%3C/text%3E%3C/svg%3E">
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   
@@ -218,11 +221,10 @@
               <p className="text-slate-600 text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
                 Sua mente é como um iceberg: 95% dela roda no automático. Aprenda a reprogramar seu subconsciente, limpar dores emocionais e manifestar a realidade que você merece.
               </p>
-              
-              <div className="animate-bounce mt-4 text-amber-500">
-                <ArrowUp className="w-8 h-8 rotate-180 mx-auto" />
-              </div>
 
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                {/* Button removed as per previous request, keeping layout clean */}
+              </div>
             </motion.div>
           </div>
         </section>
@@ -231,7 +233,7 @@
 
     const ProblemAgitation = () => {
       return (
-        <section className="py-10 md:py-20 bg-white text-slate-800">
+        <section className="py-5 md:py-20 bg-white text-slate-800">
           <div className="container mx-auto px-4 max-w-4xl">
             <motion.div 
               initial={{ opacity: 0 }}
@@ -280,7 +282,7 @@
 
     const Modules = () => {
       return (
-        <section className="py-12 md:py-24 bg-slate-50 relative overflow-hidden" id="cronograma">
+        <section className="py-6 md:py-24 bg-slate-50 relative overflow-hidden" id="cronograma">
           {/* Decorative bg elements - Soft Pastels */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-amber-200 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 opacity-40"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-rose-200 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2 opacity-40"></div>
@@ -308,9 +310,9 @@
 
     const Differentials = () => {
       return (
-        <section className="py-10 md:py-20 bg-white text-slate-900 border-t border-slate-100">
+        <section className="py-5 md:py-20 bg-white text-slate-900 border-t border-slate-100">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-3 gap-8 md:gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
+            <div className="grid md:grid-cols-3 gap-4 md:gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
               {BENEFITS.map((benefit, index) => {
                 const Icon = ICON_MAP[benefit.iconName];
                 return (
@@ -331,7 +333,7 @@
 
     const Footer = () => {
       return (
-        <footer className="bg-slate-50 text-slate-500 py-8 md:py-12 border-t border-slate-200">
+        <footer className="bg-slate-50 text-slate-500 py-6 md:py-12 border-t border-slate-200">
           <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-center md:text-left">
               <h4 className="text-slate-900 font-bold serif-font text-xl mb-2">Desafio 7P</h4>
@@ -370,11 +372,11 @@
           <Modules />
           
           {/* Concept Highlight Section - The Radio Analogy - Lighter & Smaller */}
-          <section className="py-4 md:py-16 bg-gradient-to-r from-orange-100 via-amber-100 to-rose-100 text-slate-800 overflow-hidden relative">
+          <section className="py-6 md:py-16 bg-gradient-to-r from-orange-100 via-amber-100 to-rose-100 text-slate-800 overflow-hidden relative">
              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-30 mix-blend-multiply"></div>
              
              <div className="container mx-auto px-4 relative z-10 grid md:grid-cols-2 gap-6 md:gap-8 items-center max-w-5xl">
-                <div className="text-center md:text-left">
+                <div className="text-center md:text-left flex flex-col items-center md:items-start">
                   <h2 className="text-2xl md:text-4xl font-bold mb-4 serif-font leading-tight text-orange-600">
                     Você é uma Antena de Rádio
                   </h2>

@@ -1,4 +1,4 @@
-import { Lesson, Benefit } from './types';
+import { Lesson, Benefit, Testimonial } from './types';
 
 export const LESSONS: Lesson[] = [
   {
@@ -74,5 +74,33 @@ export const BENEFITS: Benefit[] = [
     title: "Mudança de Identidade",
     description: "Não vamos apenas 'melhorar' quem você é. Vamos descobrir quem você nasceu para ser antes das travas do mundo.",
     iconName: "Fingerprint"
+  }
+];
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    name: "Fernanda Lima",
+    text: "Eu achava que meu problema era falta de sorte, mas entendi que era minha frequência. Depois do exercício da criança interior, destravei uma promoção no trabalho que esperava há 2 anos.",
+    role: "Aluna da Turma 3"
+  },
+  {
+    name: "Juliana Mendes",
+    text: "A comunidade no WhatsApp é incrível! Ver outras mulheres evoluindo me deu força. O material semanal me mantém no foco. Nunca me senti tão acolhida.",
+    role: "Aluna da Turma 5"
+  },
+  {
+    name: "Mariana Costa",
+    text: "Eu vivia no teto invisível. Ganhava e gastava tudo. A aula de autorresponsabilidade foi um soco no estômago necessário. Hoje tenho minha reserva e paz mental.",
+    role: "Aluna da Turma 2"
+  },
+  {
+    name: "Patrícia Alves",
+    text: "Simplesmente transformador. A analogia do rádio mudou tudo. Parei de sintonizar na escassez e coisas mágicas começaram a acontecer. O Desafio 7P vale cada centavo.",
+    role: "Aluna da Turma 4"
+  },
+  {
+    name: "Camila Rocha",
+    text: "A aula extra de ancestralidade foi o que eu precisava para perdoar minha mãe e seguir minha vida. Me sinto leve, como se tivesse tirado uma mochila de pedras das costas.",
+    role: "Aluna da Turma 6"
   }
 ];
