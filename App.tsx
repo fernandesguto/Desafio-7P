@@ -29,11 +29,11 @@ function App() {
       <Modules />
       
       {/* Concept Highlight Section - The Radio Analogy - Lighter & Smaller */}
-      <section className="py-10 md:py-16 bg-gradient-to-r from-orange-100 via-amber-100 to-rose-100 text-slate-800 overflow-hidden relative">
+      <section className="py-4 md:py-16 bg-gradient-to-r from-orange-100 via-amber-100 to-rose-100 text-slate-800 overflow-hidden relative">
          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-30 mix-blend-multiply"></div>
          
          <div className="container mx-auto px-4 relative z-10 grid md:grid-cols-2 gap-6 md:gap-8 items-center max-w-5xl">
-            <div>
+            <div className="text-center md:text-left">
               <h2 className="text-2xl md:text-4xl font-bold mb-4 serif-font leading-tight text-orange-600">
                 Você é uma Antena de Rádio
               </h2>
@@ -47,7 +47,7 @@ function App() {
                 Quero Mudar Minha Frequência
               </button>
             </div>
-            <div className="flex justify-center">
+            <div className="hidden md:flex justify-center">
               <div className="w-40 h-40 md:w-64 md:h-64 rounded-full border-4 border-white/50 flex items-center justify-center relative bg-white/20 backdrop-blur-sm shadow-xl">
                  <div className="absolute inset-0 rounded-full border border-white/40 animate-ping"></div>
                  <div className="w-28 h-28 md:w-44 md:h-44 rounded-full border-4 border-white/80 flex items-center justify-center bg-white text-rose-500 shadow-inner">
@@ -61,7 +61,7 @@ function App() {
       <Differentials />
       
       {/* Final CTA - Light & Clean */}
-      <section className="py-12 md:py-24 bg-gradient-to-b from-slate-50 to-white text-center relative border-t border-slate-100">
+      <section className="py-6 md:py-24 bg-gradient-to-b from-slate-50 to-white text-center relative border-t border-slate-100">
         <div className="container mx-auto px-4 max-w-3xl relative z-10">
           <h2 className="text-2xl md:text-5xl font-bold mb-6 md:mb-8 serif-font text-slate-900">
             A vida extraordinária começou a se aproximar de você.
