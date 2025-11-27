@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Star } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
@@ -17,10 +17,10 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Star className="text-amber-500 fill-amber-500 w-4 h-4" />
-            <span className="text-amber-600 font-bold tracking-[0.2em] text-sm uppercase">O Desafio 7P</span>
-            <Star className="text-amber-500 fill-amber-500 w-4 h-4" />
+          {/* Logo Replacement */}
+          <div className="flex items-baseline justify-center gap-0.5 mb-6 select-none">
+            <span className="font-sans font-black text-slate-900 tracking-tighter text-2xl md:text-3xl">DESAFIO</span>
+            <span className="serif-font font-bold text-[#F97316] text-3xl md:text-4xl -ml-1">7P</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 leading-tight serif-font text-slate-900">
