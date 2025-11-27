@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="text-center md:text-left">
           <h4 className="text-slate-900 font-bold serif-font text-xl mb-2">Desafio 7P</h4>
-          <p className="text-sm">7 dias para prosperar e libertar o passado.</p>
+          <p className="text-sm">7 dias para prosperar.</p>
         </div>
         
         <div className="text-sm text-center md:text-right">

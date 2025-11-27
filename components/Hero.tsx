@@ -23,15 +23,12 @@ const Hero: React.FC = () => {
             <span className="serif-font font-bold text-[#F97316] text-3xl md:text-4xl -ml-1">7P</span>
           </div>
 
-          <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold mb-4 leading-tight serif-font text-slate-900">
+          <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold mb-6 md:mb-8 leading-tight serif-font text-slate-900">
             7 Dias Para <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">Prosperar</span>
           </h1>
-          <h2 className="text-xl md:text-3xl text-slate-700 font-medium mb-6 serif-font italic">
-            e Libertar o Passado
-          </h2>
 
           <p className="text-slate-600 text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-            Sua mente é como um iceberg: 95% dela roda no automático. Aprenda a reprogramar seu subconsciente, limpar dores emocionais e manifestar a realidade que você merece.
+            Sua mente está rodando no automático. Aprenda a reprogramar seu subconsciente, limpar dores emocionais e manifestar a realidade que você merece.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
