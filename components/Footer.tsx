@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const Footer: React.FC = () => {
@@ -11,7 +12,6 @@ const Footer: React.FC = () => {
         
         <div className="text-sm text-center md:text-right">
           <p>&copy; {new Date().getFullYear()} Todos os direitos reservados.</p>
-          <p className="mt-1">Design focado em conversão e estética.</p>
         </div>
       </div>
     </footer>

@@ -35,7 +35,7 @@ function App() {
          
          <div className="container mx-auto px-4 relative z-10 grid md:grid-cols-2 gap-8 items-center max-w-5xl">
             <div>
-              <h2 className="text-2xl md:text-4xl font-bold mb-4 serif-font leading-tight text-slate-900">
+              <h2 className="text-2xl md:text-4xl font-bold mb-4 serif-font leading-tight text-orange-600">
                 Você é uma Antena de Rádio
               </h2>
               <p className="text-amber-700 text-lg mb-4 leading-relaxed font-bold">
