@@ -19,26 +19,18 @@
     h1, h2, h3, h4, h5, h6, .serif-font { font-family: 'Playfair Display', serif; }
   </style>
 
-  <!-- React & ReactDOM -->
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  
   <!-- Babel -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   
-  <!-- Framer Motion -->
-  <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
-  
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide-react@0.292.0/dist/umd/lucide-react.min.js"></script>
-<script type="importmap">
+  <!-- Import Map -->
+  <script type="importmap">
 {
   "imports": {
     "react": "https://aistudiocdn.com/react@^19.2.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
   }
 }
 </script>
@@ -46,14 +38,15 @@
 <body class="bg-white">
   <div id="root"></div>
 
-  <script type="text/babel">
-    const { useState, useEffect } = React;
-    const { motion, AnimatePresence } = window.Motion;
-    const { 
+  <script type="text/babel" data-type="module">
+    import React, { useState, useEffect } from 'react';
+    import { createRoot } from 'react-dom/client';
+    import { motion, AnimatePresence } from 'framer-motion';
+    import { 
       Brain, HeartHandshake, Sparkles, Radio, Gavel, Sprout, Zap, Infinity, 
       Microscope, CheckCircle, Fingerprint, ArrowRight, Star, ArrowUp, Tag,
       Clock, ShieldCheck
-    } = window.lucideReact;
+    } from 'lucide-react';
 
     // --- DATA & CONSTANTS ---
 
@@ -226,7 +219,6 @@
                 Sua mente é como um iceberg: 95% dela roda no automático. Aprenda a reprogramar seu subconsciente, limpar dores emocionais e manifestar a realidade que você merece.
               </p>
               
-              {/* Button Removed as requested */}
               <div className="animate-bounce mt-8 text-amber-500">
                 <ArrowUp className="w-8 h-8 rotate-180 mx-auto" />
               </div>
@@ -496,7 +488,7 @@
       );
     }
 
-    const root = ReactDOM.createRoot(document.getElementById('root'));
+    const root = createRoot(document.getElementById('root'));
     root.render(<App />);
   </script>
 </body>
