@@ -35,12 +35,9 @@ const Hero: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white rounded-full font-bold text-lg transition-all shadow-xl shadow-amber-200 flex items-center justify-center gap-2 group">
+            <button className="w-full sm:w-auto px-10 py-5 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white rounded-full font-bold text-xl transition-all shadow-xl shadow-amber-200 flex items-center justify-center gap-2 group hover:scale-105">
               Quero Transformar Minha Vida
               <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="w-full sm:w-auto px-8 py-4 border border-slate-300 hover:bg-slate-50 text-slate-600 rounded-full font-medium text-lg transition-all">
-              Saiba Mais
             </button>
           </div>
         </motion.div>
