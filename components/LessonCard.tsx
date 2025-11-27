@@ -23,10 +23,7 @@ interface LessonCardProps {
 
 const LessonCard: React.FC<LessonCardProps> = ({ lesson, index }) => {
   const Icon = iconMap[lesson.iconName] || Sparkles;
-  const isBonus = lesson.day === "Bônus" || lesson.day === "Extra";
   
-  // Custom styling for the Community/Extra card
-  const isCommunity = lesson.day === "Extra";
   let borderClass = 'border-slate-100 bg-white';
   let badgeClass = 'bg-slate-100 text-slate-600';
   let iconBgClass = 'bg-slate-50 text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300';
@@ -39,12 +36,6 @@ const LessonCard: React.FC<LessonCardProps> = ({ lesson, index }) => {
     iconBgClass = 'bg-amber-100 text-amber-600';
     highlightColor = 'text-amber-600';
     dotColor = 'bg-amber-500';
-  } else if (isCommunity) {
-    borderClass = 'border-green-200 bg-gradient-to-br from-green-50 to-white';
-    badgeClass = 'bg-green-500 text-white';
-    iconBgClass = 'bg-green-100 text-green-600';
-    highlightColor = 'text-green-700';
-    dotColor = 'bg-green-500';
   }
 
   return (
@@ -57,7 +48,7 @@ const LessonCard: React.FC<LessonCardProps> = ({ lesson, index }) => {
     >
       <div className="flex items-start justify-between mb-4">
         <span className={`px-3 py-1 text-xs font-bold tracking-wider uppercase rounded-full ${badgeClass}`}>
-          {lesson.day === "Extra" ? "Comunidade" : lesson.day}
+          {lesson.day}
         </span>
         <div className={`p-2 rounded-lg shadow-sm ${iconBgClass}`}>
           <Icon size={24} />

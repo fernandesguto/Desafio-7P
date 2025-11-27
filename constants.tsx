@@ -56,13 +56,6 @@ export const LESSONS: Lesson[] = [
     description: "Liberte-se de maldições familiares e lealdades invisíveis. Honrar pai e mãe não significa repetir os erros deles. Encerre ciclos de dor.",
     iconName: "Infinity",
     highlight: "Aula exclusiva de libertação."
-  },
-  {
-    day: "Extra",
-    title: "Comunidade VIP & Materiais Semanais",
-    description: "Acesso exclusivo ao grupo de WhatsApp. Troque experiências com outras alunas e receba materiais extras toda semana para continuar seu aprendizado.",
-    iconName: "Users",
-    highlight: "Você não vai estar sozinha."
   }
 ];
 

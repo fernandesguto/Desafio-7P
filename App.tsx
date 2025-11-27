@@ -91,7 +91,7 @@ function App() {
       <Differentials />
       
       {/* Final CTA - Light & Clean */}
-      <section className="py-6 md:py-24 bg-gradient-to-b from-slate-50 to-white text-center relative border-t border-slate-100">
+      <section className="pt-20 pb-10 md:py-24 bg-gradient-to-b from-slate-50 to-white text-center relative border-t border-slate-100">
         <div className="container mx-auto px-4 max-w-3xl relative z-10">
           <h2 className="text-2xl md:text-5xl font-bold mb-6 md:mb-8 serif-font text-slate-900">
             A vida extraordinária começou a se aproximar de você.
