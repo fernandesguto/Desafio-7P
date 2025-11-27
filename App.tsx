@@ -29,37 +29,12 @@ function App() {
       <ProblemAgitation />
       <Modules />
       
-      {/* Concept Highlight Section - The Radio Analogy - Lighter & Smaller */}
+      {/* Community & Social Proof Section */}
       <section className="py-10 md:py-20 bg-gradient-to-r from-orange-100 via-amber-100 to-rose-100 text-slate-800 overflow-hidden relative">
          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-30 mix-blend-multiply"></div>
          
          <div className="container mx-auto px-4 relative z-10 max-w-5xl">
-            {/* Top Part: The Radio Concept */}
-            <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center mb-16">
-              <div className="text-center md:text-left flex flex-col items-center md:items-start">
-                <h2 className="text-2xl md:text-4xl font-bold mb-4 serif-font leading-tight text-orange-600">
-                  Você é uma Antena de Rádio
-                </h2>
-                <p className="text-amber-700 text-base md:text-lg mb-4 leading-relaxed font-bold">
-                  Se você está na frequência 92.8, você nunca vai escutar a música que toca na 105.5.
-                </p>
-                <p className="text-slate-700 text-sm md:text-base leading-relaxed mb-6">
-                  Para mudar sua vida externa (dinheiro, amor, saúde), você precisa girar o botão interno da frequência. O Desafio 7P te ensina exatamente como girar esse botão.
-                </p>
-                <button className="bg-gradient-to-r from-orange-500 to-rose-500 text-white px-6 py-3 rounded-full font-bold shadow-lg shadow-orange-200 hover:scale-105 transition-all text-sm uppercase tracking-wide w-full md:w-auto">
-                  Quero Mudar Minha Frequência
-                </button>
-              </div>
-              <div className="hidden md:flex justify-center">
-                <div className="w-40 h-40 md:w-64 md:h-64 rounded-full border-4 border-white/50 flex items-center justify-center relative bg-white/20 backdrop-blur-sm shadow-xl">
-                   <div className="absolute inset-0 rounded-full border border-white/40 animate-ping"></div>
-                   <div className="w-28 h-28 md:w-44 md:h-44 rounded-full border-4 border-white/80 flex items-center justify-center bg-white text-rose-500 shadow-inner">
-                      <span className="serif-font text-3xl md:text-5xl font-bold">Hz</span>
-                   </div>
-                </div>
-              </div>
-            </div>
-
+            
             {/* Middle Part: Community */}
             <div className="mb-16 bg-white/60 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-xl border border-white/50">
               <div className="flex flex-col md:flex-row items-center gap-6">
@@ -83,7 +58,7 @@ function App() {
             {/* Bottom Part: Testimonials */}
             <div className="text-center">
               <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-8 serif-font">
-                Quem girou o botão da frequência:
+                O que dizem nossas alunas:
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 {TESTIMONIALS.map((t, i) => (
