@@ -6,15 +6,15 @@ import { ArrowRight } from 'lucide-react';
 
 const Modules: React.FC = () => {
   return (
-    <section className="py-8 md:py-12 bg-white relative overflow-hidden" id="cronograma">
+    <section className="py-8 md:py-12 bg-slate-50 relative overflow-hidden" id="cronograma">
       {/* Decorative bg elements - Very Subtle */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-slate-50 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 opacity-60" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-50 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2 opacity-60" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-amber-100 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 opacity-40" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-rose-100 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2 opacity-40" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
           <span className="text-amber-600 font-bold tracking-wider uppercase text-sm">O Cronograma</span>
-          <h2 className="text-5xl md:text-6xl font-bold mt-3 mb-4 md:mb-6 serif-font text-slate-900">
+          <h2 className="text-5xl md:text-7xl font-bold mt-3 mb-4 md:mb-6 serif-font text-slate-900">
             7 Dias de Profunda Transformação
           </h2>
           <p className="text-slate-600 text-base md:text-lg">

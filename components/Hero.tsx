@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative pt-8 pb-6 md:pt-16 md:pb-12 flex justify-center overflow-hidden bg-white text-slate-900">
+    <section className="relative pt-8 pb-6 md:pt-16 md:pb-12 flex justify-center overflow-hidden bg-gradient-to-b from-amber-50 via-white to-white text-slate-900">
       {/* Background Pattern - Subtle */}
       <div className="absolute inset-0 z-0 opacity-20">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]" />

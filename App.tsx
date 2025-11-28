@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import { ArrowUp, Tag, ArrowRight, CheckCircle, ShieldCheck, Clock, Users, MessageCircle, Star, Quote } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TESTIMONIALS } from './constants';
+import WhatsAppIcon from './WhatsAppIcon';
 
 function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -25,7 +26,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-600 selection:bg-amber-400 selection:text-amber-900">
+    <div className="min-h-screen bg-slate-50 font-sans text-slate-600 selection:bg-amber-400 selection:text-amber-900">
       <Hero />
       <ProblemAgitation />
       <Modules />
@@ -90,8 +91,8 @@ function App() {
 
       <Differentials />
       
-      {/* Final CTA - Light & Clean */}
-      <section id="oferta" className="pt-20 pb-10 md:py-24 bg-white text-center relative border-t border-slate-100">
+      {/* Final CTA - Light Gradient */}
+      <section id="oferta" className="pt-20 pb-10 md:py-24 bg-gradient-to-t from-orange-50 to-white text-center relative border-t border-slate-100">
         <div className="container mx-auto px-4 max-w-3xl relative z-10">
           <h2 className="text-2xl md:text-5xl font-bold mb-6 md:mb-8 serif-font text-slate-900">
             A vida extraordinária começou a se aproximar de você.
