@@ -25,7 +25,7 @@ const ProblemAgitation: React.FC = () => {
           <div className="relative flex justify-center md:block">
              <div className="absolute inset-0 bg-gradient-to-tr from-amber-200 to-rose-200 rounded-2xl blur-xl opacity-50 transform rotate-3 scale-95"></div>
              <img 
-              src="./luana.jpg" 
+              src="components/luana1.png" 
               alt="Luana - Mentora do Desafio 7P" 
               className="relative rounded-2xl shadow-2xl shadow-slate-200 z-10 w-full max-w-sm md:max-w-full object-cover h-auto aspect-[3/4] transition-all duration-500 hover:scale-[1.01]"
              />
