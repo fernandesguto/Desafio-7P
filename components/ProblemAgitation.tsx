@@ -1,16 +1,17 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
 const ProblemAgitation: React.FC = () => {
   return (
-    <section className="py-10 md:py-20 bg-white text-slate-800">
+    <section className="py-8 md:py-12 bg-white text-slate-800">
       <div className="container mx-auto px-4 max-w-4xl">
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-8 md:mb-16"
+          className="text-center mb-8 md:mb-12"
         >
           <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6 serif-font text-slate-900">
             Você sente que está vivendo no "Piloto Automático"?
@@ -21,7 +22,7 @@ const ProblemAgitation: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-10">
           <div className="relative flex justify-center md:block">
              <div className="absolute inset-0 bg-gradient-to-tr from-amber-200 to-rose-200 rounded-2xl blur-xl opacity-50 transform rotate-3 scale-95"></div>
              <img 
@@ -45,6 +46,17 @@ const ProblemAgitation: React.FC = () => {
               <p className="text-slate-600 text-sm md:text-base">Se foi aprendido sem consciência, pode ser mudado COM consciência. Você não é seus traumas.</p>
             </div>
           </div>
+        </div>
+
+        {/* CTA Button */}
+        <div className="text-center">
+          <a 
+            href="#oferta" 
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-lg font-bold rounded-full shadow-lg shadow-green-200 hover:from-green-600 hover:to-emerald-700 hover:scale-105 transition-all transform gap-2 w-full md:w-auto"
+          >
+            QUERO PROSPERAR
+            <ArrowRight size={20} />
+          </a>
         </div>
       </div>
     </section>

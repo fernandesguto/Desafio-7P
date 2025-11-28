@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BENEFITS } from '../constants';
 import { Microscope, CheckCircle, Fingerprint, LucideIcon } from 'lucide-react';
@@ -10,7 +11,7 @@ const iconMap: Record<string, LucideIcon> = {
 
 const Differentials: React.FC = () => {
   return (
-    <section className="py-10 md:py-20 bg-white text-slate-900 border-t border-slate-100">
+    <section className="py-8 md:py-12 bg-white text-slate-900 border-t border-slate-100">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 md:gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
           {BENEFITS.map((benefit, index) => {

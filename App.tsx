@@ -31,12 +31,12 @@ function App() {
       <Modules />
       
       {/* Community & Social Proof Section - White Background */}
-      <section className="py-10 md:py-20 bg-white text-slate-800 overflow-hidden relative border-t border-slate-100">
+      <section className="py-8 md:py-12 bg-white text-slate-800 overflow-hidden relative border-t border-slate-100">
          
          <div className="container mx-auto px-4 relative z-10 max-w-5xl">
             
             {/* Middle Part: Community */}
-            <div className="mb-16 bg-white rounded-2xl p-6 md:p-8 shadow-xl shadow-slate-200/50 border border-slate-100">
+            <div className="mb-12 bg-white rounded-2xl p-6 md:p-8 shadow-xl shadow-slate-200/50 border border-slate-100">
               <div className="flex flex-col md:flex-row items-center gap-6">
                 <div className="flex-shrink-0 bg-green-50 p-4 rounded-full text-green-600 border border-green-100">
                   <MessageCircle size={40} />
@@ -91,7 +91,7 @@ function App() {
       <Differentials />
       
       {/* Final CTA - Light & Clean */}
-      <section className="pt-20 pb-10 md:py-24 bg-white text-center relative border-t border-slate-100">
+      <section id="oferta" className="pt-20 pb-10 md:py-24 bg-white text-center relative border-t border-slate-100">
         <div className="container mx-auto px-4 max-w-3xl relative z-10">
           <h2 className="text-2xl md:text-5xl font-bold mb-6 md:mb-8 serif-font text-slate-900">
             A vida extraordinária começou a se aproximar de você.
