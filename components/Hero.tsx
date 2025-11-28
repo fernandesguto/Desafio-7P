@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
             <span className="serif-font font-bold text-[#F97316] text-3xl md:text-4xl -ml-1">7P</span>
           </div>
 
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 md:mb-8 leading-[0.9] md:leading-tight serif-font text-slate-900">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8 leading-[0.9] md:leading-tight serif-font text-slate-900">
             7 Dias para <br className="md:hidden" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">Prosperar</span>
           </h1>

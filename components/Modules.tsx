@@ -14,7 +14,7 @@ const Modules: React.FC = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
           <span className="text-amber-600 font-bold tracking-wider uppercase text-sm">O Cronograma</span>
-          <h2 className="text-5xl md:text-7xl font-bold mt-3 mb-4 md:mb-6 serif-font text-slate-900">
+          <h2 className="text-4xl md:text-6xl font-bold mt-3 mb-4 md:mb-6 serif-font text-slate-900">
             7 Dias de Profunda Transformação
           </h2>
           <p className="text-slate-600 text-base md:text-lg">
