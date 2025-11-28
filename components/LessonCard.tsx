@@ -1,10 +1,11 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Brain, HeartHandshake, Sparkles, Radio, Gavel, Sprout, Zap, Infinity, Users, LucideIcon } from 'lucide-react';
+import { Brain, HeartHandshake, Sparkles, Radio, Gavel, Sprout, Zap, Infinity, Users } from 'lucide-react';
 import { Lesson } from '../types';
 
 // Map string names to components
-const iconMap: Record<string, LucideIcon> = {
+const iconMap = {
   Brain,
   HeartHandshake,
   Sparkles,
@@ -22,7 +23,7 @@ interface LessonCardProps {
 }
 
 const LessonCard: React.FC<LessonCardProps> = ({ lesson, index }) => {
-  const Icon = iconMap[lesson.iconName] || Sparkles;
+  const Icon = iconMap[lesson.iconName as keyof typeof iconMap] || Sparkles;
   
   let borderClass = 'border-slate-100 bg-white';
   let badgeClass = 'bg-slate-100 text-slate-600';
