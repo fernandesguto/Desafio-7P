@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
@@ -28,7 +29,7 @@ const Hero: React.FC = () => {
           </h1>
 
           <p className="text-slate-600 text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-            Sua mente está rodando no automático. Aprenda a reprogramar seu subconsciente, limpar dores emocionais e manifestar a realidade que você merece.
+            Aprenda a reprogramar seu subconsciente, limpar dores emocionais e manifestar a realidade que você merece.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
