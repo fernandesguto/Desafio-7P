@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8 }}
         >
           {/* Logo Replacement */}
-          <div className="flex items-baseline justify-center gap-0.5 mb-6 select-none">
+          <div className="flex items-baseline justify-center gap-0.5 mb-12 select-none">
             <span className="font-sans font-black text-slate-900 tracking-tighter text-2xl md:text-3xl">DESAFIO</span>
             <span className="serif-font font-bold text-[#F97316] text-3xl md:text-4xl -ml-1">7P</span>
           </div>
