@@ -134,10 +134,13 @@ function App() {
                   <li className="flex items-center gap-2"><ShieldCheck size={16} className="text-green-500" /> 7 dias de garantia incondicional</li>
                 </ul>
                 
-                <button className="w-full px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-lg md:text-xl font-bold rounded-full shadow-lg shadow-green-200 hover:from-green-600 hover:to-emerald-700 hover:scale-105 transition-all transform flex items-center justify-center gap-2">
+                <a 
+                  href="https://pay.kiwify.com.br/dyDMZxn"
+                  className="w-full px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-lg md:text-xl font-bold rounded-full shadow-lg shadow-green-200 hover:from-green-600 hover:to-emerald-700 hover:scale-105 transition-all transform flex items-center justify-center gap-2"
+                >
                   COMPRAR AGORA
                   <ArrowRight size={20} />
-                </button>
+                </a>
                 
                 <p className="mt-4 text-xs text-slate-400 flex items-center gap-1">
                    <Clock size={12} /> Oferta por tempo limitado
