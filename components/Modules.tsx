@@ -1,13 +1,14 @@
+
 import React from 'react';
 import { LESSONS } from '../constants';
 import LessonCard from './LessonCard';
 
 const Modules: React.FC = () => {
   return (
-    <section className="py-12 md:py-24 bg-slate-50 relative overflow-hidden" id="cronograma">
-      {/* Decorative bg elements - Soft Pastels */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-amber-200 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 opacity-40" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-rose-200 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2 opacity-40" />
+    <section className="py-12 md:py-24 bg-white relative overflow-hidden" id="cronograma">
+      {/* Decorative bg elements - Very Subtle */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-slate-50 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 opacity-60" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-50 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2 opacity-60" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-16">

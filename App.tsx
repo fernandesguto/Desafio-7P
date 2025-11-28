@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import Hero from './components/Hero';
 import ProblemAgitation from './components/ProblemAgitation';
@@ -29,17 +30,16 @@ function App() {
       <ProblemAgitation />
       <Modules />
       
-      {/* Community & Social Proof Section */}
-      <section className="py-10 md:py-20 bg-gradient-to-r from-orange-100 via-amber-100 to-rose-100 text-slate-800 overflow-hidden relative">
-         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-30 mix-blend-multiply"></div>
+      {/* Community & Social Proof Section - White Background */}
+      <section className="py-10 md:py-20 bg-white text-slate-800 overflow-hidden relative border-t border-slate-100">
          
          <div className="container mx-auto px-4 relative z-10 max-w-5xl">
             
             {/* Middle Part: Community */}
-            <div className="mb-16 bg-white/60 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-xl border border-white/50">
+            <div className="mb-16 bg-white rounded-2xl p-6 md:p-8 shadow-xl shadow-slate-200/50 border border-slate-100">
               <div className="flex flex-col md:flex-row items-center gap-6">
-                <div className="flex-shrink-0 bg-green-100 p-4 rounded-full text-green-600">
-                  <Users size={40} />
+                <div className="flex-shrink-0 bg-green-50 p-4 rounded-full text-green-600 border border-green-100">
+                  <MessageCircle size={40} />
                 </div>
                 <div className="text-center md:text-left">
                   <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2 flex items-center justify-center md:justify-start gap-2">
@@ -67,7 +67,7 @@ function App() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ delay: i * 0.1 }}
-                    className="bg-white p-4 rounded-xl shadow-md border border-amber-50 flex flex-col items-center text-center h-full hover:-translate-y-1 transition-transform"
+                    className="bg-slate-50 p-4 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center text-center h-full hover:-translate-y-1 transition-transform"
                   >
                     <div className="mb-3 text-amber-400">
                       <div className="flex gap-0.5 justify-center">
@@ -91,7 +91,7 @@ function App() {
       <Differentials />
       
       {/* Final CTA - Light & Clean */}
-      <section className="pt-20 pb-10 md:py-24 bg-gradient-to-b from-slate-50 to-white text-center relative border-t border-slate-100">
+      <section className="pt-20 pb-10 md:py-24 bg-white text-center relative border-t border-slate-100">
         <div className="container mx-auto px-4 max-w-3xl relative z-10">
           <h2 className="text-2xl md:text-5xl font-bold mb-6 md:mb-8 serif-font text-slate-900">
             A vida extraordinária começou a se aproximar de você.
@@ -105,7 +105,7 @@ function App() {
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
-            className="mb-10 bg-white p-6 md:p-10 rounded-[2rem] inline-block shadow-2xl shadow-orange-100 border border-orange-100 relative overflow-hidden w-full max-w-md mx-auto"
+            className="mb-10 bg-white p-6 md:p-10 rounded-[2rem] inline-block shadow-2xl shadow-orange-100/50 border border-slate-100 relative overflow-hidden w-full max-w-md mx-auto"
           >
              <div className="absolute top-0 right-0 bg-rose-500 text-white text-xs font-bold px-4 py-1 rounded-bl-xl">
                OFERTA PROMOCIONAL
