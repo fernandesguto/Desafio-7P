@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -21,12 +22,12 @@ const ProblemAgitation: React.FC = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div className="relative">
-             <div className="absolute -inset-4 bg-gradient-to-tr from-amber-200 to-rose-200 rounded-full blur-2xl opacity-50"></div>
+          <div className="relative flex justify-center md:block">
+             <div className="absolute inset-0 bg-gradient-to-tr from-amber-200 to-rose-200 rounded-2xl blur-xl opacity-50 transform rotate-3 scale-95"></div>
              <img 
-              src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=2070&auto=format&fit=crop" 
-              alt="Woman thinking" 
-              className="relative rounded-2xl shadow-2xl shadow-slate-200 z-10 w-full object-cover h-64 md:h-80 transition-all duration-500 hover:scale-[1.02]"
+              src="./luana.jpg" 
+              alt="Luana - Mentora do Desafio 7P" 
+              className="relative rounded-2xl shadow-2xl shadow-slate-200 z-10 w-full max-w-sm md:max-w-full object-cover h-auto aspect-[3/4] transition-all duration-500 hover:scale-[1.01]"
              />
           </div>
           
