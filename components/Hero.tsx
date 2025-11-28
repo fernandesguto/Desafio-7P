@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
           </div>
 
           <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold mb-6 md:mb-8 leading-tight serif-font text-slate-900">
-            7 Dias Para <br className="md:hidden" />
+            7 Dias para <br className="md:hidden" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">Prosperar</span>
           </h1>
 
