@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Award, Users } from 'lucide-react';
@@ -28,18 +27,6 @@ const AboutMentor: React.FC = () => {
                 className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
               />
               
-              {/* Floating Badge */}
-              <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-white/50">
-                <div className="flex items-center gap-3">
-                  <div className="bg-amber-100 p-2 rounded-full text-amber-600">
-                    <Users size={20} />
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-slate-900 leading-none">+5.000</p>
-                    <p className="text-xs text-slate-500 uppercase tracking-wide font-medium">Vidas Transformadas</p>
-                  </div>
-                </div>
-              </div>
             </div>
             
             {/* Background Accent */}
@@ -62,10 +49,6 @@ const AboutMentor: React.FC = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 serif-font mb-6">
               Olá, eu sou a Luana
             </h2>
-            
-            <h3 className="text-xl text-amber-600 font-medium mb-6 flex items-center gap-2">
-              Terapeuta Integrativa & Especialista em Reprogramação Mental
-            </h3>
 
             <div className="space-y-4 text-slate-600 leading-relaxed text-lg">
               <p>
@@ -79,16 +62,15 @@ const AboutMentor: React.FC = () => {
               </p>
             </div>
 
-            <div className="mt-8 pt-8 border-t border-slate-100 grid grid-cols-2 gap-6">
-              <div>
-                <Award className="text-amber-500 mb-2" size={28} />
-                <h4 className="font-bold text-slate-900">Certificada</h4>
-                <p className="text-sm text-slate-500">Neurociência Comportamental</p>
-              </div>
-              <div>
-                <Sparkles className="text-amber-500 mb-2" size={28} />
-                <h4 className="font-bold text-slate-900">Método Próprio</h4>
-                <p className="text-sm text-slate-500">Validado por milhares de alunas</p>
+            <div className="mt-8 pt-8 border-t border-slate-100">
+              <div className="flex items-center gap-4">
+                <div className="bg-amber-50 p-3 rounded-full text-amber-500">
+                  <Sparkles size={24} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 text-lg">Método Próprio</h4>
+                  <p className="text-sm text-slate-500">Validado por alunas de todo o Brasil</p>
+                </div>
               </div>
             </div>
           </motion.div>
