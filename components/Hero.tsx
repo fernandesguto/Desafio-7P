@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
           </h1>
 
           <p className="text-slate-600 text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-            Aprenda a reprogramar seu subconsciente, limpar dores emocionais e manifestar a realidade que você merece.
+            Aprenda o poder do seu subconsciente, limpe dores emocionais e manifeste a nova realidade que você merece viver.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

@@ -18,14 +18,14 @@ export const LESSONS: Lesson[] = [
   {
     day: "Dia 3",
     title: "Limpeza Física e Ambiental",
-    description: "Seu ambiente reflete seu estado interno. Aprenda como a desordem, objetos quebrados e energias estagnadas bloqueiam sua prosperidade.",
+    description: "Aprenda como a desordem, objetos quebrados e energias estagnadas bloqueiam sua prosperidade. Receba um PDF exclusivo com um passo a passo para te guiar na limpeza do ambiente interno e externo.",
     iconName: "Sparkles",
     highlight: "O externo muda o interno."
   },
   {
     day: "Dia 4",
     title: "Quem Eu Sou de Verdade",
-    description: "Identidade e Vibração. Você é uma antena. Aprenda a sintonizar na frequência correta (rádio) para atrair situações compatíveis com sua nova realidade.",
+    description: "Identidade e Vibração. Você é uma antena. Aprenda a sintonizar na frequência correta para atrair situações compatíveis com sua nova realidade.",
     iconName: "Radio",
     highlight: "Tire as camadas de trauma."
   },

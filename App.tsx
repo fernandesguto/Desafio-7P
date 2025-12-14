@@ -129,7 +129,6 @@ function App() {
                 <div className="w-full h-px bg-slate-100 my-4"></div>
                 
                 <ul className="text-left w-full space-y-3 mb-8 text-slate-600 text-sm">
-                  <li className="flex items-center gap-2"><CheckCircle size={16} className="text-green-500" /> Acesso imediato às 7 aulas</li>
                   <li className="flex items-center gap-2"><CheckCircle size={16} className="text-green-500" /> Bônus: Cura da Ancestralidade</li>
                   <li className="flex items-center gap-2"><CheckCircle size={16} className="text-green-500" /> Acesso à Comunidade VIP</li>
                   <li className="flex items-center gap-2"><ShieldCheck size={16} className="text-green-500" /> 7 dias de garantia incondicional</li>

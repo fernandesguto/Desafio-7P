@@ -56,7 +56,7 @@ const LessonCard: React.FC<LessonCardProps> = ({ lesson, index }) => {
         </div>
       </div>
       
-      <h3 className="text-xl font-bold text-slate-900 mb-3 serif-font leading-tight">
+      <h3 className="text-xl font-bold text-slate-900 mb-3 serif-font leading-tight break-words hyphens-auto">
         {lesson.title}
       </h3>
       
