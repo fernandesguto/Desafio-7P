@@ -5,6 +5,7 @@ import ProblemAgitation from './components/ProblemAgitation';
 import Modules from './components/Modules';
 import Differentials from './components/Differentials';
 import Footer from './components/Footer';
+import AboutMentor from './components/AboutMentor';
 import { ArrowUp, Tag, ArrowRight, CheckCircle, ShieldCheck, Clock, Users, MessageCircle, Star, Quote } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TESTIMONIALS } from './constants';
@@ -26,11 +27,14 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-600 selection:bg-amber-400 selection:text-amber-900">
+    <div className="min-h-screen bg-slate-50 font-sans text-slate-600 selection:bg-amber-400 selection:text-amber-900 relative">
+      
       <Hero />
       <ProblemAgitation />
       <Modules />
       
+      <AboutMentor />
+
       {/* Community & Social Proof Section - White Background */}
       <section className="py-8 md:py-12 bg-white text-slate-800 overflow-hidden relative border-t border-slate-100">
          

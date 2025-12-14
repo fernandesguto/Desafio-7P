@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { ExternalLink, CheckCircle, ArrowRight } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -10,8 +11,18 @@ const Footer: React.FC = () => {
           <p className="text-sm">7 dias para prosperar.</p>
         </div>
         
-        <div className="text-sm text-center md:text-right">
+        <div className="flex flex-col items-center md:items-end gap-3 text-sm text-center md:text-right">
           <p>&copy; {new Date().getFullYear()} Todos os direitos reservados.</p>
+          
+          {/* Botão solicitado para visualizar a Página de Obrigado - AGORA MAIS VISÍVEL */}
+          <a 
+            href="#obrigado" 
+            className="mt-2 inline-flex items-center gap-2 px-6 py-3 bg-amber-100 hover:bg-amber-200 border border-amber-200 rounded-lg text-sm font-bold text-amber-800 transition-all hover:shadow-md"
+          >
+            <CheckCircle size={16} />
+            Visualizar Página de Obrigado (Pós-Compra)
+            <ArrowRight size={16} />
+          </a>
         </div>
       </div>
     </footer>
