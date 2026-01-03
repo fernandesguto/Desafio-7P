@@ -47,7 +47,7 @@
     import { 
       Brain, HeartHandshake, Sparkles, Radio, Gavel, Sprout, Zap, Infinity, 
       Microscope, CheckCircle, Fingerprint, ArrowRight, Star, ArrowUp, Tag,
-      Clock, ShieldCheck, Users, MessageCircle, Quote, Eye, Award
+      Clock, ShieldCheck, Users, MessageCircle, Quote, Eye, Award, CalendarCheck
     } from 'lucide-react';
 
     // --- DADOS E CONSTANTES ---
@@ -109,6 +109,13 @@
         iconName: "Infinity",
         highlight: "Aula exclusiva de libertação."
       },
+      {
+        day: "Bônus",
+        title: "Planner Rotina Equilibrada",
+        description: "Avalie sua vida por áreas, defina metas com prazo, organize sua semana e seu dia com mais consciência.",
+        iconName: "CalendarCheck",
+        highlight: "Organização e foco."
+      }
     ];
 
     const BENEFITS = [
@@ -160,7 +167,7 @@
     // Mapa de Ícones
     const ICON_MAP = {
       Brain, HeartHandshake, Sparkles, Radio, Gavel, Sprout, Zap, Infinity,
-      Microscope, CheckCircle, Fingerprint, Users, MessageCircle
+      Microscope, CheckCircle, Fingerprint, Users, MessageCircle, CalendarCheck
     };
 
     // --- COMPONENTES ---
@@ -241,7 +248,7 @@
               </h1>
 
               <p className="text-slate-600 text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-                Aprenda o poder do seu subconsciente, limpe dores emocionais e manifeste a nova realidade que você merece viver.
+                Reconstrua sua identidade, acabe com sua ansiedade e aprenda o seu poder interior para manifestar a nova realidade que você merece viver.
               </p>
             </motion.div>
           </div>
@@ -412,7 +419,7 @@
                   Olá, eu sou a Luana
                 </h2>
 
-                <div className="space-y-4 text-slate-600 leading-relaxed text-lg">
+                <div className="space-y-4 text-slate-600 leading-relaxed text-base md:text-lg text-justify md:text-left">
                   <p>
                     Luana Soares é apaixonada por estudos sobre inteligência emocional, com foco em ajudar pessoas que queiram ressignificar suas histórias e conquistarem uma vida extraordinária.
                   </p>
