@@ -193,8 +193,8 @@
 
       return (
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: index * 0.1, duration: 0.5 }}
           className={`relative p-6 rounded-2xl border ${borderClass} hover:shadow-xl hover:shadow-slate-200/50 hover:-translate-y-1 transition-all duration-300 group shadow-lg shadow-slate-100`}
@@ -258,7 +258,7 @@
 
               <div className="text-slate-600 text-lg md:text-xl mb-4 max-w-2xl mx-auto leading-relaxed">
                <p className="mb-4">Se tu tá cansada, confusa e com a sensação de que tua vida não anda, o problema não é quem tu é... é o ponto errado de onde tu tá tentando mudar.</p>
-               <p className="mb-4">O <b>DESAFIO 7P </ b> é um processo de 7 dias de organização interna pra tu entender por que trava, organizar mente e emoções e voltar a tomar decisões com mais clareza e direção.</p>
+               <p className="mb-4">O <b>DESAFIO 7P </b> é um processo de 7 dias de organização interna pra tu entender por que trava, organizar mente e emoções e voltar a tomar decisões com mais clareza e direção.</p>
                <p className="mb-4 font-semibold italic">Nada de promessa mágica. Nada de motivação vazia. É consciência antes da ação.</p>
                <p className="font-bold text-slate-800">👉 Se tu cansou de tentar sozinha e continuar no mesmo lugar, esse é o começo que tu vem adiando.</p>
               </div>
@@ -278,13 +278,12 @@
               transition={{ duration: 0.8 }}
               className="text-center mb-8 md:mb-12"
             >
-              <div className="flex flex-col items-center gap-2 mb-4 text-xl md:text-2xl font-bold serif-font text-slate-700">
+              <div className="flex flex-col items-center gap-2 mb-4 text-xl md:text-2xl font-bold font-sans text-slate-700">
                 <p className="flex items-center gap-2">✅ Acesso imediato</p>
                 <p className="flex items-center gap-2">✅ Conteúdo prático e direto</p>
                 <p className="flex items-center gap-2">✅ Processo guiado e rápido</p>
                 <p className="flex items-center gap-2">✅ 7 dias de garantia</p>
-
-                </div>
+              </div>
 
 <br /><br />
                  <a 
@@ -295,13 +294,8 @@
                 QUERO DESTRAVAR
                 <ArrowRight size={20} />
               </a>
-
-
-            
             </motion.div>
                
-              
-
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-10">
               <div className="relative flex justify-center md:block">
                  <div className="absolute inset-0 bg-gradient-to-tr from-amber-200 to-rose-200 rounded-2xl blur-xl opacity-50 transform rotate-3 scale-95"></div>
