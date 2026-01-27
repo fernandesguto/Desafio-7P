@@ -9,6 +9,10 @@
     {
       "source": "/obrigado",
       "destination": "/obrigado.html"
+    },
+    {
+      "source": "/v2",
+      "destination": "/landingpage2.html"
     }
   ]
 }
