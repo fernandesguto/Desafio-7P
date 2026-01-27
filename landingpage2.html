@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Desafio 7P - A Virada Final (Versão Dark)</title>
+  <title>Desafio 7P - 7 dias para prosperar</title>
   <meta name="description" content="O tempo está acabando. Recupere o controle da sua vida em 7 dias." />
   
   <!-- Favicon -->
@@ -164,28 +164,28 @@
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: index * 0.1 }}
-          className={`${isBonus ? 'bg-orange-600 border-orange-500 shadow-xl shadow-orange-600/40' : 'bg-dark-card glass-border glass-card-hover'} p-6 rounded-2xl transition-all duration-300 group flex flex-col h-full`}
+          className={`${isBonus ? 'bg-white shadow-2xl shadow-white/5' : 'bg-dark-card glass-border glass-card-hover'} p-6 rounded-2xl transition-all duration-300 group flex flex-col h-full`}
         >
           <div className="flex items-start justify-between mb-4">
-            <span className={`px-2.5 py-0.5 text-[10px] font-black tracking-widest uppercase rounded-full ${isBonus ? 'bg-white/20 text-white' : 'bg-white/10 text-white/60 border border-white/10'}`}>
+            <span className={`px-2.5 py-0.5 text-[10px] font-black tracking-widest uppercase rounded-full ${isBonus ? 'bg-orange-500 text-white' : 'bg-white/10 text-white/60 border border-white/10'}`}>
               {lesson.day}
             </span>
-            <div className={`p-2 rounded-lg ${isBonus ? 'text-white' : 'text-gray-400 group-hover:text-orange-500'} transition-colors`}>
+            <div className={`p-2 rounded-lg ${isBonus ? 'text-orange-500' : 'text-gray-400 group-hover:text-orange-500'} transition-colors`}>
               <Icon size={24} />
             </div>
           </div>
           
-          <h3 className={`text-lg font-bold mb-3 leading-tight transition-colors ${isBonus ? 'text-white' : 'text-white group-hover:text-orange-500'}`}>
+          <h3 className={`text-lg font-bold mb-3 leading-tight transition-colors ${isBonus ? 'text-orange-500' : 'text-white group-hover:text-orange-500'}`}>
             {lesson.title}
           </h3>
           
-          <p className={`text-sm leading-relaxed mb-6 flex-grow ${isBonus ? 'text-white/90' : 'text-gray-400'}`}>
+          <p className={`text-sm leading-relaxed mb-6 flex-grow ${isBonus ? 'text-black' : 'text-gray-400'}`}>
             {lesson.description}
           </p>
 
-          <div className={`pt-4 border-t ${isBonus ? 'border-white/20' : 'border-white/5'}`}>
-            <div className={`flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider ${isBonus ? 'text-white' : 'text-orange-400/80'}`}>
-              <div className={`w-1.5 h-1.5 rounded-full ${isBonus ? 'bg-white shadow-[0_0_8px_rgba(255,255,255,0.6)]' : 'bg-orange-500 shadow-[0_0_8px_rgba(249,115,22,0.6)]'}`}></div>
+          <div className={`pt-4 border-t ${isBonus ? 'border-orange-100' : 'border-white/5'}`}>
+            <div className={`flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider ${isBonus ? 'text-orange-600' : 'text-orange-400/80'}`}>
+              <div className={`w-1.5 h-1.5 rounded-full ${isBonus ? 'bg-orange-500 shadow-[0_0_8px_rgba(249,115,22,0.6)]' : 'bg-orange-500 shadow-[0_0_8px_rgba(249,115,22,0.6)]'}`}></div>
               {lesson.highlight}
             </div>
           </div>
@@ -217,6 +217,42 @@
           <p className="text-orange-500 font-bold">o tempo passa…</p>
           <p className="text-orange-500 font-bold">a energia vai embora…</p>
           <p className="text-white font-black text-2xl">e a vida continua exatamente no mesmo lugar.</p>
+        </div>
+      </section>
+    );
+
+    const CorrectionBlock = () => (
+      <section className="py-20 px-4 max-w-4xl mx-auto">
+        <div className="text-center space-y-10">
+          <h2 className="text-3xl md:text-5xl font-black text-orange-500 leading-tight tracking-tight italic">
+            O Desafio 7P existe para corrigir isso
+          </h2>
+          
+          <div className="text-gray-300 text-lg md:text-xl leading-relaxed space-y-6">
+            <p>Dentro do Desafio 7P, você não recebe motivação vazia. <br className="hidden md:block"/> Você recebe <strong>processo</strong>.</p>
+            <p>Nada de frases prontas. <br className="hidden md:block"/> Nada de empurrão emocional que dura dois dias.</p>
+            <p className="text-white font-bold text-2xl">Aqui, a mudança começa por dentro.</p>
+          </div>
+
+          <div className="bg-white/5 border border-white/10 rounded-[32px] p-8 md:p-12 text-left space-y-6 max-w-2xl mx-auto shadow-2xl">
+            <p className="font-black text-white mb-4 uppercase tracking-widest text-xs">Você aprende a:</p>
+            <ul className="space-y-4 text-gray-300 font-medium">
+              <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500">✅</span> <span>Entender por que sua mente te trava mesmo querendo mudar</span></li>
+              <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500">✅</span> <span>Identificar padrões emocionais que te mantêm no automático</span></li>
+              <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500">✅</span> <span>Organizar pensamentos antes de tomar decisões importantes</span></li>
+              <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500">✅</span> <span>Sair do ciclo de cansaço, confusão e procrastinação</span></li>
+              <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500">✅</span> <span>Criar clareza e direção sem depender de força de vontade</span></li>
+            </ul>
+          </div>
+
+          <div className="text-gray-300 text-lg md:text-xl leading-relaxed space-y-6 pt-6">
+            <p>Enquanto muita gente tenta mudar fazendo mais, <br className="hidden md:block"/> você aprende a mudar fazendo melhor.</p>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10 font-black text-white text-xl md:text-2xl mt-8">
+              <span className="bg-white/5 px-4 py-1 rounded-lg">COM CONSCIÊNCIA.</span>
+              <span className="bg-white/5 px-4 py-1 rounded-lg">COM ESTRUTURA.</span>
+              <span className="bg-white/5 px-4 py-1 rounded-lg">COM DIREÇÃO.</span>
+            </div>
+          </div>
         </div>
       </section>
     );
@@ -257,7 +293,7 @@
     const Hero = () => (
       <section className="relative pt-24 pb-16 px-4 overflow-hidden text-center">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-orange-600/10 rounded-full blur-[120px] -z-10" />
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-4xl mx-auto space-y-6">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-4xl mx-auto space-y-6 text-center">
           <div className="inline-block px-3 py-1 bg-white/10 rounded-md border border-white/20 text-xs font-bold uppercase text-orange-400">93% das vagas já preenchidas</div>
           <h1 className="text-4xl md:text-7xl font-extrabold leading-tight tracking-tighter">Sua vida está <span className="text-orange-500 glow-orange italic">passando</span>... vai continuar assistindo?</h1>
           <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">O cansaço que você sente não é físico, é a alma gritando por clareza. Recupere o controle em 7 dias.</p>
@@ -265,7 +301,7 @@
             <LiveCounter />
             <Countdown />
           </div>
-          <div className="mt-8 flex flex-col gap-4 w-full max-w-sm mx-auto text-justify">
+          <div className="mt-8 flex flex-col gap-4 w-full max-w-sm mx-auto text-center md:text-justify">
             <p>Se tu tá cansada, confusa e com a sensação de que tua vida não anda, o problema não é sua vida... é o ponto onde tu tá tentando mudar.</p>
             <p>O <strong>DESAFIO 7P</strong> é um processo de 7 dias de organização interna pra tu entender por que trava, organizar mente e emoções e voltar a tomar decisões com mais clareza e direção.</p>
             <p className="italic font-medium">Nada de promessa mágica. Nada de motivação vazia. É consciência antes da ação.</p>
@@ -334,12 +370,12 @@
 
     const App = () => (
       <div className="min-h-screen">
-        <a href="/" className="fixed top-20 right-6 z-[60] p-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white"><Home size={20} /></a>
         <div className="fixed top-0 left-0 w-full bg-orange-600 text-white text-center py-2 text-[10px] md:text-xs font-black z-50 uppercase tracking-widest">Últimas vagas promocionais</div>
         
         <Hero />
         <PainSection />
         <TruthSection />
+        <CorrectionBlock />
         <Modules />
         <MentorCard />
 
@@ -349,7 +385,9 @@
             <p className="text-gray-500 line-through text-xl mb-2">De R$ 197,00</p>
             <h3 className="text-7xl font-black text-orange-500 tracking-tighter">R$ 47,00</h3>
             <p className="text-gray-400 mt-2 italic">ou 4x de R$ 12,79 no cartão</p>
-            <a href="https://pay.hotmart.com/Y103405139M?bid=1765751031490" className="mt-8 w-full block bg-white text-black py-5 rounded-2xl font-black text-xl hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105">LIBERAR MEU ACESSO</a>
+            <a href="https://pay.hotmart.com/Y103405139M?bid=1765751031490" className="mt-8 w-full flex items-center justify-center text-center bg-white text-black py-5 px-4 md:px-8 rounded-2xl font-black text-lg md:text-xl leading-tight hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105 active:scale-95 shadow-xl">
+              LIBERAR MEU ACESSO
+            </a>
             <div className="mt-6 flex items-center justify-center gap-4 text-[10px] text-gray-500 uppercase tracking-widest font-bold">
               <span className="flex items-center gap-1"><ShieldCheck size={12}/> 7 dias de garantia</span>
               <span className="flex items-center gap-1"><Lock size={12}/> Checkout seguro</span>

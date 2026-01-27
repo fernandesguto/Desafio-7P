@@ -201,7 +201,7 @@
               Sua vida está <span className="text-orange-500 glow-orange italic">passando</span>... vai continuar apenas assistindo?
             </h1>
 
-            <div className="text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed space-y-6 text-justify mb-4">
+            <div className="text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed space-y-6 text-justify mb-4 text-center md:text-justify">
               <p>Se tu tá cansada, confusa e com a sensação de que tua vida não anda, o problema não é sua vida... é o ponto onde tu tá tentando mudar.</p>
               <p>O <strong>DESAFIO 7P</strong> é um processo de 7 dias de organização interna pra tu entender por que trava, organizar mente e emoções e voltar a tomar decisões com mais clareza e direção.</p>
               <p className="italic font-medium">Nada de promessa mágica. Nada de motivação vazia. É consciência antes da ação.</p>
@@ -233,7 +233,7 @@
           <div className="space-y-6">
             <h2 className="text-3xl font-bold">O "Teto Invisível" que te impede de subir...</h2>
             <div className="space-y-4">
-              <p className="text-gray-400">Você sente que faz, faz e faz, mas o resultado nunca condiz com o esforço? É como se houvesse uma trava emocional puxando o freio de mão da sua prosperidade.</p>
+              <p className="text-gray-400">Você sente que faz, faz e faz, mas o resultado nunca condiz com o esforço? É como se houvesse uma trava emocional puxando o freio de mão da sua prosperity.</p>
               <ul className="space-y-3">
                 <li className="flex gap-3 items-center text-gray-300">
                   <AlertCircle size={18} className="text-orange-500 flex-shrink-0" />
@@ -271,7 +271,7 @@
           
           <div className="bg-white/5 border border-white/10 rounded-3xl p-8 my-10 text-left md:text-center">
             <h3 className="text-white font-bold mb-6 text-2xl text-center">Hoje, provavelmente, você:</h3>
-            <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto text-center md:text-left">
               <div className="flex items-center gap-3"><span>❌</span> Acorda cheia de intenção, mas perde o controle do dia</div>
               <div className="flex items-center gap-3"><span>❌</span> Começa animada e desiste no meio do caminho</div>
               <div className="flex items-center gap-3"><span>❌</span> Procrastina mesmo sabendo o que precisa fazer</div>
@@ -289,6 +289,42 @@
       </section>
     );
 
+    const CorrectionBlock = () => (
+      <section className="py-20 px-4 max-w-4xl mx-auto">
+        <div className="text-center space-y-10">
+          <h2 className="text-3xl md:text-5xl font-black text-orange-500 leading-tight tracking-tight italic">
+            O Desafio 7P existe para corrigir isso
+          </h2>
+          
+          <div className="text-gray-300 text-lg md:text-xl leading-relaxed space-y-6">
+            <p>Dentro do Desafio 7P, você não recebe motivação vazia. <br className="hidden md:block"/> Você recebe <strong>processo</strong>.</p>
+            <p>Nada de frases prontas. <br className="hidden md:block"/> Nada de empurrão emocional que dura dois dias.</p>
+            <p className="text-white font-bold text-2xl">Aqui, a mudança começa por dentro.</p>
+          </div>
+
+          <div className="bg-white/5 border border-white/10 rounded-[32px] p-8 md:p-12 text-left space-y-6 max-w-2xl mx-auto shadow-2xl">
+            <p className="font-black text-white mb-4 uppercase tracking-widest text-xs">Você aprende a:</p>
+            <ul className="space-y-4 text-gray-300 font-medium">
+              <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500">✅</span> <span>Entender por que sua mente te trava mesmo querendo mudar</span></li>
+              <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500">✅</span> <span>Identificar padrões emocionais que te mantêm no automático</span></li>
+              <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500">✅</span> <span>Organizar pensamentos antes de tomar decisões importantes</span></li>
+              <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500">✅</span> <span>Sair do ciclo de cansaço, confusão e procrastinação</span></li>
+              <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500">✅</span> <span>Criar clareza e direção sem depender de força de vontade</span></li>
+            </ul>
+          </div>
+
+          <div className="text-gray-300 text-lg md:text-xl leading-relaxed space-y-6 pt-6">
+            <p>Enquanto muita gente tenta mudar fazendo mais, <br className="hidden md:block"/> você aprende a mudar fazendo melhor.</p>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10 font-black text-white text-xl md:text-2xl mt-8">
+              <span className="bg-white/5 px-4 py-1 rounded-lg">COM CONSCIÊNCIA.</span>
+              <span className="bg-white/5 px-4 py-1 rounded-lg">COM ESTRUTURA.</span>
+              <span className="bg-white/5 px-4 py-1 rounded-lg">COM DIREÇÃO.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+
     const ModuleCard = ({ m, idx }) => {
       const Icon = m.icon;
       const isBonus = m.day === "BÔNUS";
@@ -298,21 +334,21 @@
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: idx * 0.1 }}
-          className={`${isBonus ? 'bg-orange-600 border-orange-500 shadow-xl shadow-orange-600/40' : 'bg-dark-card glass-border glass-card-hover'} p-8 rounded-[32px] flex flex-col h-full group transition-all duration-300`}
+          className={`${isBonus ? 'bg-white shadow-2xl shadow-white/5' : 'bg-dark-card glass-border glass-card-hover'} p-8 rounded-[32px] flex flex-col h-full group transition-all duration-300`}
         >
           <div className="flex justify-between items-start mb-6">
-            <span className={`text-[10px] font-black tracking-widest px-3 py-1 rounded-md uppercase ${isBonus ? 'bg-white/20 text-white' : 'text-white/40 bg-white/5'}`}>
+            <span className={`text-[10px] font-black tracking-widest px-3 py-1 rounded-md uppercase ${isBonus ? 'bg-orange-500 text-white' : 'text-white/40 bg-white/5'}`}>
               {m.day}
             </span>
-            <div className={`p-2 rounded-xl ${isBonus ? 'text-white' : 'text-orange-400 group-hover:text-orange-500'} transition-colors`}>
+            <div className={`p-2 rounded-xl ${isBonus ? 'text-orange-500' : 'text-orange-400 group-hover:text-orange-500'} transition-colors`}>
               <Icon size={24} />
             </div>
           </div>
-          <h3 className={`text-xl font-bold mb-4 leading-tight group-hover:text-orange-500 transition-colors ${isBonus ? 'text-white' : 'text-white'}`}>{m.title}</h3>
-          <p className={`text-sm leading-relaxed mb-8 flex-grow ${isBonus ? 'text-white/90' : 'text-gray-400'}`}>{m.description}</p>
-          <div className={`pt-6 border-t mt-auto ${isBonus ? 'border-white/20' : 'border-white/5'}`}>
-            <div className={`flex items-center gap-2 text-xs font-bold uppercase tracking-wider ${isBonus ? 'text-white' : 'text-orange-400/80'}`}>
-              <div className={`w-2 h-2 rounded-full ${isBonus ? 'bg-white shadow-[0_0_8px_rgba(255,255,255,0.6)]' : 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]'}`}></div>
+          <h3 className={`text-xl font-bold mb-4 leading-tight transition-colors ${isBonus ? 'text-orange-500' : 'text-white group-hover:text-orange-500'}`}>{m.title}</h3>
+          <p className={`text-sm leading-relaxed mb-8 flex-grow ${isBonus ? 'text-black' : 'text-gray-400'}`}>{m.description}</p>
+          <div className={`pt-6 border-t mt-auto ${isBonus ? 'border-orange-100' : 'border-white/5'}`}>
+            <div className={`flex items-center gap-2 text-xs font-bold uppercase tracking-wider ${isBonus ? 'text-orange-600' : 'text-orange-400/80'}`}>
+              <div className={`w-2 h-2 rounded-full ${isBonus ? 'bg-orange-500 shadow-[0_0_8px_rgba(249,115,22,0.6)]' : 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]'}`}></div>
               {m.highlight}
             </div>
           </div>
@@ -418,13 +454,12 @@
               </div>
             </div>
 
-            <a href="https://pay.hotmart.com/Y103405139M?bid=1765751031490" className="w-full bg-white text-black py-5 px-8 rounded-2xl font-black text-xl hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105 active:scale-95 shadow-xl">
+            <a href="https://pay.hotmart.com/Y103405139M?bid=1765751031490" className="w-full flex items-center justify-center text-center bg-white text-black py-5 px-4 md:px-8 rounded-2xl font-black text-lg md:text-xl leading-tight hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105 active:scale-95 shadow-xl">
               LIBERAR MEU ACESSO
             </a>
             
             <div className="mt-8 flex items-center justify-center gap-6 text-gray-500 text-xs grayscale">
               <span className="flex items-center gap-1"><ShieldCheck size={14} /> Garantia de 7 dias</span>
-              
             </div>
           </div>
           
@@ -461,11 +496,6 @@
 
     const App = () => (
       <div className="min-h-screen relative overflow-hidden">
-        {/* Floating V2 Button */}
-        <a href="/v2" className="fixed top-20 right-6 z-[60] p-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-white/20 transition-all text-white shadow-xl group">
-           <Zap size={20} className="group-hover:text-orange-500 transition-colors" />
-        </a>
-
         {/* Header FOMO */}
         <div className="fixed top-0 left-0 w-full bg-orange-600 text-white text-center py-2 text-[10px] md:text-xs font-black z-50 uppercase tracking-widest border-b border-orange-500">
           Atenção: Últimas vagas disponíveis para a turma promocional
@@ -494,6 +524,7 @@
         </section>
 
         <TruthSection />
+        <CorrectionBlock />
         <ModulesSection />
         <TestimonialsSection />
         <MentorCard />
