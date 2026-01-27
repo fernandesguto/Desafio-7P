@@ -1,18 +1,4 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/obrigado",
-      "destination": "/obrigado.html"
-    },
-    {
-      "source": "/v2",
-      "destination": "/landingpage2.html"
-    }
-  ]
+  "trailingSlash": false
 }

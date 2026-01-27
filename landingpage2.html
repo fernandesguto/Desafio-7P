@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Desafio 7P - A Virada Final</title>
+  <title>Desafio 7P - A Virada Final (Versão Dark)</title>
   <meta name="description" content="O tempo está acabando. Recupere o controle da sua vida em 7 dias." />
   
   <!-- Favicon -->
@@ -42,7 +42,7 @@
     import { motion, AnimatePresence } from 'framer-motion';
     import { 
       Timer, AlertCircle, ArrowRight, CheckCircle, ShieldCheck, 
-      Star, Zap, Users, Lock, ChevronDown, Play, Sparkles
+      Star, Zap, Users, Lock, ChevronDown, Play, Sparkles, Home
     } from 'lucide-react';
 
     const Countdown = () => {
@@ -77,7 +77,7 @@
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center gap-6"
           >
-            <div className="inline-block px-3 py-1 bg-white/10 rounded-md border border-white/20 text-xs font-bold tracking-widest uppercase mb-4">
+            <div className="inline-block px-3 py-1 bg-white/10 rounded-md border border-white/20 text-xs font-bold tracking-widest uppercase mb-4 text-orange-400">
               93% das vagas já preenchidas
             </div>
             
@@ -211,7 +211,12 @@
     );
 
     const App = () => (
-      <div className="min-h-screen">
+      <div className="min-h-screen relative">
+        {/* Floating Home Button */}
+        <a href="index.html" className="fixed top-20 right-6 z-[60] p-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-white/20 transition-all text-white shadow-xl">
+           <Home size={20} />
+        </a>
+
         {/* Header FOMO */}
         <div className="fixed top-0 left-0 w-full bg-orange-600 text-white text-center py-2 text-[10px] md:text-xs font-black z-50 uppercase tracking-widest border-b border-orange-500">
           Atenção: Últimas 17 vagas disponíveis para a turma promocional
@@ -247,9 +252,9 @@
           <div className="max-w-4xl mx-auto space-y-6">
             <h4 className="text-xl font-black tracking-tighter">DESAFIO <span className="text-orange-500">7P</span></h4>
             <div className="flex justify-center gap-6 text-xs text-gray-600 font-medium">
+              <a href="index.html" className="hover:text-white transition-colors">Página Inicial</a>
               <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
               <a href="#" className="hover:text-white transition-colors">Privacidade</a>
-              <a href="#" className="hover:text-white transition-colors">Suporte</a>
             </div>
             <p className="text-[10px] text-gray-700 max-w-lg mx-auto">
               Este site não faz parte do Google Inc. Além disso, este site NÃO é endossado pelo Google de nenhuma maneira. Google é uma marca comercial da Google Inc.
