@@ -215,7 +215,7 @@
 
             <div className="mt-8 flex flex-col gap-4 w-full max-w-sm">
               <a href="https://pay.hotmart.com/Y103405139M?bid=1765751031490" className="group bg-orange-600 hover:bg-orange-500 text-white py-5 px-8 rounded-xl font-bold text-lg shadow-2xl shadow-orange-600/30 transition-all flex items-center justify-center gap-3">
-                QUERO MINHA VIRADA AGORA
+                QUERO MUDAR DE VIDA
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <p className="text-xs text-gray-500 flex items-center justify-center gap-2">
@@ -254,7 +254,7 @@
             <h3 className="text-xl font-bold mb-4 text-orange-500 italic">O Desafio 7P é o seu antídoto.</h3>
             <p className="text-gray-400 mb-6">Não é sorte, é <span className="text-white">frequência</span>. Vamos limpar os entulhos emocionais que bloqueiam seu canal de recebimento.</p>
             <div className="bg-orange-600/10 p-4 rounded-xl border border-orange-600/20">
-              <p className="text-sm font-medium text-orange-400">Atenção: Este não é mais um curso de motivação barata. É um método comprovado de 7 dias.</p>
+              <p className="text-sm font-medium text-orange-400">Atenção: Este não é mais um curso de motivação barata. É um processo cirúrgico de 7 dias.</p>
             </div>
           </div>
         </div>
@@ -305,12 +305,6 @@
 
     const CorrectionBlock = () => (
       <section className="py-20 px-4 max-w-4xl mx-auto">
-
-
-
-
-
-
         <div className="text-center space-y-10">
           <h2 className="text-3xl md:text-5xl font-black text-orange-500 leading-tight tracking-tight">
             O Desafio 7P existe para corrigir isso
@@ -354,7 +348,7 @@
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: idx * 0.1 }}
-          className={`${isBonus ? 'bg-white shadow-2xl shadow-white/5' : 'bg-dark-card glass-border glass-card-hover'} p-8 rounded-[32px] flex flex-col h-full group transition-all duration-300`}
+          className={`${isBonus ? 'bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl shadow-white/5' : 'bg-dark-card glass-border glass-card-hover'} p-8 rounded-[32px] flex flex-col h-full group transition-all duration-300`}
         >
           <div className="flex justify-between items-start mb-6">
             <span className={`text-[10px] font-black tracking-widest px-3 py-1 rounded-md uppercase ${isBonus ? 'bg-orange-500 text-white' : 'text-white/40 bg-white/5'}`}>
@@ -365,8 +359,8 @@
             </div>
           </div>
           <h3 className={`text-xl font-bold mb-4 leading-tight transition-colors ${isBonus ? 'text-orange-500' : 'text-white group-hover:text-orange-500'}`}>{m.title}</h3>
-          <p className={`text-sm leading-relaxed mb-8 flex-grow ${isBonus ? 'text-black' : 'text-gray-400'}`}>{m.description}</p>
-          <div className={`pt-6 border-t mt-auto ${isBonus ? 'border-orange-100' : 'border-white/5'}`}>
+          <p className={`text-sm leading-relaxed mb-8 flex-grow ${isBonus ? 'text-white' : 'text-gray-400'}`}>{m.description}</p>
+          <div className={`pt-6 border-t mt-auto ${isBonus ? 'border-white/10' : 'border-white/5'}`}>
             <div className={`flex items-center gap-2 text-xs font-bold uppercase tracking-wider ${isBonus ? 'text-orange-600' : 'text-orange-400/80'}`}>
               <div className={`w-2 h-2 rounded-full ${isBonus ? 'bg-orange-500 shadow-[0_0_8px_rgba(249,115,22,0.6)]' : 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]'}`}></div>
               {m.highlight}
@@ -504,7 +498,7 @@
           <div className="w-full md:w-2/3 space-y-6">
             <span className="text-orange-500 font-bold tracking-widest uppercase text-xs">A Mentora</span>
             <h2 className="text-4xl font-bold">Luana Soares</h2>
-            <div className="space-y-4 text-gray-400 text-lg leading-relaxed italic">
+            <div className="space-y-4 text-gray-400 text-lg leading-relaxed italic text-justify">
               <p>Luana Soares é apaixonada por estudos sobre inteligência emocional, com foco em ajudar pessoas que queiram ressignificar suas histórias e conquistarem uma vida extraordinária.</p>
               <p>Com uma jornada pessoal marcada por superação, Luana passou por um profundo processo de transformation após vivências impactantes em treinamentos de autoconhecimento. A partir daí, decidiu transformar sua dor em missão de vida.</p>
               <p>Sua trajetória de cura e evolução pessoal se tornou a base para seu trabalho, e agora ela inspira e capacita others a também escreverem uma nova história.</p>
@@ -517,7 +511,7 @@
     const App = () => (
       <div className="min-h-screen relative overflow-hidden">
         {/* Header FOMO */}
-        <div className="fixed top-0 left-0 w-full bg-orange-600 text-white text-center py-2 text-[10px] md:text-xs font-black z-50 uppercase tracking-widest border-b border-orange-500">
+        <div className="w-full bg-orange-600 text-white text-center py-2 text-[10px] md:text-xs font-black uppercase tracking-widest border-b border-orange-500">
           Atenção: Últimas vagas disponíveis para a turma promocional
         </div>
 
@@ -529,7 +523,7 @@
           <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-12 text-center">
             <div>
               <p className="text-3xl font-black text-white">+1.200</p>
-              <p className="text-xs text-gray-500 uppercase tracking-widest font-bold mt-1">Alunas Impactadas</p>
+              <p className="text-xs text-gray-500 uppercase tracking-widest font-bold mt-1">Vidas Impactadas</p>
             </div>
             <div>
               <p className="text-3xl font-black text-white">4.9/5</p>
