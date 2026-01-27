@@ -1,4 +1,8 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/v2", "destination": "/landingpage2.html" },
+    { "source": "/landingpage2", "destination": "/landingpage2.html" }
+  ]
 }
