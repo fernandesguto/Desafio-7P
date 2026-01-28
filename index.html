@@ -113,7 +113,7 @@
         day: "BÔNUS",
         title: "PDF Planner Rotina Equilibrada",
         description: "Avalie sua vida por áreas, defina metas com prazo, organize sua semana e seu dia com mais consciência.",
-        promoPrice: "De R$ 47,00 por R$ 0,00",
+        promoPrice: "De R$ 47,00 por 0,00",
         icon: CalendarCheck,
         highlight: "Organização e foco."
       }
@@ -186,7 +186,7 @@
     };
 
     const Hero = () => (
-      <section className="relative pt-20 pb-16 px-4 overflow-hidden">
+      <section className="relative pt-20 pb-16 px-4 overflow-hidden text-center">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-orange-600/10 rounded-full blur-[120px] -z-10" />
         
         <div className="max-w-4xl mx-auto text-center">
@@ -561,6 +561,19 @@
         </div>
 
         <Hero />
+        
+        {/* Mentor Photo */}
+        <div className="max-w-4xl mx-auto flex justify-center px-4 -mb-12 relative z-10">
+          <motion.img 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            src="https://assets.zyrosite.com/A1azoVg7xQilMZ9l/luana-G4p7uQTJMRkjvE9Q.png" 
+            alt="Luana Soares" 
+            className="w-full max-w-[320px] md:max-w-[420px] h-auto" 
+          />
+        </div>
+
         <PainSection />
         
         {/* Social Proof Stats */}

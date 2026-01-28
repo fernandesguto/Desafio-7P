@@ -113,7 +113,7 @@
         day: "Bônus",
         title: "Planner Rotina Equilibrada",
         description: "PDF exclusivo para avaliar sua vida por áreas, definir metas com prazo e organizar sua semana com mais consciência.",
-        promoPrice: "De R$ 47,00 por R$ 0,00",
+        promoPrice: "De R$ 47,00 por 0,00",
         icon: CalendarCheck,
         highlight: "Organização e foco."
       }
@@ -417,6 +417,19 @@
         <div className="w-full bg-orange-600 text-white text-center py-2 text-[10px] md:text-xs font-black uppercase tracking-widest">Últimas vagas promocionais</div>
         
         <Hero />
+
+        {/* Mentor Photo */}
+        <div className="max-w-4xl mx-auto flex justify-center px-4 -mb-12 relative z-10">
+          <motion.img 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            src="https://assets.zyrosite.com/A1azoVg7xQilMZ9l/luana-G4p7uQTJMRkjvE9Q.png" 
+            alt="Luana Soares" 
+            className="w-full max-w-[320px] md:max-w-[420px] h-auto" 
+          />
+        </div>
+
         <PainSection />
         <TruthSection />
         <CorrectionBlock />
