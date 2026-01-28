@@ -45,7 +45,7 @@
     import { 
       Timer, AlertCircle, ArrowRight, CheckCircle, ShieldCheck, 
       Star, Zap, Users, Lock, ChevronDown, Play, Sparkles, Home,
-      Brain, Heart, Radio, Gavel, Sprout, Infinity, CalendarCheck, Eye
+      Brain, Heart, Radio, Gavel, Sprout, Infinity, CalendarCheck, Eye, MessageCircle
     } from 'lucide-react';
 
     const MODULES_DATA = [
@@ -203,7 +203,7 @@
 
             <div className="text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed space-y-6 text-justify mb-4 text-center md:text-justify">
               <p>Se tu tá cansada, confusa e com a sensação de que tua vida não anda, o problema não é sua vida... é o ponto onde tu tá tentando mudar.</p>
-              <p>O <strong>DESAFIO 7P</strong> é um processo de 7 dias de organização interna pra tu entender por que trava, organizar mente e emoções e voltar a tomar decisões com mais clareza e direção.</p>
+              <p>O <strong>DESAFIO 7P</strong> é um processo de 7 dias de organization interna pra tu entender por que trava, organizar mente e emoções e voltar a tomar decisões com mais clareza e direção.</p>
               <p className="italic font-medium">Nada de promessa mágica. Nada de motivação vazia. É consciência antes da ação.</p>
               <p className="font-bold text-white">👉 Se tu cansou de tentar sozinha e continuar no mesmo lugar, esse é o começo que tu vem adiando.</p>
             </div>
@@ -233,7 +233,7 @@
           <div className="space-y-6">
             <h2 className="text-3xl font-bold">O "Teto Invisível" que te impede de subir...</h2>
             <div className="space-y-4">
-              <p className="text-gray-400">Você sente que faz, faz e faz, mas o resultado nunca condiz com o esforço? É como se houvesse uma trava emocional puxando o freio de mão da sua prosperity.</p>
+              <p className="text-gray-400">Você sente que faz, faz e faz, mas o resultado nunca condiz com o esforço? É como se houvesse uma trava emocional puxando o freio de mão da sua prosperidade</p>
               <ul className="space-y-3">
                 <li className="flex gap-3 items-center text-gray-300">
                   <AlertCircle size={18} className="text-orange-500 flex-shrink-0" />
@@ -245,7 +245,7 @@
                 </li>
                 <li className="flex gap-3 items-center text-gray-300">
                   <AlertCircle size={18} className="text-orange-500 flex-shrink-0" />
-                  <span>Medo constante de faltar ou perder o que tem</span>
+                  <span>Ganha dinheiro mas perde tudo em seguida</span>
                 </li>
               </ul>
             </div>
@@ -397,6 +397,42 @@
       </section>
     );
 
+    const WhatsAppVipSection = () => (
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto bg-green-500/10 border border-green-500/20 rounded-[40px] p-8 md:p-12 text-center relative overflow-hidden group">
+          <div className="absolute top-0 right-0 p-8 opacity-5 -rotate-12 group-hover:rotate-0 transition-transform duration-700">
+            <MessageCircle size={120} />
+          </div>
+          <div className="relative z-10">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-green-500/20 text-green-400 rounded-full border border-green-500/30 text-[10px] font-black uppercase tracking-widest mb-6">
+              <Zap size={12} /> Acesso Imediato
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Grupo VIP de Alunas no <span className="text-green-500">WhatsApp</span></h2>
+            <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
+              Ao garantir sua vaga, você será direcionada para o nosso grupo exclusivo de alunas. Lá é o lugar onde a mágica acontece fora das aulas: troca de ideias, materiais extras e suporte próximo.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6 text-left">
+              <div className="bg-white/5 p-6 rounded-2xl border border-white/5">
+                <CheckCircle size={20} className="text-green-500 mb-3" />
+                <h4 className="font-bold text-white mb-2">Material Complementar</h4>
+                <p className="text-sm text-gray-400">PDFs e guias práticos enviados diretamente no seu celular para facilitar sua aplicação.</p>
+              </div>
+              <div className="bg-white/5 p-6 rounded-2xl border border-white/5">
+                <Users size={20} className="text-green-500 mb-3" />
+                <h4 className="font-bold text-white mb-2">Troca de Ideias</h4>
+                <p className="text-sm text-gray-400">Compartilhe insights e aprenda com a jornada de outras mulheres que buscam o mesmo que você.</p>
+              </div>
+              <div className="bg-white/5 p-6 rounded-2xl border border-white/5">
+                <Sparkles size={20} className="text-green-500 mb-3" />
+                <h4 className="font-bold text-white mb-2">Material Extra</h4>
+                <p className="text-sm text-gray-400">Conteúdos bônus e avisos importantes em primeira mão para você não perder nada.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+
     const TestimonialsSection = () => (
       <section className="py-24 px-4 bg-white/5 border-y border-white/5">
         <div className="max-w-7xl mx-auto">
@@ -536,6 +572,7 @@
         <TruthSection />
         <CorrectionBlock />
         <ModulesSection />
+        <WhatsAppVipSection />
         <TestimonialsSection />
         <MentorCard />
         <FOMOPrice />
