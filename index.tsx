@@ -80,12 +80,12 @@ const BONUS_DATA = [
 
 const TESTIMONIALS = [
   {
-    name: "Fernanda Lima",
+    name: "Fernanda S. Pereira",
     text: '"Eu achava que meu problema era falta de sorte, mas entendi que era minha frequência. Depois do exercício da criança interior, destravei uma promoção no trabalho que esperava há 2 anos."'
   },
   {
     name: "Juliana Mendes",
-    text: '"A comunidade no WhatsApp é incrível! Ver outras mulheres evoluindo me deu força. O material semanal me mantém no foco. Nunca me senti tão acolhida."'
+    text: '"A comunidade no WhatsApp é incrível! Ver outras mulheres evoluindo me deu força. O grupo me mantém no foco. Nunca me senti tão acolhida."'
   },
   {
     name: "Mariana Costa",
@@ -551,9 +551,9 @@ const App = () => (
       </div>
     </section>
 
+    <TestimonialsSection />
     <TruthSection />
     <CorrectionBlock />
-    <TestimonialsSection />
     <ModulesSection />
     <WhatsAppVipSection />
     <MentorCard />
