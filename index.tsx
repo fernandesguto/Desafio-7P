@@ -166,9 +166,9 @@ const Hero = () => (
         </h1>
 
         <div className="text-slate-600 text-lg md:text-xl max-w-2xl leading-relaxed space-y-6 text-justify mb-4 text-center md:text-justify">
-          <p>Tu ta cansada, eu sei<br />E não é porque tu é fraca.<br />É porque ninguém nunca te mostrou por onde começar.</p>
-          <p>Tu trabalha.<br />Se esforça.<br />Aguenta tudo calada.<br />E no fim do dia sente que a vida não anda.</p>
-          <p>Não é falta de vontade.<br />Não é preguiça.<br />É desorientação.</p>
+          <p>Tu ta cansada, eu sei. E não é porque tu é fraca. É porque ninguém nunca te mostrou por onde começar.</p>
+          <p>Tu trabalha. Se esforça. Aguenta tudo calada. E no fim do dia sente que a vida não anda.</p>
+          <p>Não é falta de vontade. Não é preguiça. É desorientação.</p>
           <p className="font-bold text-slate-900">👉 O problema não é a tua vida.<br />👉 É tu tentar mudar sem saber o que precisa ser mudado primeiro.</p>
         </div>
 
@@ -203,10 +203,19 @@ const PainSection = () => (
         </div>
       </div>
       <div className="bg-card-custom p-8 rounded-3xl border border-slate-200 shadow-sm">
-        <h3 className="text-xl font-bold mb-4 text-orange-600 italic">O Desafio 7P é o seu antídoto.</h3>
-        <p className="text-slate-600 mb-6">Não é sorte, é <span className="text-slate-900 font-bold">método!</span> Vamos limpar os entulhos emocionais que bloqueiam sua mente de prosperar.</p>
-        <div className="bg-orange-600/5 p-4 rounded-xl border border-orange-600/10">
-          <p className="text-sm font-medium text-orange-700">Atenção: Este não é mais um curso de motivação barata. É um método exclusivo e comprovado por milhares de pessoas.</p>
+        <div className="space-y-4 text-slate-600 leading-relaxed">
+          <p className="text-xl font-bold text-orange-600 italic">O Desafio 7P não é milagre.</p>
+          <p>Não promete que tua vida vai mudar em 7 dias.</p>
+          
+          <p className="font-bold text-slate-900 pt-2">Ele faz algo muito mais perigoso:</p>
+          
+          <p>👉 Te mostra onde tu tá presa<br />
+          👉 Te faz entender por que repete os mesmos padrões<br />
+          👉 E te entrega clareza sobre o próximo passo real, sem autoengano.</p>
+          
+          <p className="pt-2">Porque quando tu entende o que te trava,<br />
+          tu para de se culpar<br />
+          e começa a se posicionar.</p>
         </div>
       </div>
     </div>
