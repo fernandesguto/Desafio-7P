@@ -1,10 +1,9 @@
-
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Timer, AlertCircle, ArrowRight, CheckCircle, ShieldCheck, 
-  Star, Zap, Users, Lock, ChevronDown, Play, Sparkles, Home,
+  Timer, ArrowRight, CheckCircle, ShieldCheck, 
+  Star, Zap, Users, Lock, Sparkles,
   Brain, Heart, Radio, Gavel, Sprout, Infinity, CalendarCheck, Eye, MessageCircle
 } from 'lucide-react';
 
@@ -137,10 +136,12 @@ const Countdown = () => {
     return () => clearInterval(timer);
   }, [timeLeft]);
 
+  const formatTime = (t: number) => t < 10 ? `0${t}` : t;
+
   return (
     <div className="flex items-center gap-2 text-orange-600 font-bold bg-orange-600/5 px-4 py-2 rounded-full border border-orange-600/10">
       <Timer size={18} />
-      <span>OFERTA EXPIRA EM POUCO TEMPO</span>
+      <span>OFERTA EXPIRA EM {formatTime(timeLeft.min)}:{formatTime(timeLeft.sec)}</span>
     </div>
   );
 };
@@ -197,7 +198,7 @@ const PainSection = () => (
         <h2 className="text-3xl font-bold text-slate-900">O "Teto Invisível" que te impede de prosperar</h2>
         <div className="space-y-4 text-slate-600 leading-relaxed">
           <p>Tu vive cansada do trabalho.<br />Cansada de ser forte o tempo todo.<br />Cansada de engolir o que sente pra não incomodar.<br />Cansada de se doar e nunca se sentir merecedora.</p>
-          <p>Tu sente que pode mais.<br />But não sabe por onde começar<br />nem o que tá te travando de verdade.</p>
+          <p>Tu sente que pode mais.<br />Mas não sabe por onde começar<br />nem o que tá te travando de verdade.</p>
           <p>E isso te faz duvidar de ti.<br />Mesmo sendo dedicada.<br />Mesmo sendo esforçada.<br />Mesmo sabendo, lá no fundo, que essa não é a vida que tu nasceu pra viver.</p>
         </div>
       </div>
@@ -222,7 +223,7 @@ const TruthSection = () => (
       
       <div className="bg-white border border-slate-200 rounded-3xl p-8 my-10 text-left md:text-center shadow-sm">
         <h3 className="text-slate-900 font-bold mb-6 text-2xl text-center">Hoje, provavelmente, você:</h3>
-        <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto text-center md:text-left">
+        <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto text-center md:text-left text-sm">
           <div className="flex items-center gap-3 text-slate-700"><span>❌</span> Acorda cheia de intenção, mas perde o controle do dia</div>
           <div className="flex items-center gap-3 text-slate-700"><span>❌</span> Começa animada e desiste no meio do caminho</div>
           <div className="flex items-center gap-3 text-slate-700"><span>❌</span> Procrastina mesmo sabendo o que precisa fazer</div>
@@ -233,8 +234,8 @@ const TruthSection = () => (
       </div>
 
       <p className="text-slate-500">Enquanto isso,</p>
-      <p className="text-orange-600 font-bold">o tempo passa…</p>
-      <p className="text-orange-600 font-bold">a energia vai embora…</p>
+      <p className="text-orange-600 font-bold uppercase">o tempo passa…</p>
+      <p className="text-orange-600 font-bold uppercase">a energia vai embora…</p>
       <p className="text-slate-900 font-black text-2xl">e a vida continua exatamente no mesmo lugar.</p>
     </div>
 
@@ -287,7 +288,6 @@ const CorrectionBlock = () => (
   </section>
 );
 
-// Fixed ModuleCard props to avoid TypeScript error regarding 'key' property by explicitly typing the component as a React Functional Component
 const ModuleCard: React.FC<{ m: any }> = ({ m }) => {
   const Icon = m.icon;
   const isBonus = m.day === "BÔNUS";
@@ -336,7 +336,7 @@ const ModulesSection = () => (
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        {MODULES_DATA.map((m, i) => <ModuleCard key={i} m={m} />)}
+        {MODULES_DATA.map((m, i) => <ModuleCard key={`module-${i}`} m={m} />)}
       </div>
 
       <div className="text-center mb-10 pt-12">
@@ -350,7 +350,7 @@ const ModulesSection = () => (
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-          {BONUS_DATA.map((m, i) => <ModuleCard key={i} m={m} />)}
+          {BONUS_DATA.map((m, i) => <ModuleCard key={`bonus-${i}`} m={m} />)}
         </div>
       </div>
     </div>
@@ -401,7 +401,7 @@ const TestimonialsSection = () => (
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
         {TESTIMONIALS.map((t, i) => (
           <motion.div 
-            key={i}
+            key={`testimonial-${i}`}
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -429,7 +429,7 @@ const FOMOPrice = () => (
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.05),transparent_70%)]" />
     
     <div className="max-w-2xl mx-auto relative z-10">
-      <h2 className="text-3xl md:text-5xl font-bold mb-12 italic tracking-tight text-slate-900">Não deixe para amanhã a vida que você merece viver <span className="text-orange-500">HOJE</span>.</h2>
+      <h2 className="text-3xl md:text-5xl font-bold mb-12 italic tracking-tight text-slate-900">Não deixe para amanhã a vida que você merece viver <span className="text-orange-500 uppercase">HOJE</span>.</h2>
       
       <div className="bg-white border border-orange-500/20 p-10 rounded-[40px] shadow-2xl shadow-orange-500/10 overflow-hidden relative">
         <div className="absolute top-0 right-0 bg-orange-600 text-white text-[10px] font-black px-6 py-2 uppercase tracking-tighter">Últimas vagas</div>
