@@ -213,9 +213,7 @@ const PainSection = () => (
           👉 Te faz entender por que repete os mesmos padrões<br />
           👉 E te entrega clareza sobre o próximo passo real, sem autoengano.</p>
           
-          <p className="pt-2">Porque quando tu entende o que te trava,<br />
-          tu para de se culpar<br />
-          e começa a se posicionar.</p>
+          <p className="pt-2">Porque quando tu entende o que te trava, tu para de se culpar e começa a agir.</p>
         </div>
       </div>
     </div>
