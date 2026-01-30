@@ -162,7 +162,7 @@ const Hero = () => (
         </div>
 
         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tighter text-slate-900">
-          Um método claro para sair da procrastinação e destravar a vida em 7 dias.   
+          Um método claro para sair da procrastinação e <span className="bg-orange-600 text-white px-2 rounded-lg">destravar</span> a vida em <span className="bg-orange-600 text-white px-2 rounded-lg">7 dias</span>
         </h1>
 
         <div className="text-slate-600 text-lg md:text-xl max-w-2xl leading-relaxed space-y-6 text-justify mb-4 text-center md:text-justify">
