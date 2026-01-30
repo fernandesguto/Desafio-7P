@@ -198,7 +198,7 @@ const PainSection = () => (
         <h2 className="text-3xl font-bold text-slate-900">O "Teto Invisível" que te impede de prosperar</h2>
         <div className="space-y-4 text-slate-600 leading-relaxed">
           <p>Tu vive cansada do trabalho.<br />Cansada de ser forte o tempo todo.<br />Cansada de engolir o que sente pra não incomodar.<br />Cansada de se doar e nunca se sentir merecedora.</p>
-          <p>Tu sente que pode mais.<br />Mas não sabe por onde começar<br />nem o que tá te travando de verdade.</p>
+          <p>Tu sente que pode mais.<br />But não sabe por onde começar<br />nem o que tá te travando de verdade.</p>
           <p>E isso te faz duvidar de ti.<br />Mesmo sendo dedicada.<br />Mesmo sendo esforçada.<br />Mesmo sabendo, lá no fundo, que essa não é a vida que tu nasceu pra viver.</p>
         </div>
       </div>
@@ -415,8 +415,10 @@ const TestimonialsSection = () => (
             transition={{ delay: i * 0.1 }}
             className="bg-white border border-slate-200 p-8 rounded-3xl flex flex-col text-center shadow-sm"
           >
-            <div className="flex justify-center mb-6">
-              <Star size={20} fill="#F97316" className="text-orange-500" />
+            <div className="flex justify-center gap-1 mb-6">
+              {[...Array(5)].map((_, idx) => (
+                <Star key={idx} size={18} fill="#F97316" className="text-orange-500" />
+              ))}
             </div>
             <p className="text-slate-600 text-sm italic leading-relaxed mb-8 flex-grow">
               {t.text}
