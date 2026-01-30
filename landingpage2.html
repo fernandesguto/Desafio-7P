@@ -25,30 +25,19 @@
 
   <!-- Babel & React Dependencies -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  
-  <script type="importmap">
-  {
-    "imports": {
-      "react": "https://esm.sh/react@18.2.0",
-      "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
-      "framer-motion": "https://esm.sh/framer-motion@10.16.4?deps=react@18.2.0,react-dom@18.2.0",
-      "lucide-react": "https://esm.sh/lucide-react@0.292.0?deps=react@18.2.0,react-dom@18.2.0"
-    }
-  }
-  </script>
 </head>
 <body class="bg-light-yellow text-slate-800 selection:bg-orange-500 selection:text-white">
   <div id="root" class="dot-grid min-h-screen"></div>
 
-  <script type="text/babel" data-type="module">
-    import React, { useState, useEffect } from 'react';
-    import { createRoot } from 'react-dom/client';
-    import { motion, AnimatePresence } from 'framer-motion';
+  <script type="text/babel" data-presets="react,env" data-type="module">
+    import React, { useState, useEffect } from 'https://esm.sh/react@18.2.0';
+    import { createRoot } from 'https://esm.sh/react-dom@18.2.0/client';
+    import { motion, AnimatePresence } from 'https://esm.sh/framer-motion@10.16.4?deps=react@18.2.0';
     import { 
       Timer, AlertCircle, ArrowRight, CheckCircle, ShieldCheck, 
       Star, Zap, Lock, Sparkles, Home, Brain, HeartHandshake,
       Radio, Gavel, Sprout, Infinity, CalendarCheck, MessageCircle, Eye, Users
-    } from 'lucide-react';
+    } from 'https://esm.sh/lucide-react@0.292.0?deps=react@18.2.0';
 
     const LESSONS = [
       {
@@ -146,8 +135,8 @@
       const [timeLeft, setTimeLeft] = useState({ min: 14, sec: 59 });
       useEffect(() => {
         const timer = setInterval(() => {
-          if (timeLeft.sec > 0) setTimeLeft({ ...timeLeft, sec: timeLeft.sec - 1 });
-          else if (timeLeft.min > 0) setTimeLeft({ min: timeLeft.min - 1, sec: 59 });
+          if (timeLeft.sec > 0) setTimeLeft(prev => ({ ...prev, sec: prev.sec - 1 }));
+          else if (timeLeft.min > 0) setTimeLeft(prev => ({ min: prev.min - 1, sec: 59 }));
         }, 1000);
         return () => clearInterval(timer);
       }, [timeLeft]);
@@ -159,7 +148,7 @@
       );
     };
 
-    const LessonCard = ({ lesson, index }) => {
+    const LessonCard = ({ lesson }) => {
       const Icon = lesson.icon;
       const isBonus = lesson.day === "Bônus";
       return (
@@ -278,7 +267,7 @@
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
             {LESSONS.map((lesson, idx) => (
-              <LessonCard key={idx} lesson={lesson} index={idx} />
+              <LessonCard key={idx} lesson={lesson} />
             ))}
           </div>
 
@@ -293,7 +282,7 @@
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {BONUSES.map((bonus, idx) => (
-              <LessonCard key={idx} lesson={bonus} index={idx + 7} />
+              <LessonCard key={idx} lesson={bonus} />
             ))}
           </div>
         </div>
@@ -348,10 +337,10 @@
             <Countdown />
           </div>
           <div className="mt-8 flex flex-col gap-4 w-full max-w-sm mx-auto text-center md:text-justify text-slate-700">
-            <p>Se tu tá cansada, confusa e com a sensação de que tua vida não anda, o problema não é sua vida... é o ponto onde tu tá tentando mudar.</p>
-            <p>O <strong>DESAFIO 7P</strong> é um processo de 7 dias de organização interna pra tu entender por que trava, organizar mente e emoções e voltar a tomar decisões com mais clareza e direção.</p>
-            <p className="italic font-medium">Nada de promessa mágica. Nada de motivação vazia. É consciência antes da ação.</p>
-            <p className="font-bold text-slate-900">👉 Se tu cansou de tentar sozinha e continuar no mesmo lugar, esse é o começo que tu vem adiando.</p>
+            <p>Tu ta cansada, eu sei<br />E não é porque tu é fraca.<br />É porque ninguém nunca te mostrou por onde começar.</p>
+            <p>Tu trabalha.<br />Se esforça.<br />Aguenta tudo calada.<br />E no fim do dia sente que a vida não anda.</p>
+            <p>Não é falta de vontade.<br />Não é preguiça.<br />É desorientação.</p>
+            <p className="font-bold text-slate-900">👉 O problema não é a tua vida.<br />👉 É tu tentar mudar sem saber o que precisa ser mudado primeiro.</p>
           </div>
           <div className="mt-8 flex flex-col gap-4 w-full max-w-sm mx-auto">
             <a href="https://pay.hotmart.com/Y103405139M?bid=1765751031490" className="group bg-orange-600 hover:bg-orange-500 text-white py-5 rounded-xl font-bold text-lg shadow-xl shadow-orange-600/20 flex items-center justify-center gap-3 transition-all">
@@ -389,18 +378,10 @@
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 text-left">
             <h2 className="text-3xl font-bold text-slate-900">O "Teto Invisível" que te impede de subir...</h2>
-            <div className="space-y-4">
-              <p className="text-slate-600">Você sente que faz, faz e faz, mas o resultado nunca condiz com o esforço? É como se houvesse uma trava emocional puxando o freio de mão.</p>
-              <ul className="space-y-3">
-                <li className="flex gap-3 items-center text-slate-700">
-                  <CheckCircle size={18} className="text-green-600 flex-shrink-0" />
-                  <span>Cansaço mental crônico diário</span>
-                </li>
-                <li className="flex gap-3 items-center text-slate-700">
-                  <CheckCircle size={18} className="text-green-600 flex-shrink-0" />
-                  <span>Sentimento de estagnação profunda</span>
-                </li>
-              </ul>
+            <div className="space-y-4 text-slate-600 leading-relaxed">
+              <p>Tu vive cansada do trabalho.<br />Cansada de ser forte o tempo todo.<br />Cansada de engolir o que sente pra não incomodar.<br />Cansada de se doar e nunca se sentir merecedora.</p>
+              <p>Tu sente que pode mais.<br />Mas não sabe por onde começar<br />nem o que tá te travando de verdade.</p>
+              <p>E isso te faz duvidar de ti.<br />Mesmo sendo dedicada.<br />Mesmo sendo esforçada.<br />Mesmo sabendo, lá no fundo, que essa não é a vida que tu nasceu pra viver.</p>
             </div>
           </div>
           <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
