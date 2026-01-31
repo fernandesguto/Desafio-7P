@@ -123,14 +123,16 @@ const Countdown = () => {
 
   return (
     <div className="flex items-center gap-2 text-orange-600 font-bold bg-orange-600/5 px-4 py-2 rounded-full border border-orange-600/10">
-      <Timer size={18} />
-      <span>OFERTA EXPIRA EM {formatTime(timeLeft.min)}:{formatTime(timeLeft.sec)}</span>
+      <div className="flex items-center gap-2">
+        <Timer size={18} />
+        <span>OFERTA EXPIRA EM {formatTime(timeLeft.min)}:{formatTime(timeLeft.sec)}</span>
+      </div>
     </div>
   );
 };
 
 const Hero = () => (
-  <section className="relative pt-20 pb-16 px-4 overflow-hidden text-center">
+  <section className="relative pt-12 pb-6 px-4 overflow-hidden text-center">
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-orange-600/5 rounded-full blur-[120px] -z-10" />
     
     <div className="max-w-4xl mx-auto text-center">
@@ -139,16 +141,16 @@ const Hero = () => (
         animate={{ opacity: 1, y: 0 }}
         className="flex flex-col items-center gap-6"
       >
-        <div className="flex items-baseline justify-center gap-0.5 mb-12 select-none">
+        <div className="flex items-baseline justify-center gap-0.5 mb-8 select-none">
           <span className="font-sans font-black text-slate-900 tracking-tighter text-2xl md:text-3xl"><strong>DESAFIO</strong></span>
           <span className="serif-font font-bold text-[#F97316] text-3xl md:text-4xl -ml-1">7P</span>
         </div>
 
-        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tighter text-slate-900">
+        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 tracking-tighter text-slate-900">
           Um método claro para sair da procrastinação e <span className="bg-orange-600 text-white px-2 rounded-lg">destravar</span> sua vida em <span className="bg-orange-600 text-white px-2 rounded-lg">7 dias</span>
         </h1>
 
-        <div className="text-slate-600 text-lg md:text-xl max-w-2xl leading-relaxed space-y-6 text-justify mb-4 text-center md:text-justify">
+        <div className="text-slate-600 text-lg md:text-xl max-w-2xl leading-relaxed space-y-4 text-justify mb-2 text-center md:text-justify">
           <p>Tu ta cansada, eu sei. E não é porque tu é fraca. É porque ninguém nunca te mostrou por onde começar.</p>
           <p>Tu trabalha. Se esforça. Aguenta tudo calada. E no fim do dia sente que a vida não anda.</p>
           <p>Não é falta de vontade. Não é preguiça. É desorientação.</p>
@@ -160,7 +162,7 @@ const Hero = () => (
           <Countdown />
         </div>
 
-        <div className="mt-8 flex flex-col gap-4 w-full max-w-sm">
+        <div className="mt-6 flex flex-col gap-4 w-full max-w-sm">
           <a href="https://pay.hotmart.com/Y103405139M?bid=1765751031490" className="group bg-orange-600 hover:bg-orange-500 text-white py-5 px-8 rounded-xl font-bold text-lg shadow-xl shadow-orange-600/20 transition-all flex items-center justify-center gap-3">
             QUERO COMEÇAR AGORA
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -175,7 +177,7 @@ const Hero = () => (
 );
 
 const PainSection = () => (
-  <section className="py-20 px-4 bg-white/40 border-y border-slate-200">
+  <section className="py-10 px-4 bg-white/40 border-y border-slate-200">
     <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
       <div className="space-y-6">
         <h2 className="text-3xl font-bold text-slate-900">O "Teto Invisível" que te impede de prosperar</h2>
@@ -204,14 +206,14 @@ const PainSection = () => (
 );
 
 const TruthSection = () => (
-  <section className="py-20 px-4 max-w-4xl mx-auto text-center">
-    <h2 className="text-3xl md:text-5xl font-black mb-10 leading-tight text-slate-900">A verdade que ninguém fala</h2>
+  <section className="py-10 px-4 max-w-4xl mx-auto text-center">
+    <h2 className="text-3xl md:text-5xl font-black mb-8 leading-tight text-slate-900">A verdade que ninguém fala</h2>
     <div className="space-y-6 text-slate-600 text-lg md:text-xl leading-relaxed">
       <p>Você não trava porque é fraca.</p>
       <p>Você trava porque tentou mudar a vida do lugar errado e ninguém te ensinou a regra do jogo interno.</p>
       <p>Enquanto você tenta organizar a vida por fora, sua mente continua no automático, repetindo os mesmos padrões.</p>
       
-      <div className="bg-white border border-slate-200 rounded-3xl p-8 my-10 text-left md:text-center shadow-sm">
+      <div className="bg-white border border-slate-200 rounded-3xl p-8 my-8 text-left md:text-center shadow-sm">
         <h3 className="text-slate-900 font-bold mb-6 text-2xl text-center">Hoje, provavelmente, você:</h3>
         <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto text-center md:text-left text-sm">
           <div className="flex items-center gap-3 text-slate-700"><span>❌</span> Acorda cheia de intenção, mas perde o controle do dia</div>
@@ -230,7 +232,7 @@ const TruthSection = () => (
     </div>
 
     <br />
-    <div className="mt-8 flex flex-col gap-4 w-full max-w-sm mx-auto">
+    <div className="mt-6 flex flex-col gap-4 w-full max-w-sm mx-auto">
       <a href="https://pay.hotmart.com/Y103405139M?bid=1765751031490" className="group bg-orange-600 hover:bg-orange-500 text-white py-5 px-8 rounded-xl font-bold text-lg shadow-xl shadow-orange-600/20 transition-all flex items-center justify-center gap-3">
         QUERO SAIR DO AUTOMÁTICO
         <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -243,7 +245,7 @@ const TruthSection = () => (
 );
 
 const CorrectionBlock = () => (
-  <section className="py-20 px-4 max-w-4xl mx-auto">
+  <section className="py-10 px-4 max-w-4xl mx-auto">
     <div className="text-center space-y-10">
       <h2 className="text-3xl md:text-5xl font-black text-orange-600 leading-tight tracking-tight">
         O Desafio 7P existe para corrigir isso
@@ -266,9 +268,9 @@ const CorrectionBlock = () => (
         </ul>
       </div>
 
-      <div className="text-slate-600 text-lg md:text-xl leading-relaxed space-y-6 pt-6">
+      <div className="text-slate-600 text-lg md:text-xl leading-relaxed space-y-6 pt-4">
         <p>Enquanto muita gente tenta mudar fazendo mais, <br className="hidden md:block"/> você aprende a mudar fazendo melhor.</p>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10 font-black text-slate-900 text-xl md:text-2xl mt-8">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10 font-black text-slate-900 text-xl md:text-2xl mt-6">
           <span className="bg-white border border-slate-100 px-4 py-1 rounded-lg">COM CONSCIÊNCIA.</span>
           <span className="bg-white border border-slate-100 px-4 py-1 rounded-lg">COM ESTRUTURA.</span>
           <span className="bg-white border border-slate-100 px-4 py-1 rounded-lg">COM DIREÇÃO.</span>
@@ -317,20 +319,20 @@ const ModuleCard: React.FC<{ m: any }> = ({ m }) => {
 };
 
 const ModulesSection = () => (
-  <section className="py-24 px-4 relative overflow-hidden">
+  <section className="py-12 px-4 relative overflow-hidden">
     <div className="absolute top-1/2 left-0 w-64 h-64 bg-orange-600/5 rounded-full blur-[100px] -z-10" />
     <div className="max-w-6xl mx-auto">
-      <div className="text-center mb-16">
+      <div className="text-center mb-12">
         <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight text-slate-900">Veja tudo o que você vai <span className="text-orange-500 italic">receber!</span></h2>
         <p className="text-slate-500 max-w-2xl mx-auto">Um passo a passo guiado de 7 dias para reprogramar sua mente e ambiente para o fluxo da abundância.</p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         {MODULES_DATA.map((m, i) => <ModuleCard key={`module-${i}`} m={m} />)}
       </div>
 
-      <div className="text-center mb-10 pt-12">
-        <div className="flex flex-col items-center mb-12">
+      <div className="text-center mb-8 pt-8">
+        <div className="flex flex-col items-center mb-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-orange-500/5 text-orange-600 rounded-full border border-orange-500/10 text-[10px] font-black uppercase tracking-widest mb-4">
             ✨ PRESENTES PARA VOCÊ
           </div>
@@ -348,7 +350,7 @@ const ModulesSection = () => (
 );
 
 const WhatsAppVipSection = () => (
-  <section className="py-20 px-4">
+  <section className="py-10 px-4">
     <div className="max-w-4xl mx-auto bg-green-500/5 border border-green-500/10 rounded-[40px] p-8 md:p-12 text-center relative overflow-hidden group">
       <div className="absolute top-0 right-0 p-8 opacity-5 -rotate-12 group-hover:rotate-0 transition-transform duration-700">
         <MessageCircle size={120} className="text-green-600" />
@@ -384,9 +386,9 @@ const WhatsAppVipSection = () => (
 );
 
 const TestimonialsSection = () => (
-  <section className="py-24 px-4 bg-white/40 border-y border-slate-200">
+  <section className="py-12 px-4 bg-white/40 border-y border-slate-200">
     <div className="max-w-7xl mx-auto">
-      <h2 className="text-3xl md:text-5xl font-bold mb-16 tracking-tight text-center text-slate-900">O que dizem nossas <span className="text-orange-500">alunas</span>:</h2>
+      <h2 className="text-3xl md:text-5xl font-bold mb-12 tracking-tight text-center text-slate-900">O que dizem nossas <span className="text-orange-500">alunas</span>:</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8 items-start">
         {TESTIMONIAL_PRINTS.map((src, i) => (
@@ -411,11 +413,11 @@ const TestimonialsSection = () => (
 );
 
 const FOMOPrice = () => (
-  <section id="oferta" className="py-24 px-4 text-center relative">
+  <section id="oferta" className="py-12 px-4 text-center relative">
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.05),transparent_70%)]" />
     
     <div className="max-w-2xl mx-auto relative z-10">
-      <h2 className="text-3xl md:text-5xl font-bold mb-12 italic tracking-tight text-slate-900">Não deixe para amanhã a vida que você merece viver <span className="text-orange-500 uppercase">HOJE</span>.</h2>
+      <h2 className="text-3xl md:text-5xl font-bold mb-10 italic tracking-tight text-slate-900">Não deixe para amanhã a vida que você merece viver <span className="text-orange-500 uppercase">HOJE</span>.</h2>
       
       <div className="bg-white border border-orange-500/20 p-10 rounded-[40px] shadow-2xl shadow-orange-500/10 overflow-hidden relative">
         <div className="absolute top-0 right-0 bg-orange-600 text-white text-[10px] font-black px-6 py-2 uppercase tracking-tighter">Últimas vagas</div>
@@ -463,7 +465,7 @@ const FOMOPrice = () => (
 );
 
 const MentorCard = () => (
-  <section className="py-20 px-4">
+  <section className="py-10 px-4">
     <div className="max-w-5xl mx-auto bg-white border border-slate-100 rounded-[40px] p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 shadow-sm">
       <div className="w-full md:w-1/3 relative group">
         <div className="absolute inset-0 bg-orange-600 rounded-2xl blur-2xl opacity-5 group-hover:opacity-10 transition-opacity" />
@@ -496,7 +498,7 @@ const App = () => (
     <Hero />
     
     {/* Mentor Photo */}
-    <div className="max-w-4xl mx-auto flex justify-center px-4 mb-20 relative z-10">
+    <div className="max-w-4xl mx-auto flex justify-center px-4 mb-6 relative z-10">
       <motion.img 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -510,7 +512,7 @@ const App = () => (
     <PainSection />
     
     {/* Social Proof Stats */}
-    <section className="py-10 border-y border-slate-200 bg-white/30">
+    <section className="py-6 border-y border-slate-200 bg-white/30">
       <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-12 text-center">
         <div>
           <p className="text-3xl font-black text-slate-900">+Alunos</p>
@@ -537,7 +539,7 @@ const App = () => (
     <FOMOPrice />
 
     {/* Footer Minimalist */}
-    <footer className="py-20 border-t border-slate-200 text-center px-4 bg-white/20">
+    <footer className="py-12 border-t border-slate-200 text-center px-4 bg-white/20">
       <div className="max-w-4xl mx-auto space-y-8">
         <h4 className="text-2xl font-black tracking-tighter text-slate-900">DESAFIO <span className="text-orange-500">7P</span></h4>
         <p className="text-[10px] text-slate-400 max-w-lg mx-auto leading-relaxed">
