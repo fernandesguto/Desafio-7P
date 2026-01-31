@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -117,7 +116,6 @@ const Countdown = () => {
         setTimeLeft(prev => ({ min: prev.min - 1, sec: 59 }));
       }
     }, 1000);
-    // Fix: Using the correct variable name 'timer' for clearInterval instead of 'interval'
     return () => clearInterval(timer);
   }, [timeLeft]);
 
@@ -151,6 +149,17 @@ const Hero = () => (
         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 tracking-tighter text-slate-900">
           Descubra o método para sair da procrastinação e <span className="bg-orange-600 text-white px-2 rounded-lg">destravar</span> sua vida em <span className="bg-orange-600 text-white px-2 rounded-lg">7 dias</span>
         </h1>
+
+        {/* Vídeo posicionado abaixo do título com bordas quadradas */}
+        <div className="w-full max-w-4xl aspect-video overflow-hidden shadow-2xl bg-slate-900 border border-white/5 mx-auto mb-8">
+          <iframe
+            src="https://www.youtube.com/embed/scE6zlNIeGM?autoplay=1&mute=0&controls=0&loop=1&playlist=scE6zlNIeGM&rel=0"
+            className="w-full h-full"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+            frameBorder="0"
+          ></iframe>
+        </div>
 
         <div className="text-slate-600 text-lg md:text-xl max-w-2xl leading-relaxed space-y-4 text-justify mb-2 text-center md:text-justify">
           <p>Tu ta cansada, eu sei. E não é porque tu é fraca. É porque ninguém nunca te mostrou por onde começar.</p>
@@ -513,23 +522,7 @@ const App = () => (
 
     <Hero />
     
-    {/* Mentor Video Section */}
-    <div className="max-w-4xl mx-auto flex justify-center px-4 mb-6 relative z-10">
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="w-full max-w-4xl aspect-video rounded-3xl overflow-hidden shadow-2xl bg-slate-900 border border-white/5"
-      >
-        <iframe
-          src="https://www.youtube.com/embed/scE6zlNIeGM?autoplay=1&mute=0&controls=0&loop=1&playlist=scE6zlNIeGM&rel=0"
-          className="w-full h-full"
-          allow="autoplay; encrypted-media"
-          allowFullScreen
-          frameBorder="0"
-        ></iframe>
-      </motion.div>
-    </div>
+    {/* Removido o Mentor Video Section daqui pois foi para dentro do Hero */}
 
     <PainSection />
     
