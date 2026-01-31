@@ -390,7 +390,7 @@ const TestimonialsSection = () => (
     <div className="max-w-7xl mx-auto">
       <h2 className="text-3xl md:text-5xl font-bold mb-12 tracking-tight text-center text-slate-900">O que dizem nossas <span className="text-orange-500">alunas</span>:</h2>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-8 items-start">
         {TESTIMONIAL_PRINTS.map((src, i) => (
           <motion.div 
             key={`testimonial-img-${i}`}
@@ -481,7 +481,7 @@ const MentorCard = () => (
         <div className="space-y-4 text-slate-600 text-lg leading-relaxed italic text-justify">
           <p>Luana Soares é apaixonada por estudos sobre inteligência emocional, com foco em ajudar pessoas que queiram ressignificar suas histórias e conquistarem uma vida extraordinária.</p>
           <p>Com uma jornada pessoal marcada por superação, Luana passou por um profundo processo de transformação após vivências impactantes em treinamentos de autoconhecimento. A partir daí, decidiu transformar sua dor em missão de vida.</p>
-          <p>Sua trajetória de cura e evolução pessoal se tornou a base para seu trabalho, e agora ela inspira e capacita outros a também escreverem uma nova história.</p>
+          <p>Sua trajetória de cura e evolução pessoal se tornou a base para seu trabalho, e agora ela inspira e capacita others a também escreverem uma nova história.</p>
         </div>
       </div>
     </div>
