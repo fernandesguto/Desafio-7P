@@ -78,27 +78,10 @@ const BONUS_DATA = [
   }
 ];
 
-const TESTIMONIALS = [
-  {
-    name: "Fernanda S. Pereira",
-    text: '"Eu achava que meu problema era falta de sorte, mas entendi que era minha frequência. Depois do exercício da criança interior, destravei uma promoção no trabalho que esperava há 2 anos."'
-  },
-  {
-    name: "Juliana Mendes",
-    text: '"A comunidade no WhatsApp é incrível! Ver outras mulheres evoluindo me deu força. O grupo me mantém no foco. Nunca me senti tão acolhida."'
-  },
-  {
-    name: "Mariana Costa",
-    text: '"Eu vivia no teto invisível. Ganhava e gastava tudo. A aula de autorresponsabilidade foi um soco no estômago necessário. Hoje tenho minha reserva e paz mental."'
-  },
-  {
-    name: "Patrícia Alves",
-    text: '"Simplesmente transformador. A analogia do rádio mudou tudo. Parei de sintonizar na escassez e coisas mágicas começaram a acontecer. O Desafio 7P vale cada centavo."'
-  },
-  {
-    name: "Camila Rocha",
-    text: '"A aula extra de ancestralidade foi o que eu precisava para perdoar minha mãe e seguir minha vida. Me sinto leve, como se tivesse tirado uma mochila de pedras das costas."'
-  }
+const TESTIMONIAL_PRINTS = [
+  "https://assets.zyrosite.com/A1azoVg7xQilMZ9l/3-RWBOlaULmlh7QuJz.png",
+  "https://assets.zyrosite.com/A1azoVg7xQilMZ9l/2-hSAr4gl9IZJT2Tza.png",
+  "https://assets.zyrosite.com/A1azoVg7xQilMZ9l/1-WC3bRthEQ5ByQpLI.png"
 ];
 
 const LiveCounter = () => {
@@ -405,27 +388,21 @@ const TestimonialsSection = () => (
     <div className="max-w-7xl mx-auto">
       <h2 className="text-3xl md:text-5xl font-bold mb-16 tracking-tight text-center text-slate-900">O que dizem nossas <span className="text-orange-500">alunas</span>:</h2>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-        {TESTIMONIALS.map((t, i) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+        {TESTIMONIAL_PRINTS.map((src, i) => (
           <motion.div 
-            key={`testimonial-${i}`}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            key={`testimonial-img-${i}`}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="bg-white border border-slate-200 p-8 rounded-3xl flex flex-col text-center shadow-sm"
+            className="flex justify-center"
           >
-            <div className="flex justify-center gap-1 mb-6">
-              {[...Array(5)].map((_, idx) => (
-                <Star key={idx} size={18} fill="#F97316" className="text-orange-500" />
-              ))}
-            </div>
-            <p className="text-slate-600 text-sm italic leading-relaxed mb-8 flex-grow">
-              {t.text}
-            </p>
-            <div className="pt-6 border-t border-slate-100">
-              <p className="font-bold text-slate-900 text-lg">{t.name}</p>
-            </div>
+            <img 
+              src={src} 
+              alt={`Depoimento ${i + 1}`} 
+              className="w-full h-auto rounded-2xl shadow-md border border-slate-100"
+            />
           </motion.div>
         ))}
       </div>
