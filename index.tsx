@@ -125,7 +125,7 @@ const Countdown = () => {
     <div className="flex items-center gap-2 text-orange-600 font-bold bg-orange-600/5 px-4 py-2 rounded-full border border-orange-600/10">
       <div className="flex items-center gap-2">
         <Timer size={18} />
-        <span>OFERTA EXPIRA EM {formatTime(timeLeft.min)}:{formatTime(timeLeft.sec)}</span>
+        <span>OFERTA EXPIRA EM BREVE</span>
       </div>
     </div>
   );
@@ -337,7 +337,7 @@ const ModulesSection = () => (
             ✨ PRESENTES PARA VOCÊ
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
-            ...e ainda você vai ganhar 2 bônus exclusivos!
+            E você vai ganhar agora 2 bônus exclusivos!
           </h2>
         </div>
         
