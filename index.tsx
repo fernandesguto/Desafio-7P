@@ -198,7 +198,7 @@ const PainSection = () => (
           👉 Te faz entender por que repete os mesmos padrões<br />
           👉 E te entrega clareza sobre o próximo passo real, sem autoengano.</p>
           
-          <p className="pt-2">Porque quando tu entende o que te trava, tu para de se culpar e começa a agir.</p>
+          <p className="pt-2">Because quando tu entende o que te trava, tu para de se culpar e começa a agir.</p>
         </div>
       </div>
     </div>
@@ -206,7 +206,7 @@ const PainSection = () => (
 );
 
 const TruthSection = () => (
-  <section className="pt-0 pb-10 px-4 max-w-4xl mx-auto text-center">
+  <section className="pt-2 pb-10 px-4 max-w-4xl mx-auto text-center">
     <h2 className="text-3xl md:text-5xl font-black mb-8 leading-tight text-slate-900">A verdade que ninguém fala</h2>
     <div className="space-y-6 text-slate-600 text-lg md:text-xl leading-relaxed">
       <p>Você não trava porque é fraca.</p>
@@ -386,11 +386,11 @@ const WhatsAppVipSection = () => (
 );
 
 const TestimonialsSection = () => (
-  <section className="pt-8 pb-4 px-4 bg-white/40 border-y border-slate-200">
+  <section className="pt-8 pb-0 px-4 bg-white/40 border-y border-slate-200">
     <div className="max-w-7xl mx-auto">
       <h2 className="text-3xl md:text-5xl font-bold mb-6 md:mb-10 tracking-tight text-center text-slate-900">O que dizem nossas <span className="text-orange-500">alunas</span>:</h2>
       
-      <div className="flex flex-col md:flex-row items-center md:items-start gap-1 md:gap-8 justify-center">
+      <div className="flex flex-col md:flex-row items-center md:items-start gap-0 justify-center">
         {TESTIMONIAL_PRINTS.map((src, i) => (
           <motion.img 
             key={`testimonial-img-${i}`}
@@ -400,7 +400,7 @@ const TestimonialsSection = () => (
             transition={{ delay: i * 0.1 }}
             src={src} 
             alt={`Depoimento ${i + 1}`} 
-            className="w-full max-w-[380px] h-auto rounded-2xl"
+            className="w-full max-w-[380px] h-auto"
           />
         ))}
       </div>
