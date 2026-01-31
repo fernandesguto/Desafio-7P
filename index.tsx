@@ -79,9 +79,9 @@ const BONUS_DATA = [
 ];
 
 const TESTIMONIAL_PRINTS = [
-  "https://assets.zyrosite.com/A1azoVg7xQilMZ9l/3-RWBOlaULmlh7QuJz.png",
+  "https://assets.zyrosite.com/A1azoVg7xQilMZ9l/1-W8iUGPCgIFDIGyqE.png",
   "https://assets.zyrosite.com/A1azoVg7xQilMZ9l/2-hSAr4gl9IZJT2Tza.png",
-  "https://assets.zyrosite.com/A1azoVg7xQilMZ9l/1-WC3bRthEQ5ByQpLI.png"
+  "https://assets.zyrosite.com/A1azoVg7xQilMZ9l/3-IcyBnFHMvA5xsuR2.png"
 ];
 
 const LiveCounter = () => {
@@ -206,7 +206,7 @@ const PainSection = () => (
 );
 
 const TruthSection = () => (
-  <section className="py-10 px-4 max-w-4xl mx-auto text-center">
+  <section className="pt-2 pb-10 px-4 max-w-4xl mx-auto text-center">
     <h2 className="text-3xl md:text-5xl font-black mb-8 leading-tight text-slate-900">A verdade que ninguém fala</h2>
     <div className="space-y-6 text-slate-600 text-lg md:text-xl leading-relaxed">
       <p>Você não trava porque é fraca.</p>
@@ -232,7 +232,7 @@ const TruthSection = () => (
     </div>
 
     <br />
-    <div className="mt-6 flex flex-col gap-4 w-full max-w-sm mx-auto">
+    <div className="mt-6 flex flex-col gap-4 w-full max-sm mx-auto">
       <a href="https://pay.hotmart.com/Y103405139M?bid=1765751031490" className="group bg-orange-600 hover:bg-orange-500 text-white py-5 px-8 rounded-xl font-bold text-lg shadow-xl shadow-orange-600/20 transition-all flex items-center justify-center gap-3">
         QUERO SAIR DO AUTOMÁTICO
         <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -386,7 +386,7 @@ const WhatsAppVipSection = () => (
 );
 
 const TestimonialsSection = () => (
-  <section className="py-12 px-4 bg-white/40 border-y border-slate-200">
+  <section className="pt-12 pb-2 px-4 bg-white/40 border-y border-slate-200">
     <div className="max-w-7xl mx-auto">
       <h2 className="text-3xl md:text-5xl font-bold mb-12 tracking-tight text-center text-slate-900">O que dizem nossas <span className="text-orange-500">alunas</span>:</h2>
       
