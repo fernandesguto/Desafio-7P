@@ -494,7 +494,7 @@ const MentorCard = () => (
         <h2 className="text-4xl font-bold text-slate-900">Luana Soares</h2>
         <div className="space-y-4 text-slate-600 text-lg leading-relaxed italic text-justify">
           <p>Luana Soares é apaixonada por estudos sobre inteligência emocional, com foco em ajudar pessoas que queiram ressignificar suas histórias e conquistarem uma vida extraordinária.</p>
-          <p>Com uma jornada pessoal marcada por superação, Luana passou por um profundo processo de transformação após vivências impactantes em treinamentos de autoconhecimento. A partir daí, decidiu transformar sua dor em missão de vida.</p>
+          <p>Com uma jornada pessoal marcada por superação, Luana passou por um profundo processo de transformation após vivências impactantes em treinamentos de autoconhecimento. A partir daí, decidiu transformar sua dor em missão de vida.</p>
           <p>Sua trajetória de cura e evolução pessoal se tornou a base para seu trabalho, e agora ela inspira e capacita others a também escreverem uma nova história.</p>
         </div>
       </div>
@@ -519,14 +519,13 @@ const App = () => (
         viewport={{ once: true }}
         className="w-full max-w-4xl aspect-video rounded-3xl overflow-hidden shadow-2xl bg-slate-900 border border-white/5"
       >
-        <video 
-          src="https://assets.zyrosite.com/A1azoVg7xQilMZ9l/luana-G4p7uQTJMRkjvE9Q.mp4" 
-          className="w-full h-full object-cover"
-          autoPlay 
-          muted 
-          loop 
-          playsInline
-        />
+        <iframe
+          src="https://www.youtube.com/embed/scE6zlNIeGM?autoplay=1&mute=1&controls=0&loop=1&playlist=scE6zlNIeGM&rel=0"
+          className="w-full h-full"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+          frameBorder="0"
+        ></iframe>
       </motion.div>
     </div>
 
