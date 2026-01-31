@@ -72,7 +72,7 @@ const BONUS_DATA = [
     day: "BÔNUS",
     title: "PDF Planner Rotina Equilibrada",
     description: "Avalie sua vida por áreas, defina metas com prazo, organize sua semana e seu dia com mais consciência.",
-    promoPrice: "De R$ 47,00 por 0,00",
+    promoPrice: "De R$ 47,00 por R$ 0,00",
     icon: CalendarCheck,
     highlight: "Organização e foco."
   }
@@ -207,7 +207,7 @@ const PainSection = () => (
 
 const TruthSection = () => (
   <section className="pt-2 pb-10 px-4 max-w-4xl mx-auto text-center">
-    <h2 className="text-3xl md:text-5xl font-black mb-8 leading-tight text-slate-900">A verdade que ninguém fala</h2>
+    <br /><h2 className="text-3xl md:text-5xl font-black mb-8 leading-tight text-slate-900">A verdade que ninguém te fala</h2>
     <div className="space-y-6 text-slate-600 text-lg md:text-xl leading-relaxed">
       <p>Você não trava porque é fraca.</p>
       <p>Você trava porque tentou mudar a vida do lugar errado e ninguém te ensinou a regra do jogo interno.</p>
