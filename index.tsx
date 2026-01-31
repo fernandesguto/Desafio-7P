@@ -510,10 +510,7 @@ const App = () => (
     {/* Social Proof Stats */}
     <section className="py-6 border-y border-slate-200 bg-white/30">
       <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-12 text-center">
-        <div>
-          <p className="text-3xl font-black text-slate-900">+Alunos</p>
-          <p className="text-xs text-slate-500 uppercase tracking-widest font-bold mt-1">de todo o Brasil</p>
-        </div>
+        
         <div>
           <p className="text-3xl font-black text-slate-900">4.9/5</p>
           <div className="flex gap-0.5 text-orange-500 justify-center my-1"><Star size={12} fill="currentColor"/><Star size={12} fill="currentColor"/><Star size={12} fill="currentColor"/><Star size={12} fill="currentColor"/><Star size={12} fill="currentColor"/></div>
