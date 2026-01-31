@@ -53,7 +53,7 @@ const MODULES_DATA = [
   {
     day: "DIA 7",
     title: "Manifestação Prática",
-    description: "Agir como se já fosse. A neurociência por trás da Lei da Atração. Alinhe pensamento, emoção, vibração e ação para colher resultados reais.",
+    description: "Agir como se já fosse. A neurociência por trás da Lei da Atração. Alinhe pensamento, emoção, vibração e action para colher resultados reais.",
     icon: Zap,
     highlight: "O segredo da cocriação."
   }
@@ -386,26 +386,22 @@ const WhatsAppVipSection = () => (
 );
 
 const TestimonialsSection = () => (
-  <section className="pt-8 pb-0 md:pt-12 md:pb-2 px-4 bg-white/40 border-y border-slate-200">
+  <section className="pt-8 pb-4 px-4 bg-white/40 border-y border-slate-200">
     <div className="max-w-7xl mx-auto">
-      <h2 className="text-3xl md:text-5xl font-bold mb-6 md:mb-12 tracking-tight text-center text-slate-900">O que dizem nossas <span className="text-orange-500">alunas</span>:</h2>
+      <h2 className="text-3xl md:text-5xl font-bold mb-6 md:mb-10 tracking-tight text-center text-slate-900">O que dizem nossas <span className="text-orange-500">alunas</span>:</h2>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-8 items-start">
+      <div className="flex flex-col md:flex-row items-center md:items-start gap-1 md:gap-8 justify-center">
         {TESTIMONIAL_PRINTS.map((src, i) => (
-          <motion.div 
+          <motion.img 
             key={`testimonial-img-${i}`}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="flex justify-center"
-          >
-            <img 
-              src={src} 
-              alt={`Depoimento ${i + 1}`} 
-              className="w-full h-auto rounded-2xl"
-            />
-          </motion.div>
+            src={src} 
+            alt={`Depoimento ${i + 1}`} 
+            className="w-full max-w-[380px] h-auto rounded-2xl"
+          />
         ))}
       </div>
     </div>
