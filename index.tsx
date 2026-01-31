@@ -213,16 +213,34 @@ const TruthSection = () => (
       <p>Você trava porque tentou mudar a vida do lugar errado e ninguém te ensinou a regra do jogo interno.</p>
       <p>Enquanto você tenta organizar a vida por fora, sua mente continua no automático, repetindo os mesmos padrões.</p>
       
-      <div className="bg-white border border-slate-200 rounded-3xl p-8 my-8 text-left md:text-center shadow-sm">
-        <h3 className="text-slate-900 font-bold mb-6 text-2xl text-center">Hoje, provavelmente, você:</h3>
-        <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto text-center md:text-left text-sm">
-          <div className="flex items-center gap-3 text-slate-700"><span>❌</span> Acorda cheia de intenção, mas perde o controle do dia</div>
-          <div className="flex items-center gap-3 text-slate-700"><span>❌</span> Começa animada e desiste no meio do caminho</div>
-          <div className="flex items-center gap-3 text-slate-700"><span>❌</span> Procrastina mesmo sabendo o que precisa fazer</div>
-          <div className="flex items-center gap-3 text-slate-700"><span>❌</span> Se sente cansada sem entender por quê</div>
-          <div className="flex items-center gap-3 text-slate-700"><span>❌</span> Vive repetindo promessas que não cumpre</div>
-          <div className="flex items-center gap-3 text-slate-700"><span>❌</span> Tenta mudar tudo ao mesmo tempo e acaba travando</div>
-        </div>
+      <div className="bg-white border border-slate-200 rounded-[32px] p-8 md:p-12 text-left space-y-6 max-w-2xl mx-auto shadow-sm my-10">
+        <p className="font-black text-slate-400 mb-4 uppercase tracking-widest text-xs">Hoje, provavelmente, você:</p>
+        <ul className="space-y-4 text-slate-700 font-medium">
+          <li className="flex gap-4">
+            <span className="flex-shrink-0 text-orange-500 font-bold text-xl">❌</span>
+            <span className="text-justify leading-relaxed">Acorda cheia de intenção, mas perde o controle do dia</span>
+          </li>
+          <li className="flex gap-4">
+            <span className="flex-shrink-0 text-orange-500 font-bold text-xl">❌</span>
+            <span className="text-justify leading-relaxed">Começa animada e desiste no meio do caminho</span>
+          </li>
+          <li className="flex gap-4">
+            <span className="flex-shrink-0 text-orange-500 font-bold text-xl">❌</span>
+            <span className="text-justify leading-relaxed">Procrastina mesmo sabendo o que precisa fazer</span>
+          </li>
+          <li className="flex gap-4">
+            <span className="flex-shrink-0 text-orange-500 font-bold text-xl">❌</span>
+            <span className="text-justify leading-relaxed">Se sente cansada sem entender por quê</span>
+          </li>
+          <li className="flex gap-4">
+            <span className="flex-shrink-0 text-orange-500 font-bold text-xl">❌</span>
+            <span className="text-justify leading-relaxed">Vive repetindo promessas que não cumpre</span>
+          </li>
+          <li className="flex gap-4">
+            <span className="flex-shrink-0 text-orange-500 font-bold text-xl">❌</span>
+            <span className="text-justify leading-relaxed">Tenta mudar tudo ao mesmo tempo e acaba travando</span>
+          </li>
+        </ul>
       </div>
 
       <p className="text-slate-500">Enquanto isso,</p>
@@ -260,11 +278,11 @@ const CorrectionBlock = () => (
       <div className="bg-white border border-slate-200 rounded-[32px] p-8 md:p-12 text-left space-y-6 max-w-2xl mx-auto shadow-sm">
         <p className="font-black text-slate-400 mb-4 uppercase tracking-widest text-xs">Você aprende a:</p>
         <ul className="space-y-4 text-slate-700 font-medium">
-          <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500 font-bold text-xl">✓</span> <span>Entender por que sua mente te trava mesmo querendo mudar</span></li>
-          <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500 font-bold text-xl">✓</span> <span>Identificar padrões emocionais que te mantêm no automático</span></li>
-          <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500 font-bold text-xl">✓</span> <span>Organizar pensamentos antes de tomar decisões importantes</span></li>
-          <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500 font-bold text-xl">✓</span> <span>Sair do ciclo de cansaço, confusão e procrastinação</span></li>
-          <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500 font-bold text-xl">✓</span> <span>Criar clareza e direção sem depender de força de vontade</span></li>
+          <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500 font-bold text-xl">✓</span> <span className="text-justify leading-relaxed">Entender por que sua mente te trava mesmo querendo mudar</span></li>
+          <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500 font-bold text-xl">✓</span> <span className="text-justify leading-relaxed">Identificar padrões emocionais que te mantêm no automático</span></li>
+          <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500 font-bold text-xl">✓</span> <span className="text-justify leading-relaxed">Organizar pensamentos antes de tomar decisões importantes</span></li>
+          <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500 font-bold text-xl">✓</span> <span className="text-justify leading-relaxed">Sair do ciclo de cansaço, confusão e procrastinação</span></li>
+          <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500 font-bold text-xl">✓</span> <span className="text-justify leading-relaxed">Criar clareza e direção sem depender de força de vontade</span></li>
         </ul>
       </div>
 
