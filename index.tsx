@@ -183,7 +183,7 @@ const PainSection = () => (
         <h2 className="text-3xl font-bold text-slate-900">O "Teto Invisível" que te impede de prosperar</h2>
         <div className="space-y-4 text-slate-600 leading-relaxed">
           <p>Tu vive cansada do trabalho. Cansada de ser forte o tempo todo. Cansada de engolir o que sente pra não incomodar. Cansada de se doar e nunca se sentir merecedora.</p>
-          <p>Tu sente que pode mais. Mas não sabe por onde começar<br />nem o que tá te travando de verdade.</p>
+          <p>Tu sente que pode mais. Mas não sabe por onde começar nem o que tá te travando de verdade.</p>
           <p>E isso te faz duvidar de ti. Mesmo sendo dedicada. Mesmo sendo esforçada. Mesmo sabendo, lá no fundo, que essa não é a vida que tu nasceu pra viver.</p>
         </div>
       </div>
@@ -214,7 +214,7 @@ const TruthSection = () => (
       <p>Enquanto você tenta organizar a vida por fora, sua mente continua no automático, repetindo os mesmos padrões.</p>
       
       <div className="bg-white border border-slate-200 rounded-[32px] p-8 md:p-12 text-left space-y-6 max-w-2xl mx-auto shadow-sm my-10">
-        <p className="font-black text-slate-400 mb-4 uppercase tracking-widest text-xs">Hoje, provavelmente, você:</p>
+        <p className="font-black text-slate-400 mb-4 uppercase tracking-widest text-xs">Hoje você está assim:</p>
         <ul className="space-y-4 text-slate-700 font-medium">
           <li className="flex gap-4">
             <span className="flex-shrink-0 text-orange-500 font-bold text-xl">❌</span>
