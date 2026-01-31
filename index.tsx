@@ -162,7 +162,7 @@ const Hero = () => (
           <Countdown />
         </div>
 
-        <div className="mt-6 flex flex-col gap-4 w-full max-w-sm">
+        <div className="mt-6 flex flex-col gap-4 w-full max-sm mx-auto text-center">
           <a href="https://pay.hotmart.com/Y103405139M?bid=1765751031490" className="group bg-orange-600 hover:bg-orange-500 text-white py-5 px-8 rounded-xl font-bold text-lg shadow-xl shadow-orange-600/20 transition-all flex items-center justify-center gap-3">
             QUERO COMEÇAR AGORA
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -206,7 +206,7 @@ const PainSection = () => (
 );
 
 const TruthSection = () => (
-  <section className="pt-2 pb-10 px-4 max-w-4xl mx-auto text-center">
+  <section className="pt-0 pb-10 px-4 max-w-4xl mx-auto text-center">
     <h2 className="text-3xl md:text-5xl font-black mb-8 leading-tight text-slate-900">A verdade que ninguém fala</h2>
     <div className="space-y-6 text-slate-600 text-lg md:text-xl leading-relaxed">
       <p>Você não trava porque é fraca.</p>
@@ -386,11 +386,11 @@ const WhatsAppVipSection = () => (
 );
 
 const TestimonialsSection = () => (
-  <section className="pt-12 pb-2 px-4 bg-white/40 border-y border-slate-200">
+  <section className="pt-8 pb-0 md:pt-12 md:pb-2 px-4 bg-white/40 border-y border-slate-200">
     <div className="max-w-7xl mx-auto">
-      <h2 className="text-3xl md:text-5xl font-bold mb-12 tracking-tight text-center text-slate-900">O que dizem nossas <span className="text-orange-500">alunas</span>:</h2>
+      <h2 className="text-3xl md:text-5xl font-bold mb-6 md:mb-12 tracking-tight text-center text-slate-900">O que dizem nossas <span className="text-orange-500">alunas</span>:</h2>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-8 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-8 items-start">
         {TESTIMONIAL_PRINTS.map((src, i) => (
           <motion.div 
             key={`testimonial-img-${i}`}
