@@ -388,7 +388,7 @@ const TestimonialsSection = () => (
     <div className="max-w-7xl mx-auto">
       <h2 className="text-3xl md:text-5xl font-bold mb-16 tracking-tight text-center text-slate-900">O que dizem nossas <span className="text-orange-500">alunas</span>:</h2>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8 items-start">
         {TESTIMONIAL_PRINTS.map((src, i) => (
           <motion.div 
             key={`testimonial-img-${i}`}
@@ -401,7 +401,7 @@ const TestimonialsSection = () => (
             <img 
               src={src} 
               alt={`Depoimento ${i + 1}`} 
-              className="w-full h-auto rounded-2xl shadow-md border border-slate-100"
+              className="w-full h-auto rounded-2xl"
             />
           </motion.div>
         ))}
