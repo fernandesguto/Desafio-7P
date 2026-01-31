@@ -18,7 +18,7 @@ const MODULES_DATA = [
   {
     day: "DIA 2",
     title: "Limpeza Emocional Profunda",
-    description: "Reorganização interna e resgate da criança interior. Não é sobre reviver dor, é sobre tirar o peso que não serve mais. Prática com mantra de segurança emocional.",
+    description: "Reorganização interna e resgate da para tirar o peso que não serve mais. Prática com mantra de segurança emocional.",
     icon: Heart,
     highlight: "Reprogramação sensorial."
   },
@@ -150,10 +150,10 @@ const Hero = () => (
           Descubra o método para sair da procrastinação e <span className="bg-orange-600 text-white px-2 rounded-lg">destravar</span> a sua vida em <br /><span className="bg-orange-600 text-white px-2 rounded-lg">7 dias</span>
         </h1>
 
-        {/* Vídeo posicionado abaixo do título com bordas quadradas e autoplay ativado (muted=1 para permitir autoplay) */}
+        {/* Vídeo posicionado abaixo do título com bordas quadradas e som ativado (mute=0) */}
         <div className="w-full max-w-4xl aspect-video overflow-hidden shadow-2xl bg-slate-900 border border-white/5 mx-auto mb-8">
           <iframe
-            src="https://www.youtube.com/embed/scE6zlNIeGM?autoplay=1&mute=1&controls=0&loop=1&playlist=scE6zlNIeGM&rel=0"
+            src="https://www.youtube.com/embed/scE6zlNIeGM?autoplay=1&mute=0&controls=0&loop=1&playlist=scE6zlNIeGM&rel=0"
             className="w-full h-full"
             allow="autoplay; encrypted-media"
             allowFullScreen
