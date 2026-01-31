@@ -214,7 +214,7 @@ const TruthSection = () => (
       <p>Enquanto você tenta organizar a vida por fora, sua mente continua no automático, repetindo os mesmos padrões.</p>
       
       <div className="bg-white border border-slate-200 rounded-[32px] p-8 md:p-12 text-left space-y-6 max-w-2xl mx-auto shadow-sm my-10">
-        <p className="font-black text-slate-400 mb-4 uppercase tracking-widest text-xs">Hoje você está assim:</p>
+        <p className="font-black text-slate-400 mb-4 uppercase tracking-widest text-xs">Hoje, provavelmente, você:</p>
         <ul className="space-y-4 text-slate-700 font-medium">
           <li className="flex gap-4">
             <span className="flex-shrink-0 text-orange-500 font-bold text-xl">❌</span>
@@ -511,16 +511,23 @@ const App = () => (
 
     <Hero />
     
-    {/* Mentor Photo */}
+    {/* Mentor Video Section */}
     <div className="max-w-4xl mx-auto flex justify-center px-4 mb-6 relative z-10">
-      <motion.img 
+      <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        src="https://assets.zyrosite.com/A1azoVg7xQilMZ9l/luana-G4p7uQTJMRkjvE9Q.png" 
-        alt="Luana Soares" 
-        className="w-full max-w-[320px] md:max-w-[420px] h-auto drop-shadow-2xl" 
-      />
+        className="w-full max-w-4xl aspect-video rounded-3xl overflow-hidden shadow-2xl bg-slate-900 border border-white/5"
+      >
+        <video 
+          src="https://assets.zyrosite.com/A1azoVg7xQilMZ9l/luana-G4p7uQTJMRkjvE9Q.mp4" 
+          className="w-full h-full object-cover"
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+        />
+      </motion.div>
     </div>
 
     <PainSection />
