@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -116,6 +117,7 @@ const Countdown = () => {
         setTimeLeft(prev => ({ min: prev.min - 1, sec: 59 }));
       }
     }, 1000);
+    // Fix: Using the correct variable name 'timer' for clearInterval instead of 'interval'
     return () => clearInterval(timer);
   }, [timeLeft]);
 
@@ -272,7 +274,7 @@ const CorrectionBlock = () => (
       <div className="text-slate-600 text-lg md:text-xl leading-relaxed space-y-6">
         <p>Dentro do Desafio 7P, você não recebe motivação vazia. <br className="hidden md:block"/> Você recebe <strong>processo</strong>.</p>
         <p>Nada de frases prontas. <br className="hidden md:block"/> Nada de empurrão emocional que dura dois dias.</p>
-        <p className="text-slate-900 font-bold text-2xl">Aqui, a mudança começa por dentro.</p>
+        <p className="text-slate-900 font-bold text-2xl">Aqui, a mudanca começa por dentro.</p>
       </div>
 
       <div className="bg-white border border-slate-200 rounded-[32px] p-8 md:p-12 text-left space-y-6 max-w-2xl mx-auto shadow-sm">
@@ -520,7 +522,7 @@ const App = () => (
         className="w-full max-w-4xl aspect-video rounded-3xl overflow-hidden shadow-2xl bg-slate-900 border border-white/5"
       >
         <iframe
-          src="https://www.youtube.com/embed/scE6zlNIeGM?autoplay=1&mute=1&controls=0&loop=1&playlist=scE6zlNIeGM&rel=0"
+          src="https://www.youtube.com/embed/scE6zlNIeGM?autoplay=1&mute=0&controls=0&loop=1&playlist=scE6zlNIeGM&rel=0"
           className="w-full h-full"
           allow="autoplay; encrypted-media"
           allowFullScreen
