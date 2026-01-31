@@ -146,7 +146,7 @@ const Hero = () => (
           <span className="serif-font font-bold text-[#F97316] text-3xl md:text-4xl -ml-1">7P</span>
         </div>
 
-        <h1 className="text-4xl md:text-3xl font-extrabold leading-[1.1] md:leading-tight mb-4 tracking-tighter text-slate-900">
+        <h1 className="text-3xl md:text-3xl font-extrabold leading-[1.1] md:leading-tight mb-4 tracking-tighter text-slate-900">
           Descubra o método para sair da procrastinação e <span className="bg-orange-600 text-white px-2 rounded-lg">destravar</span> sua vida em <span className="bg-orange-600 text-white px-2 rounded-lg">7 dias</span>
         </h1>
 
