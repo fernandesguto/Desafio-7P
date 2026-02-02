@@ -200,16 +200,16 @@ const PainSection = () => (
       </div>
       <div className="bg-card-custom p-8 rounded-3xl border border-slate-200 shadow-sm">
         <div className="space-y-4 text-slate-600 leading-relaxed">
-          <p className="text-xl font-bold text-orange-600 italic">O Desafio 7P não é milagre.</p>
-          <p>Não promete que tua vida vai mudar em 7 dias.</p>
+          <p className="text-xl font-bold text-orange-600 italic">O Desafio 7P é a tua solução!</p>
+          <p>Mas...eu não prometo mudar tua vida em 7 dias.</p>
           
-          <p className="font-bold text-slate-900 pt-2">Ele faz algo muito mais perigoso:</p>
+          <p className="font-bold text-slate-900 pt-2">Prometo fazer algo mais importante:</p>
           
-          <p>👉 Te mostra onde tu tá presa<br />
-          👉 Te faz entender por que repete os mesmos padrões<br />
-          👉 E te entrega clareza sobre o próximo passo real, sem autoengano.</p>
+          <p>👉 Te mostrar onde tu tá presa<br />
+          👉 Te fazer entender por que repete os mesmos padrões<br />
+          👉 E te entregar clareza sobre o próximo passo real, sem autoengano.</p>
           
-          <p className="pt-2">Por que quando tu entende o que te trava, tu para de se culpar e começa a agir.</p>
+          <p className="pt-2">Por que quando tu entende o que te trava, tu para de se culpar e começa a prosperar.</p>
         </div>
       </div>
     </div>
