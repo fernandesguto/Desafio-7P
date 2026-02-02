@@ -151,7 +151,7 @@ const Hero = () => (
         </h1>
 
         <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto mb-6 font-medium leading-relaxed">
-          Sem promessa vazia. Um método prático de 7 dias pra você organizar a mente, superar a procrastinação e voltar a tomar decisões com clareza.
+          Um método prático de 7 dias pra você organizar a mente, superar a procrastinação e prosperar na vida com clareza.
         </p>
 
         {/* Vídeo posicionado abaixo do título com bordas quadradas e som ativado (mute=0) */}
