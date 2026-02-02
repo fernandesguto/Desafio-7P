@@ -146,9 +146,13 @@ const Hero = () => (
           <span className="serif-font font-bold text-[#F97316] text-3xl md:text-4xl -ml-1"><strong>7P</strong></span>
         </div>
 
-        <h1 className="text-3xl md:text-4xl font-extrabold leading-[1.1] md:leading-tight mb-4 tracking-tighter text-slate-900">
+        <h1 className="text-3xl md:text-4xl font-extrabold leading-[1.1] md:leading-tight mb-2 tracking-tighter text-slate-900">
           Cansada de tentar mudar e continuar parada? Então descubra o <span className="bg-orange-600 text-white px-2 rounded-lg">Desafio 7P</span>
         </h1>
+
+        <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto mb-6 font-medium leading-relaxed">
+          Sem promessa vazia. Um método prático de 7 dias pra você organizar a mente, superar a procrastinação e voltar a tomar decisões com clareza.
+        </p>
 
         {/* Vídeo posicionado abaixo do título com bordas quadradas e som ativado (mute=0) */}
         <div className="w-full max-w-4xl aspect-video overflow-hidden shadow-2xl bg-slate-900 border border-white/5 mx-auto mb-8">
