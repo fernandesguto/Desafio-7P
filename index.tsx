@@ -143,7 +143,7 @@ const Hero = () => (
       >
         <div className="flex items-baseline justify-center gap-0.5 mb-8 select-none">
           <span className="font-sans font-black text-slate-900 tracking-tighter text-2xl md:text-3xl"><strong>DESAFIO</strong></span>
-          <span className="serif-font font-bold text-[#F97316] text-3xl md:text-4xl -ml-1">7P</span>
+          <span className="serif-font font-bold text-[#F97316] text-3xl md:text-4xl -ml-1"><strong>7P</strong></span>
         </div>
 
         <h1 className="text-3xl md:text-4xl font-extrabold leading-[1.1] md:leading-tight mb-4 tracking-tighter text-slate-900">
@@ -549,7 +549,7 @@ const App = () => (
     {/* Footer Minimalist */}
     <footer className="py-12 border-t border-slate-200 text-center px-4 bg-white/20">
       <div className="max-w-4xl mx-auto space-y-8">
-        <h4 className="text-2xl font-black tracking-tighter text-slate-900">DESAFIO <span className="text-orange-500">7P</span></h4>
+        <h4 className="text-2xl font-black tracking-tighter text-slate-900">DESAFIO <span className="text-orange-500"><strong>7P</strong></span></h4>
         <p className="text-[10px] text-slate-400 max-w-lg mx-auto leading-relaxed">
           &copy; {new Date().getFullYear()} Desafio 7P. Todos os direitos reservados. 
         </p>
