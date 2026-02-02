@@ -516,9 +516,7 @@ const MentorCard = () => (
 const App = () => (
   <div className="min-h-screen relative overflow-hidden">
     {/* Header FOMO */}
-    <div className="w-full bg-orange-600 text-white text-center py-2 text-[10px] md:text-xs font-black uppercase tracking-widest border-b border-orange-500">
-      Atenção: Vagas LIMITADAS para a turma promocional
-    </div>
+   
 
     <Hero />
     
