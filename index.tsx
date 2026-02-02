@@ -147,7 +147,7 @@ const Hero = () => (
         </div>
 
         <h1 className="text-3xl md:text-4xl font-extrabold leading-[1.1] md:leading-tight mb-4 tracking-tighter text-slate-900">
-          Descubra o método para sair da procrastinação e <span className="bg-orange-600 text-white px-2 rounded-lg">destravar</span> a sua vida em <br /><span className="bg-orange-600 text-white px-2 rounded-lg">7 dias</span>
+          Cansada de tentar mudar e continuar parada? Então descubra o <span className="bg-orange-600 text-white px-2 rounded-lg">Desafio 7P</span>
         </h1>
 
         {/* Vídeo posicionado abaixo do título com bordas quadradas e som ativado (mute=0) */}
