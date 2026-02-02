@@ -482,9 +482,7 @@ const FOMOPrice = () => (
         </div>
       </div>
       
-      <p className="mt-8 text-sm text-slate-400">
-        *O valor de R$ 47,00 é uma oferta de lançamento válida por tempo limitado.
-      </p>
+     
     </div>
   </section>
 );
