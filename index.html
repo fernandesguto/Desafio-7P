@@ -1,658 +1,466 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Desafio 7P | 7 Dias Para Prosperar</title>
-  <meta name="description" content="Liberte o passado e reprograme sua mente para a prosperidade em 7 dias." />
+  <title>Desafio 7P - 7 dias para Prosperar</title>
+  <meta name="description" content="O tempo está acabando. Recupere o controle da sua vida em 7 dias." />
   
-  <!-- Favicon 7P Logo -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia, Playfair Display, serif' font-weight='bold' font-size='80' fill='%23F97316'%3E7P%3C/text%3E%3C/svg%3E">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-weight='bold' font-size='80' fill='%23F97316'%3E7P%3C/text%3E%3C/svg%3E">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
   <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
-    h1, h2, h3, h4, h5, h6, .serif-font { font-family: 'Playfair Display', serif; }
-    .dot-grid-subtle { background-image: radial-gradient(#00000010 1px, transparent 1px); background-size: 24px 24px; }
+    * { font-family: 'Inter', Arial, Helvetica, sans-serif !important; }
+    html { scroll-behavior: smooth; }
+    .glow-orange { text-shadow: 0 0 15px rgba(249, 115, 22, 0.3); }
+    .bg-light-yellow { background-color: #FFFDF2; }
+    .bg-card-custom { background: #FFFFFF; }
+    .glass-border { border: 1px solid rgba(0, 0, 0, 0.08); }
+    .glass-card-hover:hover { background: #FFFFFF; border-color: rgba(249, 115, 22, 0.3); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1); }
+    .dot-grid { background-image: radial-gradient(#00000015 1px, transparent 1px); background-size: 24px 24px; }
+    .serif-font { font-family: Georgia, serif !important; }
   </style>
 
-  <!-- Babel -->
+  <!-- Bibliotecas Core (UMD) -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  
-  <!-- Import Map -->
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/"
-  }
-}
-</script>
+  <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+  <script src="https://unpkg.com/lucide-react@0.292.0/dist/umd/lucide-react.js"></script>
+<link rel="stylesheet" href="/index.css">
 </head>
-<body class="bg-white">
-  <div id="root"></div>
+<body class="bg-light-yellow text-slate-800 selection:bg-orange-500 selection:text-white">
+  <div id="root" class="dot-grid min-h-screen"></div>
 
-  <script type="text/babel" data-type="module">
-    import React, { useState, useEffect } from 'react';
-    import { createRoot } from 'react-dom/client';
-    import { motion, AnimatePresence } from 'framer-motion';
-    import { 
-      Brain, HeartHandshake, Sparkles, Radio, Gavel, Sprout, Zap, Infinity, 
-      Microscope, CheckCircle, Fingerprint, ArrowRight, Star, ArrowUp, Tag,
-      Clock, ShieldCheck, Users, MessageCircle, Quote
-    } from 'lucide-react';
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+    const { motion, AnimatePresence } = window.Motion;
 
-    // --- DATA & CONSTANTS ---
+    // Helper para ícones Lucide no formato UMD
+    const Icon = ({ name, ...props }) => {
+      const LucideIcon = window.LucideReact[name];
+      return LucideIcon ? <LucideIcon {...props} /> : null;
+    };
 
-    const LESSONS = [
+    const MODULES_DATA = [
       {
-        day: "Dia 1",
+        day: "DIA 1",
         title: "A Mente: Consciente x Subconsciente",
         description: "Entenda a teoria do Iceberg. Sua mente consciente (metas, lógica) é apenas 5% da força. Os outros 95% são o subconsciente que governa seus padrões automáticos.",
-        iconName: "Brain",
+        icon: "Brain",
         highlight: "O fim da autossabotagem começa aqui."
       },
       {
-        day: "Dia 2",
+        day: "DIA 2",
         title: "Limpeza Emocional Profunda",
-        description: "Reorganização interna e resgate da criança interior. Não é sobre reviver dor, é sobre tirar o peso que não serve mais. Prática com mantra de segurança emocional.",
-        iconName: "HeartHandshake",
+        description: "Reorganização interna e resgate da para tirar o peso que não serve mais. Prática com mantra de segurança emocional.",
+        icon: "Heart",
         highlight: "Reprogramação sensorial."
       },
       {
-        day: "Dia 3",
+        day: "DIA 3",
         title: "Limpeza Física e Ambiental",
-        description: "Seu ambiente reflete seu estado interno. Aprenda como a desordem, objetos quebrados e energias estagnadas bloqueiam sua prosperidade.",
-        iconName: "Sparkles",
+        description: "Aprenda como a desordem, objetos quebrados e energias estagnadas bloqueiam sua prosperidade. Receba um PDF exclusivo com um passo a passo para te guiar.",
+        icon: "Sparkles",
         highlight: "O externo muda o interno."
       },
       {
-        day: "Dia 4",
+        day: "DIA 4",
         title: "Quem Eu Sou de Verdade",
-        description: "Identidade e Vibração. Você é uma antena. Aprenda a sintonizar na frequência correta (rádio) para atrair situações compatíveis com sua nova realidade.",
-        iconName: "Radio",
+        description: "Identidade e Vibração. Você é uma antena. Aprenda a sintonizar na frequência correta para atrair situações compatíveis com sua nova realidade.",
+        icon: "Radio",
         highlight: "Tire as camadas de trauma."
       },
       {
-        day: "Dia 5",
+        day: "DIA 5",
         title: "Autorresponsabilidade Radical",
         description: "Saia da posição de vítima. Você é o diretor, roteirista e protagonista da sua peça de teatro. Assuma o leme da sua vida e pare de culpar o passado.",
-        iconName: "Gavel",
+        icon: "Gavel",
         highlight: "O poder volta para suas mãos."
       },
       {
-        day: "Dia 6",
+        day: "DIA 6",
         title: "O Poder dos Pensamentos e Palavras",
         description: "A ciência da planta: palavras têm energia biológica. Aprenda a neuroplasticidade prática para treinar seu cérebro a parar de vibrar na escassez.",
-        iconName: "Sprout",
+        icon: "Sprout",
         highlight: "Coerência vibracional."
       },
       {
-        day: "Dia 7",
+        day: "DIA 7",
         title: "Manifestação Prática",
-        description: "Agir como se já fosse. A neurociência por trás da Lei da Atração. Alinhe pensamento, emoção, vibração e ação para colher resultados reais.",
-        iconName: "Zap",
+        description: "Agir como se já fosse. A neurociência por trás da Lei da Atração. Alinhe pensamento, emoção, vibração e action para colher resultados reais.",
+        icon: "Zap",
         highlight: "O segredo da cocriação."
       }
     ];
 
-    const BONUSES = [
+    const BONUS_DATA = [
       {
+        day: "BÔNUS",
         title: "Dinâmica: Cura da Ancestralidade",
         description: "Rompa padrões familiares que te prendem sem tu perceber e encerre ciclos de dor para seguir com mais liberdade.",
-        oldPrice: "R$ 197,00",
-        newPrice: "R$ 0,00",
-        footer: "AULA EXCLUSIVA DE LIBERTAÇÃO."
+        promoPrice: "De R$ 197,00 por R$ 0,00",
+        icon: "Infinity",
+        highlight: "Aula exclusiva de libertação."
       },
       {
+        day: "BÔNUS",
         title: "PDF Planner Rotina Equilibrada",
         description: "Avalie sua vida por áreas, defina metas com prazo, organize sua semana e seu dia com mais consciência.",
-        oldPrice: "R$ 47,00",
-        newPrice: "R$ 0,00",
-        footer: "ORGANIZAÇÃO E FOCO."
+        promoPrice: "De R$ 47,00 por R$ 0,00",
+        icon: "CalendarCheck",
+        highlight: "Organização e foco."
       }
     ];
 
-    const BENEFITS = [
-      {
-        title: "Neurociência Aplicada",
-        description: "Nada de misticismo vazio. Entenda biologicamente como pensamentos geram sentimentos, que geram ações e resultados.",
-        iconName: "Microscope"
-      },
-      {
-        title: "Prática Real",
-        description: "Exercícios diários tangíveis: do 'mural dos sonhos' à limpeza física de gavetas. Ação gera movimento.",
-        iconName: "CheckCircle"
-      },
-      {
-        title: "Mudança de Identidade",
-        description: "Não vamos apenas 'melhorar' quem você é. Vamos descobrir quem você nasceu para ser antes das travas do mundo.",
-        iconName: "Fingerprint"
-      }
+    const TESTIMONIAL_PRINTS = [
+      "https://assets.zyrosite.com/A1azoVg7xQilMZ9l/1-W8iUGPCgIFDIGyqE.png",
+      "https://assets.zyrosite.com/A1azoVg7xQilMZ9l/2-hSAr4gl9IZJT2Tza.png",
+      "https://assets.zyrosite.com/A1azoVg7xQilMZ9l/3-IcyBnFHMvA5xsuR2.png"
     ];
 
-    const TESTIMONIALS = [
-      {
-        name: "Fernanda Lima",
-        text: "Eu achava que meu problema era falta de sorte, mas entendi que era minha frequência. Depois do exercício da criança interior, destravei uma promoção no trabalho que esperava há 2 anos.",
-        
-      },
-      {
-        name: "Juliana Mendes",
-        text: "A comunidade no WhatsApp é incrível! Ver outras mulheres evoluindo me deu força. O material semanal me mantém no foco. Nunca me senti tão acolhida.",
-        
-      },
-      {
-        name: "Mariana Costa",
-        text: "Eu vivia no teto invisível. Ganhava e gastava tudo. A aula de autorresponsabilidade foi um soco no estômago necessário. Hoje tenho minha reserva e paz mental.",
-        
-      },
-      {
-        name: "Patrícia Alves",
-        text: "Simplesmente transformador. A analogia do rádio mudou tudo. Parei de sintonizar na escassez e coisas mágicas começaram a acontecer. O Desafio 7P vale cada centavo.",
-        
-      },
-      {
-        name: "Camila Rocha",
-        text: "A aula extra de ancestralidade foi o que eu precisava para perdoar minha mãe e seguir minha vida. Me sinto leve, como se tivesse tirado uma mochila de pedras das costas.",
-        
-      }
-    ];
-
-    const ICON_MAP = {
-      Brain, HeartHandshake, Sparkles, Radio, Gavel, Sprout, Zap, Infinity,
-      Microscope, CheckCircle, Fingerprint, Users, MessageCircle
-    };
-
-    // --- COMPONENTS ---
-
-    const LessonCard = ({ lesson, index }) => {
-      const Icon = ICON_MAP[lesson.iconName] || Sparkles;
-      
-      let borderClass = 'border-slate-100 bg-white';
-      let badgeClass = 'bg-slate-100 text-slate-600';
-      let iconBgClass = 'bg-slate-50 text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300';
-      let highlightColor = 'text-slate-700';
-      let dotColor = 'bg-green-500';
+    const LiveCounter = () => {
+      const [count, setCount] = useState(34);
+      useEffect(() => {
+        const interval = setInterval(() => {
+          setCount(prev => {
+            const change = Math.floor(Math.random() * 3) - 1;
+            const next = prev + change;
+            return Math.min(50, Math.max(12, next));
+          });
+        }, 4000);
+        return () => clearInterval(interval);
+      }, []);
 
       return (
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: index * 0.1, duration: 0.5 }}
-          className={`relative p-6 rounded-2xl border ${borderClass} hover:shadow-xl hover:shadow-slate-200/50 hover:-translate-y-1 transition-all duration-300 group shadow-lg shadow-slate-100`}
-        >
-          <div className="flex items-start justify-between mb-4">
-            <span className={`px-3 py-1 text-xs font-bold tracking-wider uppercase rounded-full ${badgeClass}`}>
-              {lesson.day}
+        <div className="flex items-center gap-2 text-slate-500 text-sm font-medium mb-4 justify-center">
+          <Icon name="Eye" size={16} className="text-slate-400" />
+          <span><span className="text-slate-900 font-bold">{count}</span> assistindo agora</span>
+        </div>
+      );
+    };
+
+    const Countdown = () => {
+      const [timeLeft, setTimeLeft] = useState({ min: 14, sec: 59 });
+
+      useEffect(() => {
+        const timer = setInterval(() => {
+          if (timeLeft.sec > 0) {
+            setTimeLeft(prev => ({ ...prev, sec: prev.sec - 1 }));
+          } else if (timeLeft.min > 0) {
+            setTimeLeft(prev => ({ min: prev.min - 1, sec: 59 }));
+          }
+        }, 1000);
+        return () => clearInterval(timer);
+      }, [timeLeft]);
+
+      return (
+        <div className="flex items-center gap-2 text-orange-600 font-bold bg-orange-600/5 px-4 py-2 rounded-full border border-orange-600/10">
+          <Icon name="Timer" size={18} />
+          <span>OFERTA EXPIRA EM BREVE</span>
+        </div>
+      );
+    };
+
+    const ModuleCard = ({ m }) => {
+      const isBonus = m.day === "BÔNUS";
+      return (
+        <div className={`${isBonus ? 'bg-orange-50 border border-orange-100 shadow-xl shadow-orange-500/5' : 'bg-white glass-border glass-card-hover'} p-8 rounded-[32px] flex flex-col h-full group transition-all duration-300`}>
+          <div className="flex justify-between items-start mb-6">
+            <span className={`text-[10px] font-black tracking-widest px-3 py-1 rounded-md uppercase ${isBonus ? 'bg-orange-500 text-white' : 'text-slate-400 bg-slate-50 border border-slate-100'}`}>
+              {m.day}
             </span>
-            <div className={`p-2 rounded-lg shadow-sm ${iconBgClass}`}>
-              <Icon size={24} />
+            <div className={`p-2 rounded-xl ${isBonus ? 'text-orange-600' : 'text-slate-400 group-hover:text-orange-500'} transition-colors`}>
+              <Icon name={m.icon} size={24} />
             </div>
           </div>
-          
-          <h3 className="text-xl font-bold text-slate-900 mb-3 serif-font leading-tight">
-            {lesson.title}
-          </h3>
-          
-          <p className="text-slate-500 text-sm leading-relaxed mb-4">
-            {lesson.description}
-          </p>
-
-          <div className="pt-4 border-t border-slate-100">
-            <p className={`text-xs font-semibold flex items-center gap-2 ${highlightColor}`}>
-              <span className={`w-2 h-2 rounded-full ${dotColor}`}></span>
-              {lesson.highlight}
-            </p>
+          <h3 className={`text-xl font-bold mb-4 leading-tight transition-colors ${isBonus ? 'text-slate-900' : 'text-slate-900 group-hover:text-orange-500'}`}>{m.title}</h3>
+          <p className={`text-sm leading-relaxed mb-4 ${isBonus ? 'text-slate-700' : 'text-slate-600'}`}>{m.description}</p>
+          {m.promoPrice && (
+            <div className="mb-8 flex-grow">
+               <p className="text-orange-600 font-black text-2xl italic tracking-tighter leading-none">
+                 {m.promoPrice}
+               </p>
+            </div>
+          )}
+          {!m.promoPrice && <div className="mb-8 flex-grow" />}
+          <div className={`pt-6 border-t mt-auto ${isBonus ? 'border-orange-100' : 'border-slate-100'}`}>
+            <div className={`flex items-center gap-2 text-xs font-bold uppercase tracking-wider ${isBonus ? 'text-orange-700' : 'text-slate-400 group-hover:text-orange-500'}`}>
+              <div className={`w-2 h-2 rounded-full ${isBonus ? 'bg-orange-600' : 'bg-green-500'}`}></div>
+              {m.highlight}
+            </div>
           </div>
-        </motion.div>
+        </div>
       );
     };
 
-    const Hero = () => {
-      return (
-        <section className="relative pt-8 pb-10 md:pt-16 md:pb-20 flex justify-center overflow-hidden bg-white text-slate-900">
-          {/* Background Pattern - Subtle */}
-          <div className="absolute inset-0 z-0 opacity-20">
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]" />
-          </div>
-
-          <div className="container mx-auto px-4 z-10 text-center max-w-4xl mt-2">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Logo Replacement */}
-              <div className="flex items-baseline justify-center gap-0.5 mb-12 select-none">
-                <span className="font-sans font-black text-slate-900 tracking-tighter text-2xl md:text-3xl">DESAFIO</span>
-                <span className="serif-font font-bold text-[#F97316] text-3xl md:text-4xl -ml-1">7P</span>
+    const App = () => (
+      <div className="min-h-screen relative overflow-hidden">
+        <section className="relative pt-12 pb-6 px-4 overflow-hidden text-center">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-orange-600/5 rounded-full blur-[120px] -z-10" />
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="flex flex-col items-center gap-6">
+              <div className="flex items-baseline justify-center gap-0.5 mb-8 select-none">
+                <span className="font-sans font-black text-slate-900 tracking-tighter text-2xl md:text-3xl"><strong>DESAFIO</strong></span>
+                <span className="serif-font font-bold text-[#F97316] text-3xl md:text-4xl -ml-1"><strong>7P</strong></span>
               </div>
-
-              <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold mb-6 md:mb-8 leading-tight serif-font text-slate-900">
-                7 Dias Para <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">Prosperar</span>
+              <h1 className="text-3xl md:text-4xl font-extrabold leading-[1.1] md:leading-tight mb-2 tracking-tighter text-slate-900">
+                Cansada de tentar mudar e continuar parada? Então descubra o <span className="bg-orange-600 text-white px-2 rounded-lg">Desafio 7P</span>
               </h1>
-
-              <p className="text-slate-600 text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-                Aprenda a reprogramar seu subconsciente, limpar dores emocionais e manifestar a realidade que você merece.
+              <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto mb-6 font-medium leading-relaxed">
+                Um método prático de 7 dias pra você organizar a mente, superar a procrastinação e prosperar na vida com clareza.
               </p>
-            </motion.div>
-          </div>
-        </section>
-      );
-    };
-
-    const ProblemAgitation = () => {
-      return (
-        <section className="py-10 md:py-20 bg-white text-slate-800">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <motion.div 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-8 md:mb-16"
-            >
-              <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6 serif-font text-slate-900">
-                Você sente que está vivendo no "Piloto Automático"?
-              </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto rounded-full mb-6 md:mb-8"></div>
-              <div className="text-base md:text-lg text-slate-600 leading-relaxed space-y-4">
+              <div className="w-full max-w-4xl aspect-video overflow-hidden shadow-2xl bg-slate-900 border border-white/5 mx-auto mb-8">
+                <iframe
+                  src="https://www.youtube.com/embed/scE6zlNIeGM?autoplay=1&mute=0&controls=0&loop=1&playlist=scE6zlNIeGM&rel=0"
+                  className="w-full h-full"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  frameBorder="0"
+                ></iframe>
+              </div>
+              <div className="text-slate-600 text-lg md:text-xl max-w-2xl leading-relaxed space-y-4 text-justify mb-2 text-center md:text-justify">
                 <p>Tu ta cansada, eu sei. E não é porque tu é fraca. É porque ninguém nunca te mostrou por onde começar.</p>
                 <p>Tu trabalha. Se esforça. Aguenta tudo calada. E no fim do dia sente que a vida não anda.</p>
                 <p>Não é falta de vontade. Não é preguiça. É desorientação.</p>
-                <p className="font-bold text-slate-900 italic">👉 O problema não é a tua vida.<br />👉 É tu tentar mudar sem saber o que precisa ser mudado primeiro.</p>
+                <p className="font-bold text-slate-900">👉 O problema não é a tua vida.<br />👉 É tu tentar mudar sem saber o que precisa ser mudado primeiro.</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <LiveCounter />
+                <Countdown />
+              </div>
+              <div className="mt-6 flex flex-col gap-4 w-full max-sm mx-auto text-center">
+                <a href="https://pay.hotmart.com/Y103405139M?bid=1765751031490" target="_blank" rel="noopener noreferrer" className="group bg-orange-600 hover:bg-orange-500 text-white py-5 px-8 rounded-xl font-bold text-lg shadow-xl shadow-orange-600/20 transition-all flex items-center justify-center gap-3">
+                  QUERO COMEÇAR AGORA
+                  <Icon name="ArrowRight" size={20} className="group-hover:translate-x-1 transition-transform" />
+                </a>
+                <p className="text-xs text-slate-400 flex items-center justify-center gap-2">
+                  <Icon name="Lock" size={12} /> Pagamento 100% seguro pela Hotmart
+                </p>
               </div>
             </motion.div>
+          </div>
+        </section>
 
-            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-              <div className="relative flex justify-center md:block">
-                 <div className="absolute inset-0 bg-gradient-to-tr from-amber-200 to-rose-200 rounded-2xl blur-xl opacity-50 transform rotate-3 scale-95"></div>
-                 <img 
-                  src="https://assets.zyrosite.com/A1azoVg7xQilMZ9l/freepik__luananovo-a-professional-indoor-portrait-of-a-conf__79448-Yh120t9wXnt4SIzZ.png" 
-                  alt="Luana - Mentora do Desafio 7P" 
-                  className="relative rounded-2xl shadow-2xl shadow-slate-200 z-10 w-full max-sm:max-w-xs md:max-w-full object-cover h-auto aspect-[3/4] transition-all duration-500 hover:scale-[1.01]"
-                 />
+        <section className="py-10 px-4 bg-white/40 border-y border-slate-200">
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold text-slate-900">O "Teto Invisível" que te impede de prosperar</h2>
+              <div className="space-y-4 text-slate-600 leading-relaxed text-justify">
+                <p>Tu vive cansada. Trabalha. Se esforça. Aguenta calada. Se cobra. E no final do dia sente que nada mudou.</p>
+                <p>Tu sente que pode mais. Mas não sabe por onde começar nem o que tá te travando de verdade.</p>
+                <p>E isso te faz duvidar de ti. Mesmo sendo dedicada. Mesmo sendo esforçada. Mesmo sabendo, lá no fundo, que essa não é a vida que tu nasceu pra viver.</p>
               </div>
-              
-              <div className="space-y-4 md:space-y-6">
-                <div className="bg-slate-50 p-5 md:p-6 rounded-xl shadow-lg shadow-slate-100 border-l-4 border-amber-500 hover:bg-white transition-colors">
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">O Teto Invisível</h4>
-                  <p className="text-slate-600 text-sm md:text-base">Você ganha dinheiro, mas logo o carro quebra ou a geladeira pifa? Isso é sua vibração interna repelindo o excesso que você acha que "não merece".</p>
-                </div>
-                <div className="bg-slate-50 p-5 md:p-6 rounded-xl shadow-lg shadow-slate-100 border-l-4 border-slate-400 hover:bg-white transition-colors">
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">Repetição de Padrões</h4>
-                  <p className="text-slate-600 text-sm md:text-base">"Dos 0 aos 7 anos, você era uma esponja." Absorveu medos e crenças dos seus pais que hoje governam 90% das suas decisões.</p>
-                </div>
-                <div className="bg-slate-50 p-5 md:p-6 rounded-xl shadow-lg shadow-slate-100 border-l-4 border-amber-500 hover:bg-white transition-colors">
-                  <h4 className="font-bold text-slate-900 text-lg mb-2">A Solução</h4>
-                  <p className="text-slate-600 text-sm md:text-base">Se foi aprendido sem consciência, pode ser mudado COM consciência. Você não é seus traumas.</p>
-                </div>
+            </div>
+            <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+              <div className="space-y-4 text-slate-600 leading-relaxed text-justify">
+                <p className="text-xl font-bold text-orange-600 italic">O Desafio 7P é a tua solução!</p>
+                <p>Mas...eu não prometo mudar tua vida em 7 dias.</p>
+                <p className="font-bold text-slate-900 pt-2 text-left">Prometo fazer algo mais importante:</p>
+                <p>👉 Te mostrar onde tu tá presa<br />
+                👉 Te fazer entender por que repete os mesmos padrões<br />
+                👉 E te entregar clareza sobre o próximo passo real, sem autoengano.</p>
+                <p className="pt-2">Por que quando tu entende o que te trava, tu para de se culpar e começa a prosperar.</p>
               </div>
             </div>
           </div>
         </section>
-      );
-    };
 
-    const Modules = () => {
-      return (
-        <section className="py-12 md:py-24 bg-white relative overflow-hidden" id="cronograma">
-          {/* Decorative bg elements - Very Subtle */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-slate-50 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 opacity-60" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-50 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2 opacity-60" />
-
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="text-center max-w-3xl mx-auto mb-8 md:mb-16">
-              <span className="text-amber-600 font-bold tracking-wider uppercase text-sm">O Cronograma</span>
-              <h2 className="text-2xl md:text-5xl font-bold mt-3 mb-4 md:mb-6 serif-font text-slate-900">
-                7 Dias de Profunda Transformação
-              </h2>
-              <p className="text-slate-600 text-base md:text-lg">
-                Um método passo-a-passo para sair da estagnação e entrar no fluxo da prosperidade.
-              </p>
+        <section className="pt-2 pb-10 px-4 max-w-4xl mx-auto text-center">
+          <br /><h2 className="text-3xl md:text-5xl font-black mb-8 leading-tight text-slate-900">A verdade que ninguém te fala</h2>
+          <div className="space-y-6 text-slate-600 text-lg md:text-xl leading-relaxed">
+            <p>Você não trava porque é fraca.</p>
+            <p>Você trava porque tentou mudar a vida do lugar errado e ninguém te ensinou a regra do jogo interno.</p>
+            <p>Enquanto você tenta organizar a vida por fora, sua mente continua no automático, repetindo os mesmos padrões.</p>
+            <div className="bg-white border border-slate-200 rounded-[32px] p-8 md:p-12 text-left space-y-6 max-w-2xl mx-auto shadow-sm my-10">
+              <p className="font-black text-slate-400 mb-4 uppercase tracking-widest text-xs">Hoje você está assim:</p>
+              <ul className="space-y-4 text-slate-700 font-medium text-sm md:text-base">
+                <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500 font-bold text-lg">❌</span><span className="text-justify leading-relaxed">Acorda cheia de intenção, mas perde o controle do dia</span></li>
+                <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500 font-bold text-lg">❌</span><span className="text-justify leading-relaxed">Começa animada e desiste no meio do caminho</span></li>
+                <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500 font-bold text-lg">❌</span><span className="text-justify leading-relaxed">Procrastina mesmo sabendo o que precisa fazer</span></li>
+                <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500 font-bold text-lg">❌</span><span className="text-justify leading-relaxed">Se sente cansada sem entender por quê</span></li>
+                <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500 font-bold text-lg">❌</span><span className="text-justify leading-relaxed">Vive repetindo promessas que não cumpre</span></li>
+                <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500 font-bold text-lg">❌</span><span className="text-justify leading-relaxed">Tenta mudar tudo ao mesmo tempo e acaba travando</span></li>
+              </ul>
             </div>
+            <p className="text-slate-500">Enquanto isso,</p>
+            <p className="text-orange-600 font-bold uppercase">o tempo passa…</p>
+            <p className="text-orange-600 font-bold uppercase">a energia vai embora…</p>
+            <p className="text-slate-900 font-black text-2xl">e a vida continua exatamente no mesmo lugar.</p>
+          </div>
+          <br />
+          <div className="mt-6 flex flex-col gap-4 w-full max-sm mx-auto">
+            <a href="https://pay.hotmart.com/Y103405139M?bid=1765751031490" target="_blank" rel="noopener noreferrer" className="group bg-orange-600 hover:bg-orange-500 text-white py-5 px-8 rounded-xl font-bold text-lg shadow-xl shadow-orange-600/20 transition-all flex items-center justify-center gap-3">
+              QUERO SAIR DO AUTOMÁTICO
+              <Icon name="ArrowRight" size={20} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+            <p className="text-xs text-slate-400 flex items-center justify-center gap-2">
+              <Icon name="Lock" size={12} /> Pagamento 100% seguro pela Hotmart
+            </p>
+          </div>
+        </section>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-              {LESSONS.map((lesson, index) => (
-                <LessonCard key={index} lesson={lesson} index={index} />
-              ))}
+        <section className="py-10 px-4 max-w-4xl mx-auto">
+          <div className="text-center space-y-10">
+            <h2 className="text-3xl md:text-5xl font-black text-orange-600 leading-tight tracking-tight">O Desafio 7P existe para corrigir isso</h2>
+            <div className="text-slate-600 text-lg md:text-xl leading-relaxed space-y-6">
+              <p>Dentro do Desafio 7P, você não recebe motivação vazia. <br className="hidden md:block"/> Você recebe <strong>processo</strong>.</p>
+              <p>Nada de frases prontas. <br className="hidden md:block"/> Nada de empurrão emocional que dura dois dias.</p>
+              <p className="text-slate-900 font-bold text-2xl">Aqui, a mudanca começa por dentro.</p>
+            </div>
+            <div className="bg-white border border-slate-200 rounded-[32px] p-8 md:p-12 text-left space-y-6 max-w-2xl mx-auto shadow-sm">
+              <p className="font-black text-slate-400 mb-4 uppercase tracking-widest text-xs">Você aprende a:</p>
+              <ul className="space-y-4 text-slate-700 font-medium">
+                <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500 font-bold text-xl">✓</span> <span className="text-justify leading-relaxed">Entender por que sua mente te trava mesmo querendo mudar</span></li>
+                <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500 font-bold text-xl">✓</span> <span className="text-justify leading-relaxed">Identificar padrões emocionais que te mantêm no automático</span></li>
+                <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500 font-bold text-xl">✓</span> <span className="text-justify leading-relaxed">Organizar pensamentos antes de tomar decisões importantes</span></li>
+                <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500 font-bold text-xl">✓</span> <span className="text-justify leading-relaxed">Sair do ciclo de cansaço, confusão e procrastinação</span></li>
+                <li className="flex gap-4"><span className="flex-shrink-0 text-orange-500 font-bold text-xl">✓</span> <span className="text-justify leading-relaxed">Criar clareza e direção sem depender de força de vontade</span></li>
+              </ul>
             </div>
           </div>
         </section>
-      );
-    };
 
-    const BonusSection = () => {
-      return (
-        <section className="py-20 px-4 bg-[#FFFDF2] dot-grid-subtle">
+        <section className="py-12 px-4 relative overflow-hidden">
+          <div className="absolute top-1/2 left-0 w-64 h-64 bg-orange-600/5 rounded-full blur-[100px] -z-10" />
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-orange-100 shadow-sm mb-6">
-                <span className="text-[#F97316] text-[10px] font-black uppercase tracking-widest flex items-center gap-1.5">
-                  <Star size={12} fill="currentColor" /> PRESENTES PARA VOCÊ
-                </span>
-              </div>
-              <h2 className="text-3xl md:text-6xl font-black text-slate-900 leading-tight">
-                E você vai ganhar agora 2 bônus exclusivos!
-              </h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight text-slate-900">Veja tudo o que você vai <span className="text-orange-500 italic">receber!</span></h2>
+              <p className="text-slate-500 max-w-2xl mx-auto">Um passo a passo guiado de 7 dias para reprogramar sua mente e ambiente para o fluxo da abundância.</p>
             </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              {MODULES_DATA.map((m, i) => <ModuleCard key={`module-${i}`} m={m} />)}
+            </div>
+            <div className="text-center mb-8 pt-8">
+              <div className="flex flex-col items-center mb-10">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-orange-500/5 text-orange-600 rounded-full border border-orange-500/10 text-[10px] font-black uppercase tracking-widest mb-4">✨ PRESENTES PARA VOCÊ</div>
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">E você vai ganhar agora 2 bônus exclusivos!</h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                {BONUS_DATA.map((m, i) => <ModuleCard key={`bonus-${i}`} m={m} />)}
+              </div>
+            </div>
+          </div>
+        </section>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {BONUSES.map((bonus, idx) => (
-                <div key={idx} className="bg-white rounded-[40px] p-8 md:p-12 shadow-2xl shadow-orange-100/30 border border-orange-50 flex flex-col items-center text-center relative overflow-hidden group">
-                  <div className="bg-[#F97316] text-white px-4 py-1 rounded-lg text-xs font-black uppercase tracking-widest mb-8">
-                    BÔNUS
-                  </div>
-                  
-                  <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-6 leading-tight serif-font">
-                    {bonus.title}
-                  </h3>
-                  
-                  <p className="text-slate-500 text-sm md:text-base leading-relaxed mb-8 max-w-sm">
-                    {bonus.description}
-                  </p>
-                  
-                  <div className="mb-12">
-                    <p className="italic font-bold text-2xl md:text-4xl text-[#F97316] tracking-tighter">
-                      <span className="opacity-70">De {bonus.oldPrice} </span> 
-                      <span className="text-[#F97316]">por {bonus.newPrice}</span>
-                    </p>
-                  </div>
-                  
-                  <div className="w-full h-px bg-slate-100 mb-8" />
-                  
-                  <div className="flex items-center gap-2 text-[10px] md:text-xs font-black text-[#F97316] tracking-widest uppercase">
-                    <div className="w-2 h-2 rounded-full bg-[#F97316]" />
-                    {bonus.footer}
-                  </div>
+        <section className="py-10 px-4">
+          <div className="max-w-4xl mx-auto bg-green-500/5 border border-green-500/10 rounded-[40px] p-8 md:p-12 text-center relative overflow-hidden group">
+            <div className="absolute top-0 right-0 p-8 opacity-5 -rotate-12 group-hover:rotate-0 transition-transform duration-700">
+              <Icon name="MessageCircle" size={120} className="text-green-600" />
+            </div>
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-green-500/10 text-green-700 rounded-full border border-green-500/20 text-[10px] font-black uppercase tracking-widest mb-6">
+                <Icon name="Zap" size={12} /> Acesso Imediato
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight text-slate-900">Grupo VIP de Alunas no <span className="text-green-600">WhatsApp</span></h2>
+              <p className="text-slate-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 text-justify md:text-center">
+                Ao garantir sua vaga, você será direcionada para o nosso grupo exclusivo de alunas. Lá é o lugar onde a mágica acontece fora das aulas: troca de ideias, materiais extras e suporte próximo.
+              </p>
+              <div className="grid md:grid-cols-3 gap-6 text-left">
+                <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                  <Icon name="CheckCircle" size={20} className="text-green-600 mb-3" />
+                  <h4 className="font-bold text-slate-900 mb-2">Material Complementar</h4>
+                  <p className="text-sm text-slate-600">PDFs e guias práticos enviados diretamente no seu celular para facilitar sua aplicação.</p>
                 </div>
+                <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                  <Icon name="Users" size={20} className="text-green-600 mb-3" />
+                  <h4 className="font-bold text-slate-900 mb-2">Troca de Ideias</h4>
+                  <p className="text-sm text-slate-600">Compartilhe insights e aprenda com a jornada de outras mulheres que buscam o mesmo que você.</p>
+                </div>
+                <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                  <Icon name="Sparkles" size={20} className="text-green-600 mb-3" />
+                  <h4 className="font-bold text-slate-900 mb-2">Material Extra</h4>
+                  <p className="text-sm text-slate-600">Conteúdos bônus e avisos importantes em primeira mão para você não perder nada.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="pt-8 pb-0 px-4 bg-white/40 border-y border-slate-200">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 md:mb-10 tracking-tight text-center text-slate-900">O que dizem nossas <span className="text-orange-500">alunas</span>:</h2>
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-0 justify-center">
+              {TESTIMONIAL_PRINTS.map((src, i) => (
+                <motion.img 
+                  key={`testimonial-img-${i}`}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  src={src} 
+                  alt={`Depoimento ${i + 1}`} 
+                  className="w-full max-w-[380px] h-auto"
+                />
               ))}
             </div>
           </div>
         </section>
-      );
-    };
 
-    const MentorSection = () => {
-      return (
-        <section className="py-20 px-4 bg-white relative">
-          <div className="max-w-6xl mx-auto">
-            <div className="bg-white rounded-[40px] p-8 md:p-16 border border-slate-100 shadow-sm flex flex-col md:flex-row items-center gap-12">
-              <div className="w-full md:w-[40%]">
-                <img 
-                  src="https://assets.zyrosite.com/A1azoVg7xQilMZ9l/freepik__luananovo-a-professional-indoor-portrait-of-a-conf__79448-Yh120t9wXnt4SIzZ.png" 
-                  alt="Luana Soares" 
-                  className="w-full h-auto rounded-[32px] object-cover shadow-xl"
-                />
-              </div>
-              <div className="w-full md:w-[60%] space-y-6">
-                <span className="text-[#F97316] font-bold tracking-[0.2em] uppercase text-xs">
-                  A MENTORA
-                </span>
-                <h2 className="text-4xl md:text-5xl font-bold text-slate-900">
-                  Luana Soares
-                </h2>
-                <div className="space-y-6 text-slate-600 text-lg leading-relaxed italic">
-                  <p>
-                    Luana Soares é apaixonada por estudos sobre inteligência emocional, com foco em ajudar pessoas que queiram ressignificar suas histórias e conquistarem uma vida extraordinária.
-                  </p>
-                  <p>
-                    Com uma jornada pessoal marcada por superação, Luana passou por um profundo processo de transformação após vivências impactantes em treinamentos de autoconhecimento. A partir daí, decidiu transformar sua dor em missão de vida.
-                  </p>
-                  <p>
-                    Sua trajetória de cura e evolução pessoal se tornou a base para seu trabalho, e agora ela inspira e capacita others a também escreverem uma nova história.
-                  </p>
-                </div>
+        <section className="py-24 px-4">
+          <div className="max-w-5xl mx-auto bg-white border border-slate-100 rounded-[40px] p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 shadow-sm">
+            <div className="w-full md:w-1/3 relative group">
+              <div className="absolute inset-0 bg-orange-600 rounded-2xl blur-2xl opacity-5 group-hover:opacity-10 transition-opacity" />
+              <img src="https://assets.zyrosite.com/A1azoVg7xQilMZ9l/freepik__luananovo-a-professional-indoor-portrait-of-a-conf__79448-Yh120t9wXnt4SIzZ.png" className="relative w-full aspect-square object-cover rounded-3xl border border-slate-200 transition-all duration-500" />
+            </div>
+            <div className="w-full md:w-2/3 space-y-6">
+              <span className="text-orange-600 font-bold tracking-widest uppercase text-xs">A Mentora</span>
+              <h2 className="text-4xl font-bold text-slate-900">Luana Soares</h2>
+              <div className="space-y-4 text-slate-600 text-lg leading-relaxed italic text-justify">
+                <p>Luana Soares é apaixonada por estudos sobre inteligência emocional, com foco em ajudar pessoas que queiram ressignificar suas histórias e conquistarem uma vida extraordinária.</p>
+                <p>Com uma jornada pessoal marcada por superação, Luana passou por um profundo processo de transformation após vivências impactantes em treinamentos de autoconhecimento. A partir daí, decidiu transformar sua dor em missão de vida.</p>
+                <p>Sua trajetória de cura e evolução pessoal se tornou a base para seu trabalho, e agora ela inspira e capacita others a também escreverem uma nova história.</p>
               </div>
             </div>
           </div>
         </section>
-      );
-    };
 
-    const Differentials = () => {
-      return (
-        <section className="py-10 md:py-20 bg-white text-slate-900 border-t border-slate-100">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-3 gap-8 md:gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
-              {BENEFITS.map((benefit, index) => {
-                const Icon = ICON_MAP[benefit.iconName];
-                return (
-                  <div key={index} className="pt-8 md:pt-0 md:px-6 first:pt-0">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-amber-100 to-white text-amber-600 mb-6 border border-amber-100 shadow-lg shadow-amber-100/50">
-                      <Icon size={32} />
-                    </div>
-                    <h3 className="text-xl font-bold mb-4 serif-font text-slate-900">{benefit.title}</h3>
-                    <p className="text-slate-500 leading-relaxed">{benefit.description}</p>
-                  </div>
-                );
-              })}
+        <section id="oferta" className="py-12 px-4 text-center relative">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.05),transparent_70%)]" />
+          <div className="max-w-2xl mx-auto relative z-10">
+            <h2 className="text-3xl md:text-5xl font-bold mb-10 italic tracking-tight text-slate-900">Não deixe para amanhã a vida que você merece viver <span className="text-orange-500 uppercase">HOJE</span>.</h2>
+            <div className="bg-white border border-orange-500/20 p-10 rounded-[40px] shadow-2xl shadow-orange-500/10 overflow-hidden relative">
+              <div className="absolute top-0 right-0 bg-orange-600 text-white text-[10px] font-black px-6 py-2 uppercase tracking-tighter">Últimas vagas</div>
+              <p className="text-slate-400 line-through text-xl mb-2">De R$ 197,00</p>
+              <div className="mb-8">
+                <span className="text-sm text-slate-500 block mb-1 uppercase font-bold tracking-widest">Por apenas</span>
+                <h3 className="text-7xl font-black text-orange-600 tracking-tighter">R$ 37,00</h3>
+                <p className="text-slate-500 mt-2 font-medium italic">ou 3x de R$ 13,20 no cartão</p>
+              </div>
+              <div className="space-y-4 mb-10 text-sm">
+                <div className="flex items-center gap-3 justify-center text-slate-700"><Icon name="CheckCircle" size={16} className="text-green-600" /><span>Acesso imediato ao curso</span></div>
+                <div className="flex items-center gap-3 justify-center text-slate-700"><Icon name="CheckCircle" size={16} className="text-green-600" /><span>Bônus: Dinâmica Cura Ancestralidade</span></div>
+                <div className="flex items-center gap-3 justify-center text-slate-700"><Icon name="CheckCircle" size={16} className="text-green-600" /><span>PDF Planner da Rotina Equilibrada </span></div> 
+                <div className="flex items-center gap-3 justify-center text-slate-700"><Icon name="CheckCircle" size={16} className="text-green-600" /><span>7 dias de garantia</span></div>
+              </div>
+              <a href="https://pay.hotmart.com/Y103405139M?bid=1765751031490" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center text-center bg-orange-600 text-white py-5 px-4 md:px-8 rounded-2xl font-black text-lg md:text-xl leading-tight hover:bg-orange-500 transition-all transform hover:scale-105 active:scale-95 shadow-xl shadow-orange-600/20">
+                LIBERAR MEU ACESSO
+              </a>
+              <div className="mt-8 flex items-center justify-center gap-6 text-slate-400 text-xs grayscale">
+                <span className="flex items-center gap-1"><Icon name="ShieldCheck" size={14} /> Garantia de 7 dias</span>
+              </div>
             </div>
           </div>
         </section>
-      );
-    };
 
-    const Footer = () => {
-      return (
-        <footer className="bg-white text-slate-500 py-8 md:py-12 border-t border-slate-100">
-          <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-center md:text-left">
-              <h4 className="text-slate-900 font-bold serif-font text-xl mb-2">Desafio 7P</h4>
-              <p className="text-sm">7 dias para prosperar.</p>
-            </div>
-            
-            <div className="text-sm text-center md:text-right">
-              <p>&copy; {new Date().getFullYear()} Todos os direitos reservados.</p>
-            </div>
+        <footer className="py-12 border-t border-slate-200 text-center px-4 bg-white/20">
+          <div className="max-w-4xl mx-auto space-y-8">
+            <h4 className="text-2xl font-black tracking-tighter text-slate-900">DESAFIO <span className="text-orange-500"><strong>7P</strong></span></h4>
+            <p className="text-[10px] text-slate-400 max-w-lg mx-auto leading-relaxed">
+              &copy; {new Date().getFullYear()} Desafio 7P. Todos os direitos reservados. 
+            </p>
           </div>
         </footer>
-      );
-    };
+      </div>
+    );
 
-    // --- APP COMPONENT ---
-
-    function App() {
-      const [showScrollTop, setShowScrollTop] = useState(false);
-      const CTA_LINK = "https://pay.hotmart.com/Y103405139M?bid=1765751031490";
-
-      useEffect(() => {
-        const handleScroll = () => {
-          setShowScrollTop(window.scrollY > 400);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-      }, []);
-
-      const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      };
-
-      const CTAButton = () => (
-        <div className="flex justify-center py-10 px-4">
-          <a 
-            href={CTA_LINK} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-7 md:px-16 py-5 md:py-6 rounded-full font-black text-lg md:text-2xl shadow-2xl shadow-orange-200 transition-all transform hover:scale-105 active:scale-95 text-center uppercase tracking-tight"
-          >
-            Quero destravar minha vida <ArrowRight size={24} strokeWidth={3} />
-          </a>
-        </div>
-      );
-
-      return (
-        <div className="min-h-screen bg-white font-sans text-slate-600 selection:bg-amber-400 selection:text-amber-900">
-          <Hero />
-          <ProblemAgitation />
-          
-          <CTAButton />
-          
-          <Modules />
-          <BonusSection />
-          
-          {/* Community & Social Proof Section - White Background */}
-          <section className="py-10 md:py-20 bg-white text-slate-800 overflow-hidden relative border-t border-slate-100">
-             
-             <div className="container mx-auto px-4 relative z-10 max-w-5xl">
-                
-                {/* Middle Part: Community */}
-                <div className="mb-16 bg-white rounded-2xl p-6 md:p-8 shadow-xl shadow-slate-200/50 border border-slate-100">
-                  <div className="flex flex-col md:flex-row items-center gap-6">
-                    <div className="flex-shrink-0 bg-green-50 p-4 rounded-full text-green-600 border border-green-100">
-                      <MessageCircle size={40} />
-                    </div>
-                    <div className="text-center md:text-left">
-                      <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2 flex items-center justify-center md:justify-start gap-2">
-                        Você não vai estar sozinha <MessageCircle className="text-green-500" size={24} />
-                      </h3>
-                      <p className="text-slate-600 mb-2">
-                        Ao entrar no Desafio, você ganha acesso à nossa <strong>Comunidade Exclusiva no WhatsApp</strong>.
-                      </p>
-                      <p className="text-sm text-slate-500">
-                        É um ambiente seguro para troca de histórias, dúvidas e crescimento em grupo. Além disso, você receberá ajuda para continuar seu aprendizado mesmo após os 7 dias. Mantenha sua frequência alta andando com quem também quer prosperar.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom Part: Testimonials */}
-                <div className="text-center">
-                  <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-8 serif-font">
-                    O que dizem nossas alunas:
-                  </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                    {TESTIMONIALS.map((t, i) => (
-                      <motion.div 
-                        key={i}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: i * 0.1 }}
-                        className="bg-slate-50 p-4 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center text-center h-full hover:-translate-y-1 transition-transform"
-                      >
-                        <div className="mb-3 text-amber-400">
-                          <div className="flex gap-0.5 justify-center">
-                            {[1,2,3,4,5].map(s => <Star key={s} size={12} fill="currentColor" />)}
-                          </div>
-                        </div>
-                        <Quote size={20} className="text-slate-200 mb-2" />
-                        <p className="text-xs text-slate-600 italic mb-4 flex-grow">"{t.text}"</p>
-                        <div className="mt-auto">
-                          <p className="text-sm font-bold text-slate-900">{t.name}</p>
-                          <p className="text-[10px] text-slate-400 uppercase tracking-wide">{t.role}</p>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-
-             </div>
-          </section>
-
-          <CTAButton />
-
-          <MentorSection />
-          <Differentials />
-          
-          {/* Final CTA - Light & Clean */}
-          <section className="pt-20 pb-10 md:py-24 bg-white text-center relative border-t border-slate-100">
-            <div className="container mx-auto px-4 max-w-3xl relative z-10">
-              <h2 className="text-2xl md:text-5xl font-bold mb-6 md:mb-8 serif-font text-slate-900">
-                A vida extraordinária começou a se aproximar de você.
-              </h2>
-              <p className="text-slate-600 text-base md:text-lg mb-8 md:mb-12">
-                Você não precisa "dar conta" de tudo sozinha. Você só precisa aprender a regra do jogo.
-              </p>
-
-              {/* Pricing Card */}
-              <motion.div 
-                initial={{ scale: 0.9, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                className="mb-10 bg-white p-6 md:p-10 rounded-[2rem] inline-block shadow-2xl shadow-orange-100/50 border border-slate-100 relative overflow-hidden w-full max-w-md mx-auto"
-              >
-                 <div className="absolute top-0 right-0 bg-rose-500 text-white text-xs font-bold px-4 py-1 rounded-bl-xl">
-                   OFERTA PROMOCIONAL
-                 </div>
-                 
-                 <div className="flex flex-col items-center">
-                    <p className="text-slate-400 font-medium mb-2 uppercase tracking-wide text-sm flex items-center gap-2">
-                      <Tag size={16} /> Preço Especial
-                    </p>
-                    <div className="flex flex-col items-center gap-1 mb-4">
-                      <span className="text-xl text-slate-400 line-through decoration-slate-400 serif-font">De R$ 197,00</span>
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-2xl font-bold text-slate-700">Por</span>
-                        <span className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-rose-600 tracking-tight">
-                          R$ 37,00
-                        </span>
-                      </div>
-                    </div>
-                    
-                    <div className="w-full h-px bg-slate-100 my-4"></div>
-                    
-                    <ul className="text-left w-full space-y-3 mb-8 text-slate-600 text-sm">
-                      <li className="flex items-center gap-2"><CheckCircle size={16} className="text-green-500" /> Acesso imediato às 7 aulas</li>
-                      <li className="flex items-center gap-2"><CheckCircle size={16} className="text-green-500" /> Bônus: Cura da Ancestralidade</li>
-                      <li className="flex items-center gap-2"><CheckCircle size={16} className="text-green-500" /> Acesso à Comunidade VIP</li>
-                      <li className="flex items-center gap-2"><ShieldCheck size={16} className="text-green-500" /> 7 dias de garantia incondicional</li>
-                    </ul>
-                    
-                    <a href={CTA_LINK} target="_blank" rel="noopener noreferrer" className="w-full px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-lg md:text-xl font-bold rounded-full shadow-lg shadow-green-200 hover:from-green-600 hover:to-emerald-700 hover:scale-105 transition-all transform flex items-center justify-center gap-2">
-                      LIBERAR MEU ACESSO
-                      <ArrowRight size={20} />
-                    </a>
-                    
-                    <p className="mt-4 text-xs text-slate-400 flex items-center gap-1">
-                       <Clock size={12} /> Oferta por tempo limitado
-                    </p>
-                 </div>
-              </motion.div>
-
-              <p className="mt-6 text-sm text-slate-500 flex items-center justify-center gap-4">
-                <span>🔒 Pagamento 100% Seguro</span>
-              </p>
-            </div>
-          </section>
-
-          <Footer />
-
-          {/* Sticky Mobile CTA / Scroll Top */}
-          <AnimatePresence>
-            {showScrollTop && (
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                className="fixed bottom-6 right-6 z-50 flex flex-col gap-3"
-              >
-                <button 
-                  onClick={scrollToTop}
-                  className="p-3 bg-white text-amber-600 rounded-full shadow-lg border border-slate-200 hover:bg-amber-50 transition-colors"
-                  aria-label="Voltar ao topo"
-                >
-                  <ArrowUp size={20} />
-                </button>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      );
-    }
-
-    const root = createRoot(document.getElementById('root'));
+    const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(<App />);
   </script>
+<script type="module" src="/index.tsx"></script>
 </body>
 </html>
