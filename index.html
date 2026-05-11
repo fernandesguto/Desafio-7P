@@ -17,11 +17,13 @@
     * { font-family: 'Inter', Arial, Helvetica, sans-serif !important; }
     html { scroll-behavior: smooth; }
     .glow-orange { text-shadow: 0 0 15px rgba(249, 115, 22, 0.3); }
-    .bg-light-yellow { background-color: #FFFDF2; }
+    .bg-light-yellow { 
+      background: linear-gradient(135deg, #FFFDF2 0%, #FFFFFF 50%, #FFF4E5 100%);
+      background-attachment: fixed;
+    }
     .bg-card-custom { background: #FFFFFF; }
     .glass-border { border: 1px solid rgba(0, 0, 0, 0.08); }
     .glass-card-hover:hover { background: #FFFFFF; border-color: rgba(249, 115, 22, 0.3); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1); }
-    .dot-grid { background-image: radial-gradient(#00000015 1px, transparent 1px); background-size: 24px 24px; }
     .serif-font { font-family: Georgia, serif !important; }
   </style>
 
@@ -34,7 +36,7 @@
 <link rel="stylesheet" href="/index.css">
 </head>
 <body class="bg-light-yellow text-slate-800 selection:bg-orange-500 selection:text-white">
-  <div id="root" class="dot-grid min-h-screen"></div>
+  <div id="root" class="min-h-screen"></div>
 
   <script type="text/babel">
     const { useState, useEffect } = React;
